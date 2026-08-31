@@ -1,0 +1,73 @@
+﻿@font-face {
+	font-family: PeydaWeb;
+	font-style: normal;
+	font-weight: 100;
+	src: url('PeydaWeb/woff/PeydaWeb-thin.woff') format('woff'),
+	url('PeydaWeb/woff2/PeydaWeb-thin.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: PeydaWeb;
+	font-style: normal;
+	font-weight: 200;
+	src: url('PeydaWeb/woff/PeydaWeb-ExtraLight.woff') format('woff'),
+	url('PeydaWeb/woff2/PeydaWeb-ExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: PeydaWeb;
+	font-style: normal;
+	font-weight: 300;
+	src: url('PeydaWeb/woff/PeydaWeb-light.woff') format('woff'),
+	url('PeydaWeb/woff2/PeydaWeb-light.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: PeydaWeb;
+	font-style: normal;
+	font-weight: 500;
+	src: url('PeydaWeb/woff/PeydaWeb-medium.woff') format('woff'),
+	url('PeydaWeb/woff2/PeydaWeb-medium.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: PeydaWeb;
+	font-style: normal;
+	font-weight: 600;
+	src: url('PeydaWeb/woff/PeydaWeb-Semibold.woff') format('woff'),
+	url('PeydaWeb/woff2/PeydaWeb-Semibold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: PeydaWeb;
+	font-style: normal;
+	font-weight: 800;
+	src: url('PeydaWeb/woff/PeydaWeb-extrabold.woff') format('woff'),
+	url('PeydaWeb/woff2/PeydaWeb-extrabold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: PeydaWeb;
+	font-style: normal;
+	font-weight: 900;
+	src: url('PeydaWeb/woff/PeydaWeb-black.woff') format('woff'),
+	url('PeydaWeb/woff2/PeydaWeb-black.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: PeydaWeb;
+	font-style: normal;
+	font-weight: bold;
+	src: url('PeydaWeb/woff/PeydaWeb-bold.woff') format('woff'),
+	url('PeydaWeb/woff2/PeydaWeb-bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: PeydaWeb;
+	font-style: normal;
+	font-weight: normal;
+	src: url('PeydaWeb/woff/PeydaWeb-regular.woff') format('woff'),
+	url('PeydaWeb/woff2/PeydaWeb-regular.woff2') format('woff2');
+}
+
+

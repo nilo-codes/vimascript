@@ -1,0 +1,73 @@
+﻿@font-face {
+	font-family: YekanBakhWeb;
+	font-style: normal;
+	font-weight: 100;
+	src: url('YekanBakhWeb/woff/YekanBakhFaNum-Thin.woff') format('woff'),
+	url('YekanBakhWeb/woff2/YekanBakhFaNum-Thin.woff2') format('woff2');
+}
+
+/*@font-face {*/
+/*	font-family: YekanBakhWeb;*/
+/*	font-style: normal;*/
+/*	font-weight: 200;*/
+/*	src: url('YekanBakhWeb/woff/YekanBakhFaNum-ExtraLight.woff') format('woff'),*/
+/*	url('YekanBakhWeb/woff2/YekanBakhFaNum-ExtraLight.woff2') format('woff2');*/
+/*}*/
+
+@font-face {
+	font-family: YekanBakhWeb;
+	font-style: normal;
+	font-weight: 300;
+	src: url('YekanBakhWeb/woff/YekanBakhFaNum-light.woff') format('woff'),
+	url('YekanBakhWeb/woff2/YekanBakhFaNum-light.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: YekanBakhWeb;
+	font-style: normal;
+	font-weight: 500;
+	src: url('YekanBakhWeb/woff/YekanBakhFaNum-Bold.woff') format('woff'),
+	url('YekanBakhWeb/woff2/YekanBakhFaNum-Bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: YekanBakhWeb;
+	font-style: normal;
+	font-weight: 600;
+	src: url('YekanBakhWeb/woff/YekanBakhFaNum-Semibold.woff') format('woff'),
+	url('YekanBakhWeb/woff2/YekanBakhFaNum-Semibold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: YekanBakhWeb;
+	font-style: normal;
+	font-weight: 800;
+	src: url('YekanBakhWeb/woff/YekanBakhFaNum-extrabold.woff') format('woff'),
+	url('YekanBakhWeb/woff2/YekanBakhFaNum-extrabold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: YekanBakhWeb;
+	font-style: normal;
+	font-weight: 900;
+	src: url('YekanBakhWeb/woff/YekanBakhFaNum-black.woff') format('woff'),
+	url('YekanBakhWeb/woff2/YekanBakhFaNum-black.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: YekanBakhWeb;
+	font-style: normal;
+	font-weight: bold;
+	src: url('YekanBakhWeb/woff/YekanBakhFaNum-bold.woff') format('woff'),
+	url('YekanBakhWeb/woff2/YekanBakhFaNum-bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: YekanBakhWeb;
+	font-style: normal;
+	font-weight: normal;
+	src: url('YekanBakhWeb/woff/YekanBakhFaNum-regular.woff') format('woff'),
+	url('YekanBakhWeb/woff2/YekanBakhFaNum-regular.woff2') format('woff2');
+}
+
+
