@@ -1,11 +1,11 @@
-@font-face {
+/* @font-face {
     font-family: 'peyda';
     src: url("./../fonts/peyda/Peyda-Medium.ttf");
 }
 @font-face {
     font-family: 'yekanBakh';
     src: url("./../fonts/yekanBakh/YekanBakhWeb/woff/YekanBakhFaNum-SemiBold.woff");
-}
+} */
 
 .title-main::before{
     content: "";
@@ -67,6 +67,16 @@
     display: inline-block;
     margin-left: 7px;
     box-shadow: 2px 0 5px rgba(0, 96, 255, .4);
+}
+.random-articles-title::before{
+    content: "";
+    width: 4px;
+    height: 15px;
+    border-radius: 2px;
+    background-color: #f8a203;
+    display: inline-block;
+    margin-left: 7px;
+    box-shadow: 2px 0 5px rgba(248, 162, 3, .4);
 }
 
 
@@ -333,13 +343,13 @@
 
 
 body{
-    font-family: "peyda";
+    /* font-family: "peyda"; */
 }
-.sub-menu{
+/* .sub-menu{
     font-family: "yekanBakh";
     font-size: 14px;
     cursor: pointer;
-}
+} */
 .real-time-main::before{
     content: "";
     top:40%;

@@ -97,18 +97,34 @@ const productsArray = [
 
 // brands
 const brandsArray = [
-    {title: "ایساکو", src: "../imgs/img-brands/file.1736767619.39314.webp"},
-    {title: "پارس لنت", src: "../imgs/img-brands/file.1736779878.54799.webp"},
-    {title: "وی پارت", src: "../imgs/img-brands/file.1736780368.27117.webp"},
-    {title: "امیرنیا", src: "../imgs/img-brands/file.1736780009.79829.webp"},
-    {title: "سایپا", src: "../imgs/img-brands/file.1736777722.39255.webp"},
-    {title: "والئو", src: "../imgs/img-brands/file.1736778216.39126.webp"},
-    {title: "مادپارت", src: "../imgs/img-brands/file.1736779747.21865.webp"},
-    {title: "ساپکو", src: "../imgs/img-brands/file.1736780758.20040.webp"},
-    {title: "کنزاکس", src: "../imgs/img-brands/file.1736769677.14146.webp"},
-    {title: "بتاسرامد", src: "../imgs/img-brands/file.1736780189.48830.webp"},
-    {title: "اسپیدی", src: "../imgs/img-brands/file.1736778668.43658.webp"},
-    {title: "ایده پارت", src: "../imgs/img-brands/file.1736780507.74102.webp"},
+    {id: 1, title: "ایساکو", src: "../imgs/img-brands/file.1736767619.39314.webp"},
+    {id: 2, title: "پارس لنت", src: "../imgs/img-brands/file.1736779878.54799.webp"},
+    {id: 3, title: "وی پارت", src: "../imgs/img-brands/file.1736780368.27117.webp"},
+    {id: 4, title: "امیرنیا", src: "../imgs/img-brands/file.1736780009.79829.webp"},
+    {id: 5, title: "سایپا", src: "../imgs/img-brands/file.1736777722.39255.webp"},
+    {id: 6, title: "والئو", src: "../imgs/img-brands/file.1736778216.39126.webp"},
+    {id: 7, title: "مادپارت", src: "../imgs/img-brands/file.1736779747.21865.webp"},
+    {id: 8, title: "ساپکو", src: "../imgs/img-brands/file.1736780758.20040.webp"},
+    {id: 9, title: "کنزاکس", src: "../imgs/img-brands/file.1736769677.14146.webp"},
+    {id: 10, title: "بتاسرامد", src: "../imgs/img-brands/file.1736780189.48830.webp"},
+    {id: 11, title: "اسپیدی", src: "../imgs/img-brands/file.1736778668.43658.webp"},
+    {id: 12, title: "ایده پارت", src: "../imgs/img-brands/file.1736780507.74102.webp"},
+]
+
+// random articles
+const articlesArray = [
+    {id: 1, title: "بهترین هدلایت برای پژو پارس و پژو 405 چیست؟", src: "../imgs/img-articles/file.1736867341.98478.webp", author: "مهرآفرین", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "25 دی 1403", type: "لوازم اسپورت"},
+    {id: 2, title: "تاریخچه سیستم صوتی در خودروسازی", src: "../imgs/img-articles/file.1736868491.56388.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "5 مرداد 1405", type: "سیستم صوتی"},
+    {id: 3, title: "بررسی عوارض استارت زدن ماشین روشن", src: "../imgs/img-articles/file.1736865549.83950.webp", author: "محسن جباری", profile_src: "../imgs/img-articles/article-profile/file.1736681841.91977.jpg", date: "2 خرداد 1404", type: "تعمیرات"},
+    {id: 4, title: "معرفی خودرو اشکودا اکتاویا؛ سدان اروپایی جذاب و تازه‌وارد بازار", src: "../imgs/img-articles/file.1736870066.83672.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "14 تیر 1405", type: "تعمیرات"},
+    {id: 5, title: "بررسی تخصصی علت زنگ زدن شمع ماشین", src: "../imgs/img-articles/file.1736864633.97003.webp", author: "قطعه پلاس", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "12 اسفند 1405", type: "جلوبندی"},
+    {id: 6, title: "در صورت پاره شدن تسمه دینام چکار کنیم + خطرات پاره شدن تسمه دینام", src: "../imgs/img-articles/file.1736864339.41312.webp", author: "محسن جباری", profile_src: "../imgs/img-articles/article-profile/file.1736681841.91977.jpg", date: "25 شهریور 1402", type: "تعمیرات"},
+    {id: 7, title: "در صورت پاره شدن تسمه دینام چکار کنیم + خطرات پاره شدن تسمه دینام", src: "../imgs/img-articles/file.1736866063.65293.webp", author: "قطعه پلاس", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "5 مهر 1405", type: "عیب یابی"},
+    {id: 8, title: "واتر پمپ چیست؟ (هرآنچه باید درباره آن بدانید)", src: "../imgs/img-articles/file.1736863837.46593.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "19 آذر 1405", type: "فنی"},
+    {id: 9, title: "علائم خرابی کمک فنر + زمان مناسب برای تعویض آنها", src: "../imgs/img-articles/file.1736862535.82765.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "10 بهمن 1404", type: "اخبار خودرو"},
+    {id: 10, title: "همه چیز درباره کاتاف زدن ماشین", src: "../imgs/img-articles/file.1736865080.36408.webp", author: "مهرآفرین", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "11 ابان 1405", type: "تیونینگ"},
+    {id: 11, title: "همه چیز درباره تاب داشتن سرسیلندر، از علائم تا خطرات", src: "../imgs/img-articles/file.1736865665.34094.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "1 اردیبهشت 1405", type: "تعمیرات"},
+    {id: 12, title: "بهترین برندهای لنت ترمز پژو پارس کدام است؟", src: "../imgs/img-articles/file.1736863569.35553.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "13 مرداد 1405", type: "دانستنی ها"},
 ]
 
 
@@ -775,9 +791,9 @@ const gifsContainer = $.querySelector(".gifs")
 const swiperPagination = $.querySelector(".pagination")
 
 const gifItems = [
-    "../images/file.1736860214.21292.webp",
-    "../images/file.1736700859.41955.webp",
-    "../images/file.1736700912.41917.webp",
+    "../imgs/img-banner/file.1736860214.21292.webp",
+    "../imgs/img-banner/file.1736700859.41955.webp",
+    "../imgs/img-banner/file.1736700912.41917.webp",
 ]
 let currentIndex = 0
 
@@ -1359,15 +1375,15 @@ const initDiscountSection = () => {
         initDiscountSwiper()
 
         // آپدیت بعد از بارگذاری کامل تصاویر
-        setTimeout(() => {
-            if (desktopDiscountSwiper) {
-                desktopDiscountSwiper.update()
-            }
-            if (mobileDiscountSwiper) {
-                mobileDiscountSwiper.update()
-            }
-            productDiscountedTimer()
-        }, 300)
+        // setTimeout(() => {
+        //     if (desktopDiscountSwiper) {
+        //         // desktopDiscountSwiper.update()
+        //     }
+        //     if (mobileDiscountSwiper) {
+        //         mobileDiscountSwiper.update()
+        //     }
+        //     productDiscountedTimer()
+        // }, 300)
     }, 100)
 }
 
@@ -1406,19 +1422,29 @@ const updatePagination = (swiper) => {
 
         bullet.classList.remove(
             "active-pagination-product",
-            "not-active-pagination-product"
+            "not-active-pagination-product",
+            "small-pagination-product"
         )
 
-        bullet.classList.add("not-active-pagination-product")
+        bullet.classList.add(
+            "not-active-pagination-product"
+        )
     })
 
+    // اگر ۴ تا یا کمتر داریم
     if (total <= 4) {
         bullets.forEach((bullet, index) => {
             bullet.style.display = "block"
 
             if (index === activeIndex) {
-                bullet.classList.remove("not-active-pagination-product")
-                bullet.classList.add("active-pagination-product")
+                bullet.classList.remove(
+                    "not-active-pagination-product",
+                    "small-pagination-product"
+                )
+
+                bullet.classList.add(
+                    "active-pagination-product"
+                )
             }
         })
 
@@ -1435,6 +1461,7 @@ const updatePagination = (swiper) => {
         start = activeIndex - 1
     }
 
+    // نمایش فقط ۴ دایره
     for (let i = start; i < start + 4; i++) {
         const bullet = bullets[i]
 
@@ -1442,9 +1469,41 @@ const updatePagination = (swiper) => {
 
         bullet.style.display = "block"
 
+        // دایره فعال
         if (i === activeIndex) {
-            bullet.classList.remove("not-active-pagination-product")
-            bullet.classList.add("active-pagination-product")
+            bullet.classList.remove(
+                "not-active-pagination-product",
+                "small-pagination-product"
+            )
+
+            bullet.classList.add(
+                "active-pagination-product"
+            )
+        }
+
+        // دایره اول و چهارم
+        else if (
+            i === start ||
+            i === start + 3
+        ) {
+            bullet.classList.remove(
+                "not-active-pagination-product"
+            )
+
+            bullet.classList.add(
+                "small-pagination-product"
+            )
+        }
+
+        // دایره‌های وسط
+        else {
+            bullet.classList.remove(
+                "small-pagination-product"
+            )
+
+            bullet.classList.add(
+                "not-active-pagination-product"
+            )
         }
     }
 }
@@ -2339,7 +2398,7 @@ const createMechanicalPartsHTML = (item) => {
                     ${item.color.map(color => `<div class="circle ${color} ${color === "bg-white" ? "border border-gray-300" : ""} rounded-full size-2"></div>`).join("")}
                 </div>
                 <img src="${item.src}" alt="" class="size-[170px] my-[10px] display-flex justify-self-center">
-                <p class="display-flex h-[50px] mb-[30px] max-h-[55px] min-h-[55px] dark:text-white">${item.title}</p>
+                <p class="display-flex h-[50px] mb-[30px] max-h-[55px] min-h-[55px] text-[14px] dark:text-white">${item.title}</p>
                 <div class="mechanical-parts-discount flex items-center text-center justify-end gap-1.5  h-[20px]">
     
                     <div class="discount-container ${item.discount ? "" : "hidden"} p-1.5 mb-1.5 bg-amber-500 shadow-lg shadow-amber-400/30 text-[14px] rounded-t-xl rounded-br-xl rounded-bl-sm h-[20px] display-flex">
@@ -2430,7 +2489,7 @@ const createviewedProduct = (item) => {
         <div class="products-slide  p-[15px] border-[1.5px] border-l border-b border-gray-100 dark:border-[#262631] group/changeColor cursor-pointer">
             <div class="products-slide-top display-flex justify-start gap-1">
                 <img src="${item.src}" alt="" class="size-[70px]">
-                <h3 class="title group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300 text-[15px] [word-spacing:2px] dark:text-white leading-5 h-10 line-clamp-2 text-start overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
+                <h3 class="title group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300 text-[14px] dark:text-white leading-5 h-10 line-clamp-2 text-start overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
                     <a href="#">
                         ${item.title}
                     </a>
@@ -2457,6 +2516,7 @@ const createviewedProduct = (item) => {
 }
 const addviewedProduct = () => {
     const viewedProductsContainer = $.querySelector(".viewed-products-container")
+    
     const viewedProducts = productsArray.filter((item) => item.viewed >= 200)
     
 
@@ -2555,7 +2615,7 @@ const desktopBestSellingProducts = () => {
                         <i class="ri-star-fill text-amber-400 pb-1.5"></i>
                     </div>
 
-                    <div class="title text-[14px] dark:text-white leading-5 h-10 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
+                    <div class="title text-[13px] dark:text-white leading-5 h-10 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
                         ${item.title}
                     </div>
                 </div>
@@ -2915,7 +2975,6 @@ const headlight_PAGINATION_COUNT = productsArray.filter(
     item => item.type === "headlight"
 ).length
 const headlightSwiper = $.querySelector(".headlight-swiper")
-console.log(headlightSwiper);
 
 const headlightPagination = $.querySelector(".headlight-categories-pagination")
 
@@ -2926,7 +2985,8 @@ const createHeadlightProductColors = (colors) => {
 }
 
 const createHeadlightSlideHTML = (item) => {
-    const colors = createOilProductColors(item.color)
+
+    const colors = createHeadlightProductColors(item.color)
     
 
     return `
@@ -2999,7 +3059,7 @@ const addHeadlightProducts = () => {
 const renderHeadlightPagination = () => {
     headlightPagination.innerHTML = ""
 
-    for (let i = 0; i < OIL_PAGINATION_COUNT; i++) {
+    for (let i = 0; i < headlight_PAGINATION_COUNT; i++) {
         headlightPagination.insertAdjacentHTML(
             "beforeend",
             `
@@ -3013,6 +3073,7 @@ const renderHeadlightPagination = () => {
 }
 
 const updateHeadlightPagination = (swiper) => {
+    
     const bullets = headlightPagination.querySelectorAll("span")
     const activeIndex = swiper.realIndex % headlight_PAGINATION_COUNT
 
@@ -3034,7 +3095,7 @@ const headlightSwiperInstance = new Swiper(".headlight-container", {
     slidesOffsetAfter: 0,
     centeredSlides: false,
     loop: true,
-    loopAdditionalSlides: OIL_PAGINATION_COUNT,
+    loopAdditionalSlides: headlight_PAGINATION_COUNT,
     speed: 800,
     watchOverflow: true,
     observer: true,
@@ -3109,11 +3170,11 @@ const createBrandsHTML = () => {
             "beforeend",
             `
             <div class="swiper-slide">
-                <div class="card relative display-flex bg-white rounded-full size-[110px] cursor-pointer group">
+                <div class="card relative display-flex bg-white dark:bg-[#353542] rounded-full cursor-pointer group aspect-square w-full max-w-[110px]">
                     <img
                         src="${brand.src}"
                         alt="${brand.title}"
-                        class="bg-white size-[110px] p-[20px] rounded-full visible opacity-100 group-hover:invisible group-hover:opacity-0 transition-all duration-300"
+                        class="bg-white dark:bg-[#353542] w-full h-full p-[20%] rounded-full visible opacity-100 group-hover:invisible group-hover:opacity-0 transition-all duration-300"
                     >
 
                     <div
@@ -3131,17 +3192,17 @@ const createBrandsHTML = () => {
 const renderBrandsPagination = () => {
     brandsPagination.innerHTML = ""
 
-    for (let i = 0; i < PAGINATION_COUNT; i++) {
+    brandsArray.forEach((_, index) => {
         brandsPagination.insertAdjacentHTML(
             "beforeend",
             `
             <span
-                data-index="${i}"
+                data-index="${index}"
                 class="not-active-pagination-product cursor-pointer">
             </span>
             `
         )
-    }
+    })
 }
 
 const updateBrandsPagination = (swiper) => {
@@ -3149,18 +3210,14 @@ const updateBrandsPagination = (swiper) => {
         brandsPagination.querySelectorAll("span")
     )
 
-    if (!bullets.length) return
+    const total = bullets.length
 
-    const total = brandsArray.length
-    const activeIndex = ((swiper.realIndex % total) + total) % total
-    const start = total > PAGINATION_COUNT
-        ? (activeIndex - 1 + total) % total
-        : 0
+    if (!total) return
 
-    bullets.forEach((bullet, index) => {
-        const brandIndex = (start + index) % total
+    const activeIndex = swiper.realIndex
 
-        bullet.dataset.index = String(brandIndex)
+    bullets.forEach((bullet) => {
+        bullet.style.display = "none"
 
         bullet.classList.remove(
             "active-pagination-product",
@@ -3168,17 +3225,76 @@ const updateBrandsPagination = (swiper) => {
             "small-pagination-product"
         )
 
-        const isActive = brandIndex === activeIndex
-        const isEdge = index === 0 || index === PAGINATION_COUNT - 1
-
-        if (isActive) {
-            bullet.classList.add("active-pagination-product")
-        } else if (isEdge && total > PAGINATION_COUNT) {
-            bullet.classList.add("small-pagination-product")
-        } else {
-            bullet.classList.add("not-active-pagination-product")
-        }
+        bullet.classList.add(
+            "not-active-pagination-product"
+        )
     })
+
+    if (total <= PAGINATION_COUNT) {
+        bullets.forEach((bullet, index) => {
+            bullet.style.display = "block"
+
+            if (index === activeIndex) {
+                bullet.classList.remove(
+                    "not-active-pagination-product"
+                )
+
+                bullet.classList.add(
+                    "active-pagination-product"
+                )
+            }
+        })
+
+        return
+    }
+
+    let start
+
+    if (activeIndex === 0) {
+        start = 0
+    } else if (activeIndex >= total - 1) {
+        start = total - PAGINATION_COUNT
+    } else {
+        start = activeIndex - 1
+    }
+
+    for (let i = start; i < start + PAGINATION_COUNT; i++) {
+    const bullet = bullets[i]
+
+    if (!bullet) continue
+
+    bullet.style.display = "block"
+
+    if (i === activeIndex) {
+        bullet.classList.remove(
+            "not-active-pagination-product",
+            "small-pagination-product"
+        )
+
+        bullet.classList.add(
+            "active-pagination-product"
+        )
+    } else if (
+        i === start ||
+        i === start + PAGINATION_COUNT - 1
+    ) {
+        bullet.classList.remove(
+            "not-active-pagination-product"
+        )
+
+        bullet.classList.add(
+            "small-pagination-product"
+        )
+    } else {
+        bullet.classList.remove(
+            "small-pagination-product"
+        )
+
+        bullet.classList.add(
+            "not-active-pagination-product"
+        )
+    }
+}
 }
 
 createBrandsHTML()
@@ -3186,11 +3302,14 @@ renderBrandsPagination()
 
 const BrandsSwiperInstance = new Swiper(".brands-container", {
     rtl: true,
+
     slidesPerView: 2,
     slidesPerGroup: 1,
-    spaceBetween: 3,
+    spaceBetween: 7,
+
     slidesOffsetBefore: 0,
     slidesOffsetAfter: 0,
+
     centeredSlides: false,
 
     loop: true,
@@ -3242,7 +3361,7 @@ const BrandsSwiperInstance = new Swiper(".brands-container", {
             })
         },
 
-        slideChange: function () {
+        realIndexChange: function () {
             updateBrandsPagination(this)
         }
     }
@@ -3253,12 +3372,167 @@ brandsPagination.addEventListener("click", (event) => {
 
     if (!bullet) return
 
-    const targetIndex = Number(bullet.dataset.index)
+    const targetIndex = Number(
+        bullet.dataset.index
+    )
 
     if (Number.isNaN(targetIndex)) return
 
-    BrandsSwiperInstance.slideToLoop(targetIndex, 800)
-    restartBrandsAutoplay(BrandsSwiperInstance)
+    BrandsSwiperInstance.slideToLoop(
+        targetIndex,
+        800
+    )
+
+    restartBrandsAutoplay(
+        BrandsSwiperInstance
+    )
+})
+
+
+
+
+
+// random articles
+const randomArticlesSwiper = $.querySelector(".random-articles-swiper")
+const randomArticlesPagination = $.querySelector(".random-articles-pagination")
+
+
+const createRandomArticlesHTML = (item) => {
+    articlesArray.forEach((item) => {
+        randomArticlesSwiper.insertAdjacentHTML("beforeend",
+            `
+               <div class="swiper-slide !h-[250px] overflow-visible">
+                   <div class="articles-card relative w-full h-[200px] p-[10px]">
+                       <img src="${item.src}" alt="" class="w-full h-[200px] object-cover rounded-b-md rounded-t-2xl">
+       
+                       <span class="category-badge absolute top-1/12 right-[40px] bg-white text-gray-600 text-[13px] p-1 px-2 rounded-lg">
+                           <a href="#">${item.type}</a>
+                       </span>
+       
+                       <div class="article-footer absolute bottom-[-40px] left-1/2 -translate-x-1/2 w-[90%] bg-white pt-[10px] px-[15px] pb-[15px] rounded-xl">
+                           <h3 class="article-title w-full min-w-0 whitespace-nowrap overflow-hidden text-ellipsis text-[13px] text-gray-600 mb-2">
+                               ${item.title}
+                           </h3>
+       
+                           <ul class="display-flex justify-start gap-2">
+                               <li class="display-flex gap-1.5 text-gray-400 text-[12px]">
+                                   <img src="${item.profile_src}" alt="" class="size-[20px] rounded-md">
+                                   <a>${item.author}</a>
+                               </li>
+       
+                               <li class="divider size-1 bg-blue-600 rounded-full"></li>
+       
+                               <li class="text-gray-400 text-[12px]">
+                                   <span>${item.date}</span>
+                               </li>
+                           </ul>
+                       </div>
+       
+                   </div>
+               </div>
+           `
+            
+        )
+    })
+}
+
+const renderRandomArticlesPagination = () => {
+    randomArticlesPagination.innerHTML = ""
+
+    for (let i = 0; i < articlesArray.length; i++) {
+        randomArticlesPagination.insertAdjacentHTML(
+            "beforeend",
+            `
+            <span
+                data-index="${i}"
+                class="not-active-pagination-product cursor-pointer">
+            </span>
+            `
+        )
+    }
+}
+
+const updateRandomArticlesPagination = (swiper) => {
+    const bullets = randomArticlesPagination.querySelectorAll("span")
+    const activeIndex = swiper.realIndex % articlesArray.length
+
+    bullets.forEach((bullet, index) => {
+        bullet.classList.remove(
+            "active-pagination-articles",
+            "not-active-pagination-product"
+        )
+
+        if (index === activeIndex) {
+            bullet.classList.add("active-pagination-articles")
+        } else {
+            bullet.classList.add("not-active-pagination-product")
+        }
+    })
+}
+
+createRandomArticlesHTML()
+renderRandomArticlesPagination()
+
+const randomArticlesSwiperInstance = new Swiper(".random-articles-container", {
+    rtl: true,
+    slidesPerView: 4,
+    slidesPerGroup: 1,
+    spaceBetween: 0,
+
+    loop: true,
+    speed: 800,
+
+    observer: true,
+    observeParents: true,
+
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+    },
+
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+            spaceBetween: 0
+        },
+        600: {
+            slidesPerView: 2,
+            spaceBetween: 0
+        },
+        770: {
+            slidesPerView: 3,
+            spaceBetween: 0
+        },
+        990: {
+            slidesPerView: 4,
+            spaceBetween: 0
+        }
+    },
+
+    on: {
+        init(swiper) {
+            swiper.slideToLoop(0, 0)
+
+            setTimeout(() => {
+                updateRandomArticlesPagination(swiper)
+            }, 0)
+        },
+
+        slideChange(swiper) {
+            updateRandomArticlesPagination(swiper)
+        }
+    }
+})
+randomArticlesPagination.addEventListener("click", (event) => {
+    const bullet = event.target.closest("span")
+
+    if (!bullet) return
+
+    const target = Number(bullet.dataset.index)
+
+    if (Number.isNaN(target)) return
+
+    randomArticlesSwiperInstance.slideToLoop(target, 800)
 })
 
 
@@ -3301,7 +3575,6 @@ window.addEventListener("load", addCategoryProduct)
 window.addEventListener("load", addPopularProduct)
 window.addEventListener("load", addMechanicalPartsHTML)
 window.addEventListener("load", addviewedProduct)
-// window.addEventListener("load", createBrandsHTML)
 
 window.addEventListener("load", function() {
     setTimeout(() => {

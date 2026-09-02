@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="./../styles/app.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="../fonts/iranYekan/WebFonts/css/style.css">
+    
 </head>
 
-<body class="bg-gray-100 dark:bg-[#262631]">
+<body class="bg-[#f2f5fc] dark:bg-[#262631]">
     <!-- Advertising banner -->
     <div class="top-banner">
         <img src="./../images/file.1768966309.85371.webp" alt="" class="img-banner1">
@@ -548,7 +550,7 @@
             </section>
 
             <section>
-                <div class="engine-oil-container mt-[50px] rounded-3xl bg-linear-to-b from-white to-gray-100 dark:from-[#353542] dark:to-[#35354200] p-[30px]">
+                <div class="engine-oil-container mt-[50px] rounded-3xl bg-linear-to-b from-white to-[#f2f5fc] dark:from-[#353542] dark:to-[#35354200] p-[30px]">
                     <div class="display-flex justify-between mb-5">
                         <div class="display-flex">
                             <h3 class="engine-oil-title display-flex border-gray pl-3 font-bold dark:text-white">روغن موتور</h3>
@@ -563,7 +565,7 @@
                             <div class="oil-categories-pagination !static flex justify-center gap-1"></div>
                         </div>
                     </div>
-                    <div class="swiper oil-container shadow-lg shadow-gray-200/30">
+                    <div class="swiper oil-container">
                         <div class="oil-swiper swiper-wrapper">
                             <!-- oil products loaded from js -->
                         </div>
@@ -574,9 +576,10 @@
 
 
             <section>
-                
+                <img src="../imgs/img-banner/file.1736792469.35879.webp" alt="" loading="lazy" class="desktop-banner">
                 <img src="../imgs/img-banner/file.1736799203.62414.webp" alt="" loading="lazy" class="mobile-banner hidden">
             </section>
+
 
             <section>
                 <div class="swiper product-categories-container">
@@ -683,26 +686,26 @@
             </section>
 
 
-            <section class="bg-gray-200 flex flex-col p-[20px] rounded-3xl mt-[30px] dark:bg-[#353542]">
+            <section class="bg-[#f5ead7] flex flex-col p-[20px] rounded-3xl mt-[30px] dark:bg-[#353542]">
                 <div class="desktop hidden min-[825px]:flex">
                     <div class="title-discounted-products display-flex flex-col ml-[40px] mr-[10px] shrink-0">
                         <img src="../imgs/img-banner/file.1736802469.59352.webp" alt="" class="w-[200px] dark:invert">
-                        <a href="#" class="bg-white shadow-lg shadow-gray-200 dark:shadow-none p-2 rounded-lg mt-6 hover:bg-white/85 hover:text-gray-600 transition-colors duration-300">مشاهده محصولات</a>
+                        <a href="#" class="bg-white p-2 rounded-lg mt-6 hover:bg-white/85 hover:text-gray-600 transition-colors duration-300">مشاهده محصولات</a>
                         <div class="swiper-slider-controller display-flex justify-around mt-6 bg-black shadow-lg shadow-black/20 text-white w-[75px] py-2 rounded-xl">
-                            <div class="discount-next cursor-pointer">
+                            <div class="featured-next cursor-pointer">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-4.5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
                             <span class="text-gray-500 text-[12px]">|</span>
-                            <div class="discount-prev cursor-pointer">
+                            <div class="featured-prev cursor-pointer">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-4.5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                                 </svg>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper discount-swiper rounded-l-3xl">
+                    <div class="swiper featured-desktop-swiper rounded-l-3xl">
                         <div class="swiper-wrapper">
                             <!-- discounted products loaded from js -->
                                
@@ -719,13 +722,13 @@
                         <div class="display-flex gap-2">
                             <a href="#" class="bg-white shadow-lg text-[12px] shadow-gray-200 dark:shadow-none p-1 px-2 rounded-lg hover:bg-white/85 hover:text-gray-600 transition-colors duration-300">مشاهده محصولات</a>
                             <div class="swiper-slider-controller display-flex justify-around bg-black m-0 shadow-lg shadow-black/20 text-white w-[45px] py-1 rounded-lg">
-                                <div class="discount-next-mobile cursor-pointer">
+                                <div class="featured-next-mobile cursor-pointer">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-3.5">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                     </svg>
                                 </div>
                                 <span class="text-gray-500 text-[12px]">|</span>
-                                <div class="discount-prev-mobile cursor-pointer">
+                                <div class="featured-prev-mobile cursor-pointer">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-3.5">
                                       <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                                     </svg>
@@ -737,7 +740,7 @@
                     </div>
     
     
-                    <div class="mobile-swiper w-full overflow-hidden rounded-3xl">
+                    <div class="mobile-swiper featured-mobile-swiper w-full overflow-hidden rounded-3xl">
                         <div class="swiper-wrapper">
                             <!-- <div class="min-w-0 border bg-white p-4">
                                 <div class="box-head flex justify-between">
@@ -836,6 +839,302 @@
                             
                         </div>
     
+                    </div>
+
+                </div>
+            </section>
+
+
+
+            <section class="mt-[30px]">
+                <div class="mechanical-parts-top display-flex justify-between">
+                    <div class="display-flex">
+                        <h3 class="mechanical-parts-title display-flex border-gray pl-3 font-bold dark:text-white">لوازم مکانیکی</h3>
+                        <a href="#" class="oil-more-elem px-2 py-0.5 rounded-md display-flex gap-1 text-[12px] text-gray-400">
+                            بیشتر
+                        </a>
+                    </div>
+                    <div class="swiper-slider-controller display-flex justify-around bg-blue-600 shadow-lg shadow-blue-400/60 text-white w-[65px] py-1.5 rounded-xl">
+                        <div class="mechanical-parts-next cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </div>
+                        <span class="text-blue-400 text-[12px]">|</span>
+                        <div class="mechanical-parts-prev cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="mechanical-parts-main swiper mt-[10px]">
+                    <div class="mechanical-parts-swiper swiper-wrapper">
+
+                       <!-- loaded from js -->
+                        
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="mt-[30px]">
+                <div class="popular-products-top display-flex justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="popular-products-symbol bg-white size-[50px] rounded-2xl display-flex">
+                            <i class="ri-instance-line text-blue-600 text-[26px]"></i>
+                        </div>
+    
+                        <div class="popular-products-title flex flex-col items-start">
+                            <h3 class="font-bold dark:text-white">پربازدید ترین محصولات</h3>
+                            <span class="text-[12px] text-gray-400">product list</span>
+                        </div>
+                    </div>
+                    <div class="popular-products-more cursor-pointer">
+                        <a href="#" class="oil-more-elem mr-3 bg-blue-600 px-2.5 py-0.5 rounded-lg display-flex gap-1 text-[13px] text-white shadow-lg shadow-blue-300 dark:shadow-blue-900">
+                            بیشتر
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-2.5">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="viewed-products-container bg-white dark:bg-[#353542] rounded-3xl mt-[15px] grid grid-cols-4">
+                    <!-- loaded from js -->
+                </div>
+            </section>
+
+
+            <section class="bg-[#cde1ff] flex flex-col p-[20px] rounded-3xl mt-[30px] dark:bg-[#353542]">
+                <div class="desktop hidden min-[825px]:flex">
+                    <div class="title-discounted-products display-flex flex-col ml-[40px] mr-[10px] shrink-0">
+                        <img src="../imgs/img-banner/file.1736936950.40810.webp" alt="" class="w-[200px] dark:invert">
+                        <a href="#" class="bg-white p-2 rounded-lg mt-6 hover:bg-white/85 hover:text-gray-600 transition-colors duration-300">مشاهده محصولات</a>
+                        <div class="swiper-slider-controller display-flex justify-around mt-6 bg-black shadow-lg shadow-black/20 text-white w-[75px] py-2 rounded-xl">
+                            <div class="bestSelling-next cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-4.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-500 text-[12px]">|</span>
+                            <div class="bestSelling-prev cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-4.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper bestSelling-desktop-swiper rounded-l-3xl">
+                        <div class="swiper-wrapper">
+                            <!-- discounted products loaded from js -->
+                               
+                        </div>
+    
+                    </div>
+
+                </div>
+
+
+                <div class="mobile flex flex-col min-[825px]:hidden">
+                    <div class="title-discounted-products-mobile display-flex justify-between flex-row shrink-0 mb-[20px]">
+                        <h3 class="font-bold text-[13px] dark:text-white">محصولات تخفیف دار</h3>
+                        <div class="display-flex gap-2">
+                            <a href="#" class="bg-white shadow-lg text-[12px] shadow-gray-200 dark:shadow-none p-1 px-2 rounded-lg hover:bg-white/85 hover:text-gray-600 transition-colors duration-300">مشاهده محصولات</a>
+                            <div class="swiper-slider-controller display-flex justify-around bg-black m-0 shadow-lg shadow-black/20 text-white w-[45px] py-1 rounded-lg">
+                                <div class="bestSelling-next-mobile cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-3.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </div>
+                                <span class="text-gray-500 text-[12px]">|</span>
+                                <div class="bestSelling-prev-mobile cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-3.5">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                    </svg>
+                                </div>
+                            </div>
+    
+                        </div>
+                        
+                    </div>
+    
+    
+                    <div class="mobile-swiper bestSelling-mobile-swiper w-full overflow-hidden rounded-3xl">
+                        <div class="swiper-wrapper">
+                            <!-- <div class="min-w-0 border bg-white p-4">
+                                <div class="box-head flex justify-between">
+                                    <div class="color flex flex-col gap-0.5">
+                                        ${colors}
+                                    </div>
+                                    <div class="time text-[12px] text-gray-500">
+                                        <p>
+                                            <span class="bg-gray-200 rounded-md px-0.5">۰۵</span>
+                                            :
+                                            <span class="bg-gray-200 rounded-md px-0.5">۳۶</span>
+                                            :
+                                            <span class="bg-gray-200 rounded-md px-0.5">۰۹</span>
+                                            /
+                                            <span class="bg-gray-200 rounded-md px-0.5">۹۱۵</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="box-img flex w-full items-center justify-center">
+                                    <img src="../images/file.1736710364.28748.webp" alt="" class="size-[150px] object-contain">
+        
+                                </div>
+                                <div class="box-info my-2 mb-4">
+                                    <div class="star ">
+                                        <span class="text-[15px]">۵</span>
+                                        <i class="ri-star-fill text-amber-400 pb-1.5"></i>
+                                    </div>
+                                    <div class="title text-[14px] text-base/loose line-clamp-2">
+                                        <p>${item.title}</p>
+                                    </div>
+                                </div>
+                                <div class="strikethrough-price text-gray-400 line-through text-[13px] flex justify-end">
+                                    <p>${item.previous_price}</p>
+                                </div>
+                                <div class="price-container flex justify-between">
+                                    <div class="discount-container px-5 bg-amber-500 text-[14px] rounded-t-xl rounded-br-xl rounded-bl-sm w-8 h-[20px] pt-1 display-flex">
+                                         <p class="flex justify-between gap-0.5 p-0.5">
+                                             <i class="ri-percent-fill text-[12px] font-bold"></i>
+                                             <span class="discount-box text-white">${item.star}</span>
+                                         </p>
+                                     </div>
+                                    <div class="box-price display-flex gap-1">
+                                        <p>${item.price}</p>
+                                        <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1">
+                                    </div>
+                                </div>
+        
+                            </div>
+                            <div class="min-w-0 border bg-white p-4">
+                                <div class="box-head flex justify-between">
+                                    <div class="color flex flex-col gap-0.5">
+                                        ${colors}
+                                    </div>
+                                    <div class="time text-[12px] text-gray-500">
+                                        <p>
+                                            <span class="bg-gray-200 rounded-md px-0.5">۰۵</span>
+                                            :
+                                            <span class="bg-gray-200 rounded-md px-0.5">۳۶</span>
+                                            :
+                                            <span class="bg-gray-200 rounded-md px-0.5">۰۹</span>
+                                            /
+                                            <span class="bg-gray-200 rounded-md px-0.5">۹۱۵</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="box-img flex w-full items-center justify-center">
+                                    <img src="${item.src}" alt="" class="size-[150px] object-contain">
+        
+                                </div>
+                                <div class="box-info my-2 mb-4">
+                                    <div class="star ">
+                                        <span class="text-[15px]">۵</span>
+                                        <i class="ri-star-fill text-amber-400 pb-1.5"></i>
+                                    </div>
+                                    <div class="title text-[14px] text-base/loose line-clamp-2">
+                                        <p>${item.title}</p>
+                                    </div>
+                                </div>
+                                <div class="strikethrough-price text-gray-400 line-through text-[13px] flex justify-end">
+                                    <p>${item.previous_price}</p>
+                                </div>
+                                <div class="price-container flex justify-between">
+                                    <div class="discount-container px-5 bg-amber-500 text-[14px] rounded-t-xl rounded-br-xl rounded-bl-sm w-8 h-[20px] pt-1 display-flex">
+                                         <p class="flex justify-between gap-0.5 p-0.5">
+                                             <i class="ri-percent-fill text-[12px] font-bold"></i>
+                                             <span class="discount-box text-white">${item.star}</span>
+                                         </p>
+                                     </div>
+                                    <div class="box-price display-flex gap-1">
+                                        <p>${item.price}</p>
+                                        <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1">
+                                    </div>
+                                </div>
+        
+                            </div> -->
+                            
+                        </div>
+    
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section>
+                <div class="info-headlight-container mt-[50px] rounded-3xl bg-linear-to-b from-white to-[#f2f5fc] dark:from-[#353542] dark:to-[#35354200] p-[30px]">
+                    <div class="display-flex justify-between mb-5">
+                        <div class="display-flex">
+                            <h3 class="headlight-title display-flex border-gray pl-3 font-bold dark:text-white">هدلایت</h3>
+                            <a href="#" class="oil-more-elem mr-3 bg-blue-600 px-2 py-0.5 rounded-md display-flex gap-1 text-[12px] text-white shadow-lg shadow-blue-300 dark:shadow-blue-900">
+                                بیشتر
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-2">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="headlight-categories-pagination">
+                            <div class="headlight-pagination !static flex justify-center gap-1"></div>
+                        </div>
+                    </div>
+                    <div class="swiper headlight-container">
+                        <div class="headlight-swiper swiper-wrapper">
+                            <!-- headlight products loaded from js -->
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section class="mt-[20px]">
+                <div class="info-brands-container rounded-3xl">
+                    <div class="display-flex justify-between mb-[20px]">
+                        <div class="display-flex">
+                            <h3 class="brands-title display-flex font-bold dark:text-white">برند ها</h3>
+                        </div>
+                        <div class="brands-pagination">
+                            <div class="brands-categories-pagination !static flex justify-center gap-1"></div>
+                        </div>
+                    </div>
+                    <div class="swiper brands-container overflow-hidden">
+                        <div class="brands-swiper swiper-wrapper">
+                             <!-- loaded from js -->
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+
+            <section class="mt-[50px]">
+                <div class="info-random-articles-container rounded-3xl">
+                    <div class="display-flex justify-between mb-5">
+                        <div class="display-flex">
+                            <h3 class="random-articles-title display-flex border-gray pl-3 font-bold dark:text-white">مقالات تصادفی</h3>
+                            <a href="#" class="random-articles-more-elem mr-3 bg-amber-500 px-2 py-0.5 rounded-lg display-flex gap-1 text-[12px] text-white shadow-lg shadow-amber-400/30 dark:shadow-blue-900">
+                                بیشتر
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-2">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="articles-pagination-container">
+                            <div class="random-articles-pagination !static flex justify-center gap-1"></div>
+                        </div>
+                    </div>
+
+                    <div class="swiper random-articles-container -mx-[20px]">
+                        <div class="random-articles-swiper swiper-wrapper">
+
+                            <!-- loaded from js -->
+
+                        </div>
                     </div>
 
                 </div>
