@@ -3401,16 +3401,16 @@ const createRandomArticlesHTML = (item) => {
     articlesArray.forEach((item) => {
         randomArticlesSwiper.insertAdjacentHTML("beforeend",
             `
-               <div class="swiper-slide !h-[250px] overflow-visible">
-                   <div class="articles-card relative w-full h-[200px] p-[10px]">
-                       <img src="${item.src}" alt="" class="w-full h-[200px] object-cover rounded-b-md rounded-t-2xl">
+               <div class="swiper-slide !h-[300px] overflow-visible">
+                   <div class="articles-card relative w-full h-[200px] p-[10px] group/change">
+                       <img src="${item.src}" alt="" class="w-full h-[200px] object-cover rounded-b-md rounded-t-2xl cursor-pointer">
        
-                       <span class="category-badge absolute top-1/12 right-[40px] bg-white text-gray-600 text-[13px] p-1 px-2 rounded-lg">
+                       <span class="category-badge absolute top-[30px] right-[30px] bg-white text-gray-600 dark:bg-[#353542] dark:text-white group-hover/change:text-white group-hover/change:bg-blue-600 transition-colors duration-300 text-[13px] p-1 px-2 rounded-lg cursor-pointer">
                            <a href="#">${item.type}</a>
                        </span>
        
-                       <div class="article-footer absolute bottom-[-40px] left-1/2 -translate-x-1/2 w-[90%] bg-white pt-[10px] px-[15px] pb-[15px] rounded-xl">
-                           <h3 class="article-title w-full min-w-0 whitespace-nowrap overflow-hidden text-ellipsis text-[13px] text-gray-600 mb-2">
+                       <div class="article-footer absolute bottom-[-60px] left-1/2 -translate-x-1/2 w-[90%] bg-white dark:bg-[#353542] pt-[10px] px-[15px] pb-[15px] rounded-xl cursor-pointer">
+                           <h3 class="article-title w-full min-w-0 whitespace-nowrap overflow-hidden text-ellipsis text-[13px] text-gray-600 mb-2 group-hover/change:text-cyan-400 transition-colors duration-300 dark:text-white">
                                ${item.title}
                            </h3>
        
@@ -3538,6 +3538,208 @@ randomArticlesPagination.addEventListener("click", (event) => {
 
 
 
+// * footer
+
+// news letters
+const newsLetterInput = $.querySelector(".news-letter-input")
+const newsLetterBtn = $.querySelector(".news-letter-btn")
+const emailToast = $.querySelector(".email-toast")
+const toastTitle = $.querySelector(".toast-title")
+const toastIcon = $.querySelector(".toast-icon")
+
+let newsLettersContainer = []
+
+
+newsLetterBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    const userNewsLetter = newsLetterInput.value
+    const regexNewsLetter = /^\w+([.\-_])?\w*@gmail.com$/g
+    if (regexNewsLetter.test(userNewsLetter)) {
+        newLetters = {
+            id: newsLettersContainer.length + 1,
+            newsLetter: userNewsLetter
+        }
+        newsLetterInput.value = ""
+        
+        
+        if (newsLettersContainer.length === 0) {
+            newsLettersContainer.push(newLetters)
+            addToLocalStorage()
+            showGoodToastBox()
+            
+        }  else {
+
+    const isDuplicate = newsLettersContainer.some((item) => {
+        return item.newsLetter === userNewsLetter
+    })
+
+    if (isDuplicate) {
+        showDuplicateBox()
+    } else {
+        newsLettersContainer.push(newLetters)
+        addToLocalStorage()
+        showGoodToastBox()
+    }
+}
+        
+        
+    }  else {
+        newsLetterInput.value = ""
+        showbadToastBox()
+    }
+    
+})
+
+const showGoodToastBox = () => {
+    toastTitle.innerHTML = ""
+    toastTitle.innerHTML = "ایمیل در خبرنامه عضویت یافت"
+
+    toastIcon.classList.remove("text-red-200")
+    toastIcon.classList.add("text-emerald-200")
+
+    // ظاهر شدن از پایین به بالا
+    emailToast.classList.remove(
+        "opacity-0",
+        "translate-y-10",
+        "pointer-events-none",
+        "bg-red-400"
+    )
+    
+    emailToast.classList.add(
+        "opacity-100",
+        "translate-y-0",
+        "scale-100",
+        "bg-emerald-600/70"
+    )
+    
+    setTimeout(() => {
+        // بزرگ شدن + محو شدن
+        emailToast.classList.remove(
+            "opacity-100",
+            "translate-y-0",
+            "scale-100"
+        )
+    
+        emailToast.classList.add(
+            "opacity-0",
+            "scale-110",
+            "pointer-events-none"
+        )
+    }, 3000)
+
+}
+const showbadToastBox = () => {
+    toastTitle.innerHTML = ""
+    toastTitle.innerHTML = "ایمیل یا شماره همراه وارد شده نامعتبر است"
+
+    toastIcon.classList.remove("text-emerald-200")
+    toastIcon.classList.add("text-red-200")
+
+    // ظاهر شدن از پایین به بالا
+    emailToast.classList.remove(
+        "opacity-0",
+        "translate-y-10",
+        "pointer-events-none",
+        "bg-emerald-600/70"
+    )
+
+    emailToast.classList.add(
+        "opacity-100",
+        "translate-y-0",
+        "scale-100",
+        "bg-red-400"
+    )
+
+    setTimeout(() => {
+        // بزرگ شدن + محو شدن
+        emailToast.classList.remove(
+            "opacity-100",
+            "translate-y-0",
+            "scale-100"
+        )
+
+        emailToast.classList.add(
+            "opacity-0",
+            "scale-110",
+            "pointer-events-none"
+        )
+    }, 3000)
+}
+const showDuplicateBox = () => {
+    toastTitle.innerHTML = ""
+    toastTitle.innerHTML = "این ایمیل یا شماره همراه از قبل ثبت شده است"
+    
+    toastIcon.classList.remove("text-emerald-200")
+    toastIcon.classList.add("text-red-200")
+    
+    // ظاهر شدن از پایین به بالا
+    emailToast.classList.remove(
+        "opacity-0",
+        "translate-y-10",
+        "pointer-events-none",
+        "bg-emerald-600/70"
+    )
+    
+    emailToast.classList.add(
+        "opacity-100",
+        "translate-y-0",
+        "scale-100",
+        "bg-red-400"
+    )
+    
+    setTimeout(() => {
+        // بزرگ شدن + محو شدن
+        emailToast.classList.remove(
+            "opacity-100",
+            "translate-y-0",
+            "scale-100"
+        )
+    
+        emailToast.classList.add(
+            "opacity-0",
+            "scale-110",
+            "pointer-events-none"
+        )
+    }, 3000)
+
+}
+function addToLocalStorage() {
+    localStorage.setItem("news", JSON.stringify(newsLettersContainer))
+}
+
+
+
+
+// show footer nav bar in mobile
+const footerIconBar=$.querySelector(".footer-icon-bar")
+const footerItemsBar=$.querySelector(".footer-items-bar")
+let openOrCloseFooterMenu=false
+const showFooterBar=()=>{
+    if(openOrCloseFooterMenu){
+        footerIconBar.classList.add("close-hamburger-menu-footer")
+        footerIconBar.classList.remove("open-hamburger-menu-footer")
+        footerItemsBar.classList.add("hidden")
+        openOrCloseFooterMenu=false
+    }else{
+        footerIconBar.classList.add("open-hamburger-menu-footer")
+        footerIconBar.classList.remove("close-hamburger-menu-footer")
+        footerItemsBar.classList.remove("hidden")
+        openOrCloseFooterMenu=true
+    }
+}
+footerIconBar.addEventListener("click",showFooterBar)
+
+$.addEventListener("click",(e)=>{
+    if(!footerItemsBar.contains(e.target)&&!footerIconBar.contains(e.target)&&openOrCloseFooterMenu){
+        footerIconBar.classList.remove("open-hamburger-menu-footer")
+        footerIconBar.classList.add("close-hamburger-menu-footer")
+        footerItemsBar.classList.add("hidden")
+        openOrCloseFooterMenu=false
+    }
+})
+
+
+
 
 
 
@@ -3550,7 +3752,14 @@ const getDataFromLocalStorage = () => {
         html.classList.remove("dark");
     }
 
+    const localNews = JSON.parse(localStorage.getItem("news"))
+
+    if (localNews) {
+        newsLettersContainer = localNews
+    }
+    
 };
+getDataFromLocalStorage()
 const empty = () => {
     storyImg.querySelectorAll("img, video").forEach(el => el.remove());
     storyProgressBarContainer.innerHTML = ""
