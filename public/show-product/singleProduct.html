@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="../fonts/iranYekan/WebFonts/css/style.css">
+</head>
+<body class="bg-[#f2f5fc] dark:bg-[#262631] overflow-x-hidden">
+    <!-- Advertising banner -->
+    <div class="top-banner">
+        <img src="../images/file.1768966309.85371.webp" alt="" class="img-banner1">
+        <img src="../images/file.1736699119.52020.webp" alt="" class="img-banner2 hidden">
+    </div>
+
+    <header>
+        <div class="max-w-[92rem] mx-auto px-4">
+
+            <!-- header -->
+            <div class="header-top display-flex justify-between mt-4 mb-2">
+                <div class="search display-flex gap-6">
+                    <div class="logo w-[140px] flex flex-row gap-3 items-center">
+
+                        <!-- nav in mobile -->
+                        <div class="icon-bar relative p-1 cursor-pointer close-hamburger-menu hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 menu dark:text-white">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+                            </svg>
+                            <div class="items-bar relative z-50 hidden">
+                                <ul class="absolute top-2 -right-1 text-black bg-white dark:bg-[#353542] dark:text-white w-[150px] text-nowrap rounded-xl flex flex-col text-start py-2">
+                                    <li><a href="#" class="hover:bg-gray-100 block p-2 dark:hover:bg-[#43434f]">صفحه نخست</a></li>
+                                    <li><a href="#" class="hover:bg-gray-100 block p-2 dark:hover:bg-[#43434f]">مجله</a></li>
+                                    <li><a href="#" class="hover:bg-gray-100 block p-2 dark:hover:bg-[#43434f]">فروشنده شوید</a></li>
+                                    <li><a href="#" class="hover:bg-gray-100 block p-2 dark:hover:bg-[#43434f]">پرسش های متداول</a></li>
+                                    <li><a href="#" class="hover:bg-gray-100 block p-2 dark:hover:bg-[#43434f]">تماس با ما</a></li>
+                                    <li class="display-flex">
+                                        <a href="#" class="hover:bg-gray-100 block w-[150px] h-[40px] text-gray-500 flex items-center justify-center dark:text-white dark:hover:bg-[#43434f]">09999999999
+                                           <i class="ri-customer-service-2-fill border-r border-gray-300 pr-1 mr-2"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <img src="../images/file.1736631603.77232.webp" alt="" class="dark:hidden">
+                        <img src="../images/file.1736631627.57705.webp" alt="" class="hidden dark:flex">
+                    </div>
+
+                    <!-- search box -->
+                    <div class="search-box relative min-w-[500px] h-12">
+                        <input type="text" class="general-search bg-gray-200 w-[100%] h-[100%] rounded-2xl ps-2 text-[#74777c] dark:bg-[#353542] dark:text-white outline-0" placeholder="جست و جوی سراسری...">
+                        <div class="product-archive font-extrabold bg-white dark:bg-[#262631] dark:text-white absolute top-[5px] left-1.5 p-2 max-[860px]:p-1 rounded-[10px] display-flex">
+                            <a href="#" class="text-[14px] max-[860px]:text-[12px]">آرشیو محصولات</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="size-4">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- theme -->
+                <div class="header-actions bg-white dark:bg-[#353542] dark:text-white w-[200px] max-[860px]:h-9 max-[860px]:w-[100px] h-11 display-flex gap-2.5 rounded-xl">
+                    <div class="theme text-[20px] max-[860px]:text-[17px]">
+                         <i class="ri-moon-line cursor-pointer"></i>
+                     </div>
+                     
+                    <i class="user-symbol ri-user-6-fill cursor-pointer text-[20px] max-[860px]:text-[17px]"></i>
+
+                    <div class="shopping-cart text-[13px] !flex max-[860px]:!hidden bg-blue-600 text-white p-1 rounded-lg w-[100px] display-flex gap-1.5 shadow-blue-200 shadow-lg dark:shadow-blue-800 dark:shadow-md hover:scale-105 transition duration-300 ease-in">
+                        <a href="#">سبد خرید</a>
+                        <span class="number-of-products bg-blue-300 text-white dark:bg-white dark:text-black size-4 rounded display-flex">۰</span>
+                    </div>
+                    <div class="relative !hidden max-[860px]:!block">
+                        <i class="ri-shopping-cart-line text-[17px] cursor-pointer"></i>
+                        <div class="count-badage el-center "><span class="absolute top-0 -right-1.5 bg-blue-600 size-3 display-flex rounded-sm text-white text-[8px]">۰</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- <a href="../user/dashboard/index.html"></a> -->
+
+            <!-- nav -->
+            <nav class="navbar display-flex justify-between border-gray-300 dark:border-gray-600 border-dashed border-b mb-5 mt-[20px] relative z-50">
+                <div class="nav-menu">
+                    <ul class="main-menu display-flex gap-10 text-gray-500 dark:text-white mb-2 text-[15px]">
+                        <li class="parent relative group/sub relative display-flex border-gray text-black dark:text-white pl-8 max-[860px]:pl-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+                            </svg>
+                            <a href="#" class="font-bold p-3">دسته بندی ها</a>
+                            <ul class="sub-menu sub-menu-style dark:text-white group-hover/sub:flex text-black top-7 right-0">
+
+                                <li class="relative group/sub2">
+                                    <a href="#" class="w-[200px] display-flex justify-between pl-5 hover-sub-menu dark:hover:text-blue-500">لوازم مصرفی خودرو
+                                        
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    
+                                    <ul class="sub-menu-style group-hover/sub2:flex">
+                                        <li class="w-[200px] relative group/sub3">
+                                            <a href="#" class="display-flex justify-between pl-5 hover-sub-menu">روغن موتور
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                                </svg>
+                                            </a>
+
+                                            <ul class="sub-menu-style group-hover/sub3:flex w-[190px]">
+                                                <li class="w-[200px] hover-sub-menu dark:hover:text-blue-500"><a href="#">روغن موتور خودرو</a></li>
+                                                <li class="w-[200px] hover-sub-menu dark:hover:text-blue-500"><a href="#">روغن موتور سیکلت</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="hover-sub-menu"><a href="#">فیلتر ها</a></li>
+                                        <li class="hover-sub-menu"><a href="#">قطعات سرویسی</a></li>
+                                        <li class="hover-sub-menu"><a href="#">روغن گیربکس</a></li>
+                                        <li class="hover-sub-menu"><a href="#">روغن هیدرولیک</a></li>
+                                        <li class="hover-sub-menu"><a href="#">ضدیخ و آب رادیاتور</a></li>
+                                        <li class="hover-sub-menu"><a href="#">باتری</a></li>
+                                        <li class="hover-sub-menu"><a href="#">لاستیک</a></li>
+                                        <li class="hover-sub-menu"><a href="#">مکمل سوخت و روغن</a></li>
+                                        <li class="hover-sub-menu"><a href="#">واکس و پولیش</a></li>
+                                        <li class="hover-sub-menu"><a href="#">لوازم نظافت خودرو</a></li>
+                                    </ul>
+
+                                </li>
+                                <li class="w-[200px] relative group/sub4">
+                                    <a href="#" class="display-flex justify-between pl-5 hover-sub-menu dark:hover:text-blue-500">لوازم یدکی خودرو
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </a>
+
+                                    <ul class="sub-menu-style group-hover/sub4:flex">
+                                        <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">لوازم بدنه</a></li>
+                                        <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">چراغ</a></li>
+                                        <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">آینه جانبی</a></li>
+                                        <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">لوازم جلوبندی و تعلیق</a></li>
+                                        <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">لوازم الکترونیکی</a></li>
+                                        <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">هدلایت</a></li>
+                                    </ul>
+                                </li>
+                                <li class="w-[200px] relative group/sub5">
+                                    <a href="#" class="display-flex justify-between pl-5 hover-sub-menu dark:hover:text-blue-500">لوازم صوتی و تصویری
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </a>
+
+                                    <ul class="sub-menu-style group-hover/sub5:flex">
+                                        <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">سیستم صوتی کامل</a></li>
+                                        <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">باند و ساب ووفر</a></li>
+                                        <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">ظبط صوتی تصویری</a></li>
+                                    </ul>
+                                </li>
+                                <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">لوازم جانبی خودرو</a></li>
+                                <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">لوازم تزئینی خودرو</a></li>
+                                <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">چراغ خودرو</a></li>
+                                <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">لاستیک و رینک</a></li>
+                                <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">لوازم موتور</a></li>
+                                <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">لوازم جلوبندی</a></li>
+                                <li class="hover-sub-menu dark:hover:text-blue-500"><a href="#">لوازم مکانیکی</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="hover:text-blue-600">صفحه نخست</a></li>
+                        <li><a href="#" class="hover:text-blue-600">مجله</a></li>
+                        <li><a href="#" class="hover:text-blue-600">فروشنده شوید</a></li>
+                        <li><a href="#" class="hover:text-blue-600">پرسش های متداول</a></li>
+                        <li><a href="#" class="hover:text-blue-600">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="call-us display-flex flex-row text-gray-500 dark:text-white gap-2">
+                    <a href="#" class="inline-block border-gray pl-2.5">09999999999</a>
+                    <i class="ri-customer-service-2-fill"></i>
+                </div>
+            </nav>
+
+            <!-- header in mobile -->
+             <div class="header-top-in-mobile hidden mt-4 mb-2">
+                <div class="search">
+                    <div class="search-box-in-mobile relative display-flex">
+                        <input type="text" class="general-search bg-gray-200 w-[100%] h-[100%] rounded-2xl ps-2 text-[#74777c] dark:bg-[#353542] dark:text-white outline-0" placeholder="جست و جوی سراسری...">
+                        <div class="product-archive font-bold bg-white w-[140px] dark:bg-[#262631] dark:text-white text-[15px] h-[15px] absolute top-1 left-1.5 p-2.5 rounded-[10px] display-flex">
+                            <a href="#" class="max-[690px]:text-[12px]">آرشیو محصولات</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="size-4">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            
+        </div>
+    </header>
+
+    <main>
+        <div class="max-w-[92rem] mx-auto px-4">
+            <h2 class="title-info">
+                <ul class="display-flex justify-start text-[14px] mt-6 mb-2">
+                    <li class="ml-2.5">
+                        <a href="#" class="font-bold">ویماشاپ</a>
+                    </li>
+                    <li class="display-flex gap-2.5 ml-2.5 text-gray-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-2.5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+                        <a href="#">چراغ خودرو</a>
+                    </li>
+                    <li class="display-flex gap-2.5 text-gray-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-2.5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+                        <a href="#">چراغ جلو چپ اس ان تی کد AM 5964 مناسب برای ساینا</a>
+                    </li>
+                </ul>
+            </h2>
+    
+            <section class="info-product-container bg-white rounded-3xl grid grid-cols-[auto_auto_auto] mt-3">
+                <div class="p-5">
+                    <div class="bg-[#0060ff33] display-flex justify-between p-2 rounded-xl">
+                        <h2 class="text-[18px] font-bold text-blue-600">فروش ویژه</h2>
+                        <div>
+                            <p>
+                                <span class="timer-seconds bg-white font-bold dark:bg-black/40 rounded-md px-0.5">۰۰</span> :
+                                <span class="timer-minutes bg-white font-bold dark:bg-black/40 rounded-md px-0.5">۰۰</span> :
+                                <span class="timer-hours bg-white font-bold dark:bg-black/40 rounded-md px-0.5">20</span> :
+                                <span class="timer-days bg-white font-bold dark:bg-black/40 rounded-md px-0.5">850</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="img-container">
+                        <div class="overflow-hidden my-5 rounded-2xl">
+                            <img src="../images/file.1736764333.52817.webp" alt="" class="img-zoom w-[400px] transition-transform duration-200 ease-in hover:scale-200">
+
+                        </div>
+                        <ul class="img-product-slides display-flex gap-2.5">
+                            <li>
+                                <img src="../images/file.1736764333.52817.webp" alt="" class="w-[70px] opacity-70 border-2 border-gray-300 p-1 rounded-2xl">
+                            </li>
+                            <li class="relative">
+                                <img src="../images/file.1736764235.15130.webp" alt="" class="w-[70px] opacity-70 border-2 border-gray-300 p-1 rounded-2xl">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="top-main-info flex flex-col gap-5 border-r-[1px] border-r-[#e5e9ec] border-l-[1px] border-l-[#e5e9ec] border-dashed p-5">
+                    <a href="#" class="text-[14px] hover:text-cyan-500 transition-colors duration-300">سایپا</a>
+                    <div>
+                        <h3 class="font-bold">چراغ جلو چپ اس ان تی کد AM 5964 مناسب برای ساینا</h3>
+                        <div class="product-en flex items-center relative text-[12px] text-gray-400">
+                            <span class="inline-block z-40 bg-white pl-2">Left headlight SNT code AM 5964 suitable for Saina</span>
+                        </div>
+                    </div>
+                    <div class="star text-[13px]">
+                        <i class="ri-star-fill icon me-1 text-amber-400"></i>
+                        ۴
+                    </div>
+                    <div>
+                        <h5 class="text-[13px] font-bold">رنگ: نقره ای</h5>
+                        <ul class="display-flex justify-start gap-2 mt-1.5">
+                            <li class="bg-slate-300 rounded-full size-8 outline-2 outline-cyan-500 outline-offset-2 relative">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-6 absolute top-1 right-1 text-white">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                </svg>
+                                
+                            </li>
+                            <li class="bg-gray-500 size-7 rounded-full relative"></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="text-[13px] font-bold">گارانتی:</h5>
+                        <div class="bg-[#eff3f8] display-flex gap-2 rounded-lg outline-2 outline-cyan-400 outline-offset-2 w-full max-w-[160px] p-1 mt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4 text-cyan-500 ">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <ul>
+                                <li class="text-[14px]"> اصالت و سلامت کالا</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 class="text-[13px] font-bold">خصوصیات برجسته:</h5>
+                        <ul class="display-flex justify-start gap-2 mt-3">
+                            <li class="bg-[#f2f5fc] p-2 rounded-xl">
+                                <p class="text-gray-400 text-[12px]">مناسب برای خودرو:</p>
+                                <p class="text-[13px]">ساینا</p>
+                            </li>
+                            <li class="bg-[#f2f5fc] p-2 rounded-xl">
+                                <p class="text-gray-400 text-[12px]">جهت نصب:</p>
+                                <p class="text-[13px]">چپ</p>
+                            </li>
+                            <li class="bg-[#f2f5fc] p-2 rounded-xl">
+                                <p class="text-gray-400 text-[12px]">ابعاد بسته بندی</p>
+                                <p class="text-[13px]">۵۷x۲۹x۱۸ سانتی‌متر</p>
+                            </li>
+                            <li class="bg-[#f2f5fc] p-2 rounded-xl">
+                                <p class="text-gray-400 text-[12px]">وزن بسته بندی:</p>
+                                <p class="text-[13px]">۲.۲۰۰ کیلوگرم</p>
+                            </li>
+                            <li class="bg-[#f2f5fc] p-2 rounded-xl">
+                                <p class="text-gray-400 text-[12px]">میزان روشنایی</p>
+                                <p class="text-[13px]">1500 لومن</p>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="display-flex justify-start gap-2 border-2 border-[#f7f8fa] rounded-2xl p-2 w-fit max-w-full">
+                        <div class="bg-[#eff2f5] display-flex gap-2 text-gray-400 p-0.5 px-1.5 rounded-lg">
+                            <i class="ri-calendar-todo-line"></i>
+                            <p class="text-gray-950 text-[13px] mt-1">1405/06/17</p>
+                        </div>
+                        <p class="text-[14px]">موجودی و قیمت محصول بروز است</p>
+                    </div>
+                    <div class="display-flex justify-start items-start gap-2 border-2 border-[#f7f8fa] rounded-2xl p-2 w-full max-w-[630px]">
+                        <i class="ri-information-fill text-gray-300 text-[20px]"></i>
+                        <p class="text-[13px] text-start">درخواست مرجوع کردن کالا در گروه چراغ خودرو با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد  (در صورت پلمب بودن، کالا نباید باز شده باشد).</p>
+                    </div>
+                </div>
+
+                <div class="product-purchase-info p-5 pb-10">
+                    <div class="bg-[#f2f5fc] p-4 rounded-2xl mb-5">
+                        <h3 class="font-bold text-[15px]">فروشنده</h3>
+                        <ul>
+                            <li class="display-flex justify-start gap-2 border-b-[1px] border-b-[#e5e9ec] border-dashed py-[12px]">
+                                <div class="bg-white w-full max-w-[35px] display-flex rounded-xl border-[1px] border-gray-200">
+                                    <img src="./imgs/file.1739249780.66876.webp" alt="" class="w-[40px] p-1">
+
+                                </div>
+                                <a href="#" class="text-[14px] hover:text-cyan-400 transition-colors duration-300">
+                                    ویماشاپ
+                                    <i class="ri-verified-badge-fill verify me-0 text-[12px] text-blue-500"></i>
+                                </a>
+                                <div>
+                                    <span class="divider"></span>
+                                    <span class="text-gray-400 text-[14px]">فروشگاه اصلی</span>
+                                </div>
+                            </li>
+                            <li class="text-[14px] display-flex justify-start gap-2 border-b-[1px] border-b-[#e5e9ec] border-dashed py-[12px]">
+                                <i class="ri-donut-chart-fill"></i>
+                                <span>عملکرد</span>
+                                <span class="divider"></span>
+                                <span class="text-green-700 font-bold">عالی</span>
+                            </li>
+                            <li class="text-[14px] display-flex justify-start gap-2 border-b-[1px] border-b-[#e5e9ec] border-dashed py-[12px]">
+                                <i class="ri-qr-code-line"></i>
+                                <span>شناسه محصول</span>
+                                <span class="divider"></span>
+                                <span class="text-gray-400 relative top-0 group cursor-pointer">p-4895867
+                                    <div class="tooltip bg-gray-300 text-[13px] text-gray-950 p-2 rounded-lg absolute bottom-7 -right-6 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">کپی شناسه محصول</div>
+                                </li>
+                            </span>
+                            <li class="text-[14px] display-flex justify-start gap-2 border-b-[1px] border-b-[#e5e9ec] border-dashed py-[12px]">
+                                <i class="ri-truck-line"></i>
+                                <span>ارسال فروشگاه اصلی</span>
+                                <span class="divider"></span>
+                                <span class="text-gray-400 text-[13px]">آماده ارسال</span>
+                            </li>
+                            <li class="flex gap-2 text-[#13deb9] text-[12px] pt-[12px]">
+                                <span class="bg-[#13deb91a] p-1 rounded-lg group ">کالای اصل
+                                    
+                                    <div class="tooltip bg-gray-300 text-[13px] text-gray-950 p-2 rounded-lg text-center fixed bottom-[22.5rem] left-[12rem] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 w-full max-w-[200px] pointer-events-none">کالای اصل به کالایی گفته میشود که توسط برند ثبت شده ای تولید شده باشد</div>
+                                </span>
+                                <span class="divider"></span>
+                                <span class="bg-[#13deb91a] p-1 rounded-lg">کالای نو</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="border-t-[1px] pt-3 border-gray-300 border-dashed">
+                        <div>
+                            <span class="text-[13px]">
+                                👁️ +
+                                <b>200</b>
+                                نفر این کالا را مشاهده کرده‌اند
+                            </span>
+                        </div>
+
+                        <div class="display-flex justify-between mt-2">
+                            <div class="bg-[#f2f5fa] p-1.5 rounded-lg display-flex gap-2">
+                                <span>
+                                    <i class="ri-add-line text-[#aeb4be]"></i>
+                                </span>
+                                <input class="w-full max-w-[50px] bg-white p-0.5 rounded-md outline-0 flex text-center" value="1" type="text" minlength="1" maxlength="4" autocomplete="off">
+                                <span>
+                                    <i class="ri-subtract-line text-[#aeb4be]"></i>
+                                </span>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-end gap-1">
+                                    <span class="text-[14px] font-bold text-amber-500 line-through">۴۵۰,۰۰۰</span>
+                                    <div class="discount-container p-1.5 bg-amber-500 shadow-lg shadow-amber-400/30 text-[14px] rounded-t-xl rounded-br-xl rounded-bl-sm h-[20px] display-flex ">
+                                        <p class="flex justify-between display-flex gap-0.5">
+                                            <i class="ri-percent-fill text-[11px] font-bold"></i>
+                                            <span class="text-white text-[13px] pt-1">
+                                                ۲۰
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-end gap-1">
+                                    <span class="text-[24px] font-bold">۴۰۰,۰۰۰</span>
+                                    <img src="../images/toman-D-K3lGL1.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="bg-blue-600 text-white w-full py-2 rounded-2xl font-bold mt-2 shadow-lg shadow-blue-200 hover:bg-blue-500 hover:shadow-none transition-colors duration-300 cursor-pointer">افزودن به سبد خرید</button>
+                        <div class="bg-[#9ce76a1a] mt-5 display-flex justify-start p-2 rounded-3xl gap-2">
+                            <img src="./imgs/torobpay.png" alt="" class="bg-[#9ce76a] w-[50px] rounded-2xl p-0.5">
+                            <div class="flex flex-col text-start">
+                                <span class="text-[13px] font-bold">پرداخت اقساطی با ترب پی</span>
+                                <span class="text-[11px]">۴ قسط بدون کارمزد، ماهانه 100,000 تومان</span>
+                            </div>
+                        </div>
+                        <div class="display-flex justify-between mt-3">
+                            <div>
+                                <i class="ri-copper-coin-fill text-warning me-1 text-amber-400"></i>
+                                <span class="text-[13px] text-gray-500">
+                                    امتیاز باشگاه مشتریان
+                                </span>
+                            </div>
+                            <div class="text-[13px]">
+                                <span class="text-[14px] font-bold">۴۰</span>
+                                امتیاز
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
+                <div class="info-headlight-container mt-[30px] rounded-3xl bg-linear-to-b from-white to-[#f2f5fc] dark:from-[#353542] dark:to-[#35354200] p-[30px]">
+                    <div class="display-flex justify-between mb-5">
+                        <div class="display-flex">
+                            <h3 class="headlight-title display-flex border-gray pl-3 font-bold dark:text-white">هدلایت</h3>
+                            <a href="#" class="oil-more-elem mr-3 bg-blue-600 px-2 py-0.5 rounded-md display-flex gap-1 text-[12px] text-white shadow-lg shadow-blue-300 dark:shadow-blue-900">
+                                بیشتر
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-2">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="headlight-categories-pagination">
+                            <div class="headlight-pagination !static flex justify-center gap-1"></div>
+                        </div>
+                    </div>
+                    <div class="swiper headlight-container">
+                        <div class="headlight-swiper swiper-wrapper">
+                            <!-- headlight products loaded from js -->
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="mb-2 mt-[20px]">
+        <div class="max-w-[92rem] mx-auto px-4">
+
+            <section>
+                <div class="footer-info-bar display-flex justify-between bg-white p-5 rounded-2xl border-dashed border-gray-300 border-[1px] dark:bg-[#353542] dark:border-[#585868]">
+                    <div class="display-flex">
+                        <div class="border-gray pl-5 flex items-center">
+                            <img src="../images/file.1736631603.77232.webp" alt="" class="w-[150px] shrink-0 visible dark:hidden">
+                            <img src="../images/file.1736631627.57705.webp" alt="" class="w-[150px] shrink-0 hidden dark:block">
+                        </div>
+                        <span class="footer-info-bar-title mr-5 font-bold dark:text-white text-start">روز های شنبه تا چهارشنبه از ساعت 8 الی 17 و روز پنجشنبه ساعت 8 الی 12</span>
+                    </div>
+                    <div class="text-gray-500 dark:text-white whitespace-nowrap">
+                        <i class="ri-customer-service-2-fill"></i>
+                        <a href="#" class=" border-gray pl-1.5">0211234567</a>
+                    </div>
+                </div>
+
+                <div class="footer-info-bar-mobile bg-white p-5 rounded-2xl border-dashed border-gray-300 border-[1px] dark:bg-[#353542] dark:border-[#585868] hidden">
+                    <div class="display-flex justify-between mb-2.5">
+                        <div class="flex items-center">
+                            <img src="../images/file.1736631603.77232.webp" alt="" class="w-[150px] shrink-0 visible dark:hidden">
+                            <img src="../images/file.1736631627.57705.webp" alt="" class="w-[150px] shrink-0 hidden dark:block">
+                        </div>
+                        <div class="text-gray-500 dark:text-white whitespace-nowrap">
+                            <i class="ri-customer-service-2-fill mr-1"></i>
+                            <a href="#" class=" border-gray pl-2 text-[14px]">0211234567</a>
+                        </div>
+                    </div>
+                    <span class="footer-info-bar-title font-bold display-flex !text-[13px] text-gray-950 dark:text-white">روز های شنبه تا چهارشنبه از ساعت 8 الی 17 و روز پنجشنبه ساعت 8 الی 12</span>
+                </div>
+            </section>
+
+
+            <section class="mt-[30px]">
+                <div class="footer-middle-container grid grid-cols-[3fr_1fr_1fr] max-[770px]:grid-cols-2 border-b-[1px] border-dashed border-gray-300 dark:border-gray-600 pb-[30px] max-[770px]:pb-[15px]">
+                    <div class="min-[990px]:ml-[70px] max-[770px]:col-span-3 max-[770px]:mb-[30px]">
+                        <h3 class="inline bg-blue-600 text-white px-5 py-1 rounded-r-2xl rounded-tl-2xl rounded-bl-sm shadow-lg shadow-blue-500/45 dark:shadow-blue-900/80 font-bold">فروشگاه اینترنتی ویماشاپ</h3>
+                        <p class="footer-info-description min-[770px]:max-h-[100px] text-[14px] leading-7 mt-[20px] text-gray-500 dark:text-gray-400 text-justify min-[990px]:mb-[50px] max-[575px]:text-[13px] max-[575px]:leading-6">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
+                    </div>
+                    <div class="display-flex">
+                        <ul class="text-gray-500 dark:text-gray-400 leading-8 text-[15px] max-[990px]:leading-7 max-[990px]:text-[14px]">
+                            <li class="mb-[10px] text-gray-950 dark:text-white font-bold text-[16px]">دسترسی سریع</li>
+                            <li class="hover:text-blue-500 transition-colors duration-300 cursor-pointer">فروشنده شوید</li>
+                            <li class="hover:text-blue-500 transition-colors duration-300 cursor-pointer">راهنمای فروشندگان</li>
+                            <li class="hover:text-blue-500 transition-colors duration-300 cursor-pointer">قوانین و شرایط</li>
+                            <li class="hover:text-blue-500 transition-colors duration-300 cursor-pointer">پنل فروشندگان</li>
+                        </ul>
+                    </div>
+                    <div class="display-flex max-[770px]:col-span-2">
+                        <ul class="text-gray-500 dark:text-gray-400 leading-8 text-[15px] max-[990px]:leading-7 max-[990px]:text-[14px]">
+                            <li class="mb-[10px] text-gray-950 dark:text-white font-bold text-[16px]">راهنمای فروشگاه</li>
+                            <li class="hover:text-blue-500 transition-colors duration-300 cursor-pointer">راهنمای فروشندگان</li>
+                            <li class="hover:text-blue-500 transition-colors duration-300 cursor-pointer">قوانین و شرایط</li>
+                            <li class="hover:text-blue-500 transition-colors duration-300 cursor-pointer">تماس با ما</li>
+                            <li class="hover:text-blue-500 transition-colors duration-300 cursor-pointer">راهنمای خرید فروشگاه</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+    
+
+            <section class="mt-[40px] max-[770px]:mt-[20px]">
+                <div class="grid grid-cols-2 max-[770px]:grid-cols-1 max-[770px]:gap-10">
+                    <ul class="text-gray-500 dark:text-gray-400 space-y-3 max-[770px]:text-center max-[770px]:text-[14px]">
+                        <li>
+                            <span class="font-bold text-gray-950 dark:text-white">نشانی: </span>
+                            ارومیه خیابان رسالت مجتمع عرشیا واحد 119 اداری
+                        </li>
+                        <li>
+                            <span class="font-bold text-gray-950 dark:text-white">تلفن پشتیبانی: </span>
+                            0211234567
+                        </li>
+                        <li>
+                            <span class="font-bold text-gray-950 dark:text-white">ایمیل: </span>
+                            email@gmail.com
+                        </li>
+                    </ul>
+                    <div class="flex justify-end flex-col gap-3">
+                        <div class="text-gray-400 flex justify-end max-[770px]:justify-center">
+                            <span class="text-[13px]">
+                                مجوز های فروشگاه
+                                <i class="ri-corner-left-down-line"></i>
+                            </span>
+                        </div>
+                        <div class="flex gap-2 justify-end max-[770px]:justify-center">
+                            <div class="size-[80px] ">
+                                <img src="../imgs/img-licenses/01.png" alt="" class="rounded-2xl">
+                            </div>
+                            <div class="size-[80px] ">
+                                <img src="../imgs/img-licenses/02.png" alt="" class="rounded-2xl">
+                            </div>
+                            <div class="size-[80px] ">
+                                <img src="../imgs/img-licenses/03.png" alt="" class="rounded-2xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="mt-[30px] max-[770px]:mt-[50px] flex justify-between items-start max-[770px]:flex-col">
+                <ul class="display-flex min-[757px]:!justify-start max-[756px]:!justify-center gap-x-2 gap-y-2 flex-wrap max-[575px]:hidden">
+                    <li class="bg-white hover:bg-blue-600 hover:text-white dark:bg-[#414150] dark:text-white cursor-pointer p-1.5 px-4 rounded-2xl font-bold transition-colors duration-300">صفحه نخست</li>
+                    <li class="hover:text-blue-600 cursor-pointer transition-colors duration-300 px-4 dark:text-white">مجله</li>
+                    <li class="hover:text-blue-600 cursor-pointer transition-colors duration-300 px-4 dark:text-white">فروشنده شوید</li>
+                    <li class="hover:text-blue-600 cursor-pointer transition-colors duration-300 px-4 dark:text-white">درباره ما</li>
+                    <li class="hover:text-blue-600 cursor-pointer transition-colors duration-300 px-4 dark:text-white">قوانین و شرایط</li>
+                    <li class="hover:text-blue-600 cursor-pointer transition-colors duration-300 px-4 dark:text-white">راهنمای فروشندگان</li>
+                </ul>
+
+                <div class="display-flex max-[770px]:w-full max-[770px]:justify-center max-[575px]:flex-row max-[575px]:gap-2.5">
+    
+                    <div class="footer-icon-bar cursor-pointer close-hamburger-menu-footer bg-white dark:bg-[#353542] rounded-2xl border-[1px] border-gray-300 dark:border-[#585868] border-dashed min-[575px]:hidden">
+                        <div class="display-flex size-[45px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 menu dark:text-white">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+                            </svg>
+                        </div>
+                        <div class="footer-items-bar relative z-50 hidden">
+                            <ul class="absolute -top-[320px] text-black bg-white dark:bg-[#353542] dark:text-white w-[160px] text-nowrap rounded-xl flex flex-col text-start py-2 border-[1px] border-gray-300 dark:border-[#585868] border-dashed">
+                                <li><a href="#" class="hover:bg-gray-100 block p-2 px-3 dark:hover:bg-[#43434f]">صفحه نخست</a></li>
+                                <li><a href="#" class="hover:bg-gray-100 block p-2 px-3 dark:hover:bg-[#43434f]">مجله</a></li>
+                                <li><a href="#" class="hover:bg-gray-100 block p-2 px-3 dark:hover:bg-[#43434f]">فروشنده شوید</a></li>
+                                <li><a href="#" class="hover:bg-gray-100 block p-2 px-3 dark:hover:bg-[#43434f]">درباره ما</a></li>
+                                <li><a href="#" class="hover:bg-gray-100 block p-2 px-3 dark:hover:bg-[#43434f]">قوانین و شرایط</a></li>
+                                <li><a href="#" class="hover:bg-gray-100 block p-2 px-3 dark:hover:bg-[#43434f]">راهنمای فروشندگان</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="max-[575px]:mt-0 max-[575px]:w-full max-[757px]:mt-[20px] max-[757px]:min-w-0">
+                        <form action="" class="bg-white dark:bg-[#353542] p-1 pr-3 flex flex-nowrap items-center rounded-3xl border-[1px] border-gray-300 dark:border-[#585868] border-dashed max-[757px]:w-full max-[757px]:min-w-0">
+                            <input type="text" placeholder="ایمیل یا شماره همراه..." class="news-letter-input outline-none w-[250px] max-[989px]:w-[180px] max-[757px]:w-auto max-[757px]:min-w-0 max-[757px]:flex-1 placeholder:text-gray-300 dark:placeholder:text-gray-400 text-[15px]">
+                            <button type="submit" class="news-letter-btn bg-blue-600 shrink-0 shadow-lg shadow-blue-500/45 hover:bg-blue-500 dark:hover:bg-blue-700 hover:shadow-none transition-colors duration-300 cursor-pointer text-white p-3 max-[575px]:p-2.5 px-5 rounded-3xl rounded-br-sm max-[575px]:text-[14px]">عضویت</button>
+                        </form>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section class="mt-[50px]">
+                <div class="display-flex justify-between max-[770px]:flex-col max-[770px]:gap-3">
+                    <div>
+                        <p class="text-gray-400 text-[13px]">تمامی حقوق برای ویماشاپ محفوظ است - توسعه توسط <a href="#" class="cursor-pointer text-amber-500">ویماشاپ</a></p>
+                    </div>
+                    <ul class="display-flex text-[#858585] bg-[#e9eef3] dark:bg-[#353542] dark:text-[#bbb] p-2 rounded-xl">
+                        <li>
+                            <a class="el-center" href="#"><i class="ri-instagram-line p-2 hover:bg-blue-600 hover:text-white rounded-lg transition-colors duration-300"></i></a>
+                        </li>
+                        <li>
+                            <a class="el-center" href="#"><i class="ri-send-plane-2-line p-2 hover:bg-blue-600 hover:text-white rounded-lg transition-colors duration-300"></i></a>
+                        </li>
+                        <li>
+                            <a class="el-center" href="#"><i class="ri-twitter-x-line p-2 hover:bg-blue-600 hover:text-white rounded-lg transition-colors duration-300"></i></a>
+                        </li>
+                        <li>
+                            <a class="el-center" href="#"><i class="ri-facebook-line p-2 hover:bg-blue-600 hover:text-white rounded-lg transition-colors duration-300"></i></a>
+                        </li>
+                    </ul>
+
+                </div>
+            </section>
+
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>

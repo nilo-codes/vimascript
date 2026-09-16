@@ -61,38 +61,38 @@ const circleMainStories = [
 
 // products array
 const productsArray = [
-    {id: 1,title: "چراغ جلو چپ مدرن مدل MD-28663 مناسب برای دنا پلاس", price: 790_000, src: "../images/file.1736764235.15130.webp", color: ["bg-blue-300", "bg-white"], previous_price: 890_000, discount: 11, star: 4, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 240, sales: 54},
-    {id: 2,title: "سمپاش کنزاکس مدل KPS-102 حجم 2 لیتر", price: 1_420_000, src: "../images/file.1736801171.44215.webp", color: ["bg-gray-200", "bg-yellow-400", "bg-gray-600"], previous_price: "", discount: "", star: 4, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 258, sales: 28},
-    {id: 3,title: "لامپ هدلایت خودرو مدل S2 پایه H1 بسته دو عددی", price: 1_600_000, src: "../images/file.1736782031.16645.webp", color: ["bg-purple-400", "bg-white"], previous_price: 1_690_000, discount: 5, star: 5, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 202, sales: 71},
-    {id: 4,title: "کمپرسور هوا کنزاکس مدل KAC-13 مدل چندکاره اتوماتیک", price: 2_550_000, src: "../images/file.1736801623.63624.webp", color: ["bg-yellow-700", "bg-white"], previous_price: 2_690_000, discount: 5, star: 5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 260, sales: 154},
-    {id: 5,title: "لامپ خودرو سام مدل 144 بسته دو عددی تکمیل شده", price: 100_000, src: "../images/file.1736783807.85162.webp", color: ["bg-blue-300", "bg-white"], previous_price: 110_000, discount: 9, star: 4, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 210, sales: 98},
-    {id: 6,title: "روغن موتور خودرو الف مدل EVOLUTION STI700 10W40 SN حجم 5 لیتر",price: 570_000, src: "../images/file.1736710941.51585.webp", color: ["bg-gray-500", "bg-blue-950"], previous_price: 700_000, discount: 19, star: 5, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 220, sales: 243},
-    {id: 7,title: "هدلایت لامپ خودرو D9 مدل H4 بسته 2 عددی", price: 1_750_000 , src: "../images/file.1736781067.44454.webp", color: ["bg-amber-500", "bg-amber-300"], previous_price: 1_800_000, discount: 3, star: 3, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 300, sales: 127},
-    {id: 8,title: "چراغ عقب چپ جمع ساز مدل JT123B مناسب برای سمند",price: 360_000, src: "../images/file.1736714148.51039.webp", color: ["bg-red-700", "bg-white"], previous_price: 460_000, discount: 22, star: 3, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 280, sales: 410},
-    {id: 9,title: "آچار بکس شارژی کنزاکس مدل 8800 مدل همه کاره", price: 3_350_000, src: "../images/file.1736802129.55888.webp", color: ["bg-amber-500", "bg-white"], previous_price: 3_350_000, discount: 4, star: 4.5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 325, sales: 109},
-    {id: 10,title: "هدلایت لامپ خودرو اسمارت مدل M10 PRO پایه H7 بسته دو عددی", price: "استعلام موجودی", src: "../images/file.1736783333.49271.webp", color: ["bg-gray-700"], previous_price: "", discount: "", star: 4, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 200, sales: 85},
-    {id: 11,title: "کمپرسور هوا فندکی کنزاکس مدل 5417", price: 3_250_000, src: "../images/file.1736704448.36439.webp", color: ["g-yellow-400", "bg-black"], previous_price: "", discount: "", star: 4.6, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 310, sales: 69},
-    {id: 12,title: "چراغ جلو راست گروه پژوهش صنعت مدرن کد 44 مناسب برای پژو پارس", price: 600_000, src: "../images/file.1736765649.19155.webp", color: ["bg-blue-900", "bg-white"], previous_price: "", discount: "", star: 5, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 350, sales: 291},
-    {id: 13,title: "پمپ هیدرولیک فرمان دیناپارت کد 103011 مناسب برای پژو 405 و سمند", price: 380_000, src: "../images/file.1736850732.24344.webp", color: ["bg-black", "bg-white"], previous_price: 450_000, discount: 16, star: 4, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 200, sales: 338},
-    {id: 14,title: "چراغ عقب چپ فن آوران پرتو الوند مدل salimpl مناسب برای پژو پارس ELX", price: 400_000, src: "../images/file.1736764562.85996.webp", color: ["bg-gray-600", "bg-red-700"], previous_price: 420_000, discount: 5, star: 5, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 400, sales: 172},
-    {id: 15,title: "چراغ خطر راست خودرو کروز پلاس کد CR506306 مناسب برای شاهین", price: 900_000, src: "../images/file.1736763503.21517.webp", color: ["bg-red-300", "bg-gray-300"], previous_price: "", discount: "", star: 4, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 430, sales: 108},
-    {id: 16,title: "دریل کنزاکس مدل KED-150", price: 6_300_000, src: "../images/file.1736800627.32736.webp", color: ["bg-amber-500", "bg-amber-300"], previous_price: 6_900_000, discount: 9, star: 5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 372, sales: 21},
-    {id: 17,title: "چراغ جلو چپ اس ان تی کد AM 5964 مناسب برای ساینا", price: 400_000, src: "../images/file.1736764333.52817.webp", color: ["bg-gray-300"], previous_price: 450_000, discount: 11, star: 4, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 412, sales: 72},
-    {id: 18,title: "موتور برق کنزاکس مدل KPG-13000", price: "استعلام موجودی", src: "../images/file.1736800861.20102.webp", color: ["bg-amber-300"], previous_price: "", discount: "", star: 5, type: "mechanical parts", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 470, sales: 289},
-    {id: 19,title: "بلبرینگ چرخ جلو حامد مدل 198 مناسب برای 405 , Pars", price: 115_000, src: "../images/file.1736850024.72548.webp", color: ["bg-gray-300", "bg-gray-600"], previous_price: 140_000, discount: 18, star: 5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 408, sales: 300},
-    {id: 20,title: "چراغ خطر عقب چپ گروه پژوهش صنعت مدرن کد L1 مناسب برای دنا", price: 700_000, src: "../images/file.1736763925.55473.webp", color: ["bg-red-500", "bg-black"], previous_price: 760_000, discount: 5, star: 5, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 510, sales: 193},
-    {id: 21,title: "روغن موتور خودرو موتوسل مدل Kangaroo Plus SM 10W40 حجم 5 لیتر", price: 1_000_000, src: "../images/file.1736711221.80403.webp", color: ["bg-yellow-500", "bg-white"], previous_price: "", discount: "", star: 4, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 604, sales: 95},
-    {id: 22,title: "روغن موتور مدل پاور پلاس سوپر 10w40 SJ حجم 4 لیتر", price: 1_180_000, src: "../images/file.1736708594.81208.webp", color: ["bg-gray-300", "bg-gray-600"], previous_price: 1_360_000, discount: 13, star: 5, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 386, sales: 359},
-    {id: 23,title: "روغن موتور لیکمولی مدل 10W40 SN حجم 4 لیتر", price: 1_000_000, src: "../images/file.1736710364.28748.webp", color: ["bg-blue-500", "bg-white"], previous_price: 1_250_000, discount: 20, star: 4, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 273, sales: 180},
-    {id: 24,title: "روغن موتور پتروناس مدل 800 SyntiumEU کد 885869 حجم 4 لیتر", price: 950_000, src: "../images/file.1736713100.43916.webp", color: ["bg-gray-300", "bg-gray-600"], previous_price: "", discount: "", star: 5, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 319, sales: 80},
-    {id: 25,title: "روغن موتور با کیفیت موتوسل مدل 10W40 SM حجم 4 لیتر", price: 750_000, src: "../images/file.1736710054.23797.webp", color: ["bg-black", "bg-gray-300"], previous_price: 800_000, discount: 6, star: 4, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 327, sales: 94},
-    {id: 26,title: "لامپ هدلایت خودرو کانپکس مدل M8 H7 بسته 2 عددی", price: 1_100_000, src: "../images/file.1736781288.52956.webp", color: ["bg-pink-700/50", "bg-white"], previous_price: 1_200_000, discount: 8, star: 4.5, type: "headlight", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 286, sales: 510},
-    {id: 27,title: "روغن موتور موتوسل مدل 10W40 SL حجم 3.5 لیتر", price: "استعلام موجودی", src: "../imgs/img-product/file.1736711454.45904.webp", color: [], previous_price: "", discount: "", star: 5, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 54, sales: 328},
-    {id: 28,title: "روغن موتور خودرو زادو مدل 20W50-SM-16000 EXTERA POWER حجم 5 لیتر", price: "استعلام موجودی", src: "../imgs/img-product/file.1736710666.43273.webp", color: [], previous_price: "", discount: "", star: 4, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 91, sales: 244},
-    {id: 29,title: "هدلایت لامپ خودرو روشا مدل TP1 پایه H3 بسته دو عددی", price: 1_400_000, src: "../imgs/img-product/file.1736782692.52155.webp", color: ["bg-cyan-600/60", "bg-white"], previous_price: "", discount: "", star: 4, type: "headlight", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 180, sales: 43},
-    {id: 30,title: "چراغ عقب مدل G4133400 مناسب برای خودروهای لیفان", price: "استعلام موجودی", src: "../imgs/img-product/file.1736765386.82005.webp", color: [], previous_price: "", discount: "", star: 4.5, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 573, sales: 205},
-    {id: 31,title: "کمپرسور هوا گالف مدل 5420 با تنوع ابزار های مورد نیاز", price: "استعلام موجودی", src: "../imgs/img-product/file.1736800164.56400.webp", color: [], previous_price: "", discount: "", star: 5, type: "mechanical parts", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 247, sales: 80},
-    {id: 32,title: "لامپ چراغ کوچک خودرو سام اسپرت مدل 24 SMD BELU بسته 2 عددی", price: "استعلام موجودی", src: "../imgs/img-product/file.1736781554.41936.webp", color: [], previous_price: "", discount: "", star: 5, type: "headlight", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 341, sales: 188},
+    {id: 1,title: "چراغ جلو چپ مدرن مدل MD-28663 مناسب برای دنا پلاس", price: 790_000, src: "../images/file.1736764235.15130.webp", color: ["bg-blue-300", "bg-white"], previous_price: 890_000, discount: 11, star: 4, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 240, sales: 54, slug: "p1"},
+    {id: 2,title: "سمپاش کنزاکس مدل KPS-102 حجم 2 لیتر", price: 1_420_000, src: "../images/file.1736801171.44215.webp", color: ["bg-gray-200", "bg-yellow-400", "bg-gray-600"], previous_price: "", discount: "", star: 4, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 258, sales: 28, slug: "p2"},
+    {id: 3,title: "لامپ هدلایت خودرو مدل S2 پایه H1 بسته دو عددی", price: 1_600_000, src: "../images/file.1736782031.16645.webp", color: ["bg-purple-400", "bg-white"], previous_price: 1_690_000, discount: 5, star: 5, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 202, sales: 71, slug: "p3"},
+    {id: 4,title: "کمپرسور هوا کنزاکس مدل KAC-13 مدل چندکاره اتوماتیک", price: 2_550_000, src: "../images/file.1736801623.63624.webp", color: ["bg-yellow-700", "bg-white"], previous_price: 2_690_000, discount: 5, star: 5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 260, sales: 154, slug: "p4"},
+    {id: 5,title: "لامپ خودرو سام مدل 144 بسته دو عددی تکمیل شده", price: 100_000, src: "../images/file.1736783807.85162.webp", color: ["bg-blue-300", "bg-white"], previous_price: 110_000, discount: 9, star: 4, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 210, sales: 98, slug: "p5"},
+    {id: 6,title: "روغن موتور خودرو الف مدل EVOLUTION STI700 10W40 SN حجم 5 لیتر",price: 570_000, src: "../images/file.1736710941.51585.webp", color: ["bg-gray-500", "bg-blue-950"], previous_price: 700_000, discount: 19, star: 5, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 220, sales: 243, slug: "p6"},
+    {id: 7,title: "هدلایت لامپ خودرو D9 مدل H4 بسته 2 عددی", price: 1_750_000 , src: "../images/file.1736781067.44454.webp", color: ["bg-amber-500", "bg-amber-300"], previous_price: 1_800_000, discount: 3, star: 3, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 300, sales: 127, slug: "p7"},
+    {id: 8,title: "چراغ عقب چپ جمع ساز مدل JT123B مناسب برای سمند",price: 360_000, src: "../images/file.1736714148.51039.webp", color: ["bg-red-700", "bg-white"], previous_price: 460_000, discount: 22, star: 3, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 280, sales: 410, slug: "p8"},
+    {id: 9,title: "آچار بکس شارژی کنزاکس مدل 8800 مدل همه کاره", price: 3_350_000, src: "../images/file.1736802129.55888.webp", color: ["bg-amber-500", "bg-white"], previous_price: 3_350_000, discount: 4, star: 4.5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 325, sales: 109, slug: "p9"},
+    {id: 10,title: "هدلایت لامپ خودرو اسمارت مدل M10 PRO پایه H7 بسته دو عددی", price: "استعلام موجودی", src: "../images/file.1736783333.49271.webp", color: ["bg-gray-700"], previous_price: "", discount: "", star: 4, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 200, sales: 85, slug: "p10"},
+    {id: 11,title: "کمپرسور هوا فندکی کنزاکس مدل 5417", price: 3_250_000, src: "../images/file.1736704448.36439.webp", color: ["g-yellow-400", "bg-black"], previous_price: "", discount: "", star: 4.6, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 310, sales: 69, slug: "p11"},
+    {id: 12,title: "چراغ جلو راست گروه پژوهش صنعت مدرن کد 44 مناسب برای پژو پارس", price: 600_000, src: "../images/file.1736765649.19155.webp", color: ["bg-blue-900", "bg-white"], previous_price: "", discount: "", star: 5, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 350, sales: 291, slug: "p12"},
+    {id: 13,title: "پمپ هیدرولیک فرمان دیناپارت کد 103011 مناسب برای پژو 405 و سمند", price: 380_000, src: "../images/file.1736850732.24344.webp", color: ["bg-black", "bg-white"], previous_price: 450_000, discount: 16, star: 4, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 200, sales: 338, slug: "p13"},
+    {id: 14,title: "چراغ عقب چپ فن آوران پرتو الوند مدل salimpl مناسب برای پژو پارس ELX", price: 400_000, src: "../images/file.1736764562.85996.webp", color: ["bg-gray-600", "bg-red-700"], previous_price: 420_000, discount: 5, star: 5, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 400, sales: 172, slug: "p14"},
+    {id: 15,title: "چراغ خطر راست خودرو کروز پلاس کد CR506306 مناسب برای شاهین", price: 900_000, src: "../images/file.1736763503.21517.webp", color: ["bg-red-300", "bg-gray-300"], previous_price: "", discount: "", star: 4, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 430, sales: 108, slug: "p15"},
+    {id: 16,title: "دریل کنزاکس مدل KED-150", price: 6_300_000, src: "../images/file.1736800627.32736.webp", color: ["bg-amber-500", "bg-amber-300"], previous_price: 6_900_000, discount: 9, star: 5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 372, sales: 21, slug: "p16"},
+    {id: 17,title: "چراغ جلو چپ اس ان تی کد AM 5964 مناسب برای ساینا", price: 400_000, src: "../images/file.1736764333.52817.webp", color: ["bg-gray-300"], previous_price: 450_000, discount: 11, star: 4, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 412, sales: 72, slug: "p17"},
+    {id: 18,title: "موتور برق کنزاکس مدل KPG-13000", price: "استعلام موجودی", src: "../images/file.1736800861.20102.webp", color: ["bg-amber-300"], previous_price: "", discount: "", star: 5, type: "mechanical parts", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 470, sales: 289, slug: "p18"},
+    {id: 19,title: "بلبرینگ چرخ جلو حامد مدل 198 مناسب برای 405 , Pars", price: 115_000, src: "../images/file.1736850024.72548.webp", color: ["bg-gray-300", "bg-gray-600"], previous_price: 140_000, discount: 18, star: 5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 408, sales: 300, slug: "p19"},
+    {id: 20,title: "چراغ خطر عقب چپ گروه پژوهش صنعت مدرن کد L1 مناسب برای دنا", price: 700_000, src: "../images/file.1736763925.55473.webp", color: ["bg-red-500", "bg-black"], previous_price: 760_000, discount: 5, star: 5, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 510, sales: 193, slug: "p20"},
+    {id: 21,title: "روغن موتور خودرو موتوسل مدل Kangaroo Plus SM 10W40 حجم 5 لیتر", price: 1_000_000, src: "../images/file.1736711221.80403.webp", color: ["bg-yellow-500", "bg-white"], previous_price: "", discount: "", star: 4, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 604, sales: 95, slug: "p21"},
+    {id: 22,title: "روغن موتور مدل پاور پلاس سوپر 10w40 SJ حجم 4 لیتر", price: 1_180_000, src: "../images/file.1736708594.81208.webp", color: ["bg-gray-300", "bg-gray-600"], previous_price: 1_360_000, discount: 13, star: 5, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 386, sales: 359, slug: "p22"},
+    {id: 23,title: "روغن موتور لیکمولی مدل 10W40 SN حجم 4 لیتر", price: 1_000_000, src: "../images/file.1736710364.28748.webp", color: ["bg-blue-500", "bg-white"], previous_price: 1_250_000, discount: 20, star: 4, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 273, sales: 180, slug: "p23"},
+    {id: 24,title: "روغن موتور پتروناس مدل 800 SyntiumEU کد 885869 حجم 4 لیتر", price: 950_000, src: "../images/file.1736713100.43916.webp", color: ["bg-gray-300", "bg-gray-600"], previous_price: "", discount: "", star: 5, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 319, sales: 80, slug: "p24"},
+    {id: 25,title: "روغن موتور با کیفیت موتوسل مدل 10W40 SM حجم 4 لیتر", price: 750_000, src: "../images/file.1736710054.23797.webp", color: ["bg-black", "bg-gray-300"], previous_price: 800_000, discount: 6, star: 4, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 327, sales: 94, slug: "p25"},
+    {id: 26,title: "لامپ هدلایت خودرو کانپکس مدل M8 H7 بسته 2 عددی", price: 1_100_000, src: "../images/file.1736781288.52956.webp", color: ["bg-pink-700/50", "bg-white"], previous_price: 1_200_000, discount: 8, star: 4.5, type: "headlight", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 286, sales: 510, slug: "p26"},
+    {id: 27,title: "روغن موتور موتوسل مدل 10W40 SL حجم 3.5 لیتر", price: "استعلام موجودی", src: "../imgs/img-product/file.1736711454.45904.webp", color: [], previous_price: "", discount: "", star: 5, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 54, sales: 328, slug: "p27"},
+    {id: 28,title: "روغن موتور خودرو زادو مدل 20W50-SM-16000 EXTERA POWER حجم 5 لیتر", price: "استعلام موجودی", src: "../imgs/img-product/file.1736710666.43273.webp", color: [], previous_price: "", discount: "", star: 4, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 91, sales: 244, slug: "p28"},
+    {id: 29,title: "هدلایت لامپ خودرو روشا مدل TP1 پایه H3 بسته دو عددی", price: 1_400_000, src: "../imgs/img-product/file.1736782692.52155.webp", color: ["bg-cyan-600/60", "bg-white"], previous_price: "", discount: "", star: 4, type: "headlight", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 180, sales: 43, slug: "p29"},
+    {id: 30,title: "چراغ عقب مدل G4133400 مناسب برای خودروهای لیفان", price: "استعلام موجودی", src: "../imgs/img-product/file.1736765386.82005.webp", color: [], previous_price: "", discount: "", star: 4.5, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 573, sales: 205, slug: "p30"},
+    {id: 31,title: "کمپرسور هوا گالف مدل 5420 با تنوع ابزار های مورد نیاز", price: "استعلام موجودی", src: "../imgs/img-product/file.1736800164.56400.webp", color: [], previous_price: "", discount: "", star: 5, type: "mechanical parts", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 247, sales: 80, slug: "p31"},
+    {id: 32,title: "لامپ چراغ کوچک خودرو سام اسپرت مدل 24 SMD BELU بسته 2 عددی", price: "استعلام موجودی", src: "../imgs/img-product/file.1736781554.41936.webp", color: [], previous_price: "", discount: "", star: 5, type: "headlight", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 341, sales: 188, slug: "p32"},
 ]
 
 // brands
@@ -254,14 +254,34 @@ $.addEventListener("click", (e) => {
 })
 
 // theme
+const themeSymbol = $.querySelector(".theme i")
 const changeTheme = () => {
     html.classList.toggle("dark");
-
+    themeSymbol.classList.toggle("ri-moon-line")
+    themeSymbol.classList.toggle("ri-sun-line")
+    
     const theme = html.classList.contains("dark") ? "dark" : "light";
 
     localStorage.setItem("theme", theme);
 };
 
+const userSymbol = $.querySelector(".user-symbol")
+userSymbol.addEventListener("click",()=>{
+    const userId=localStorage.getItem("userId")
+
+    if(!userId){
+        window.location.href="../login/index.html"
+        return
+    }
+
+    const clickedButton=localStorage.getItem(`clickedButton_${userId}`)
+
+    if(!clickedButton){
+        localStorage.setItem(`clickedButton_${userId}`,"userSymbol")
+    }
+
+    window.location.href="../user/dashboard/index.html"
+})
 
 
 
@@ -940,15 +960,17 @@ const showRealTimeImg = () => {
         if (index === 0) {
             realTimeMain.insertAdjacentHTML("beforeend",
                 `
-                <div class="main-img shrink-0 bg-white dark:bg-[#353542] shadow-xl shadow-gray-200 dark:shadow-none flex items-center justify-center size-[70px]">
-                    <img src="${item.src}" alt="" class="size-[45px]"></div>
+                <div data-slug="${item.slug}" class="relative flex items-center bg-gray-100 dark:bg-[#414150] rounded-3xl mt-6 p-4 cursor-pointer">
+                    <div class="main-img shrink-0 bg-white dark:bg-[#353542] shadow-xl shadow-gray-200 dark:shadow-none flex items-center justify-center size-[70px]">
+                        <img src="${item.src}" alt="" class="size-[45px]"></div>
 
-                <div class="main-text flex flex-col text-start gap-1.5 min-w-0 ml-4 ms-4">
-                    <p class="whitespace-nowrap text-[14px] truncate dark:text-white">${item.title}</p>
+                    <div class="main-text flex flex-col text-start gap-1.5 min-w-0 ml-4 ms-4">
+                        <p class="whitespace-nowrap text-[14px] truncate dark:text-white">${item.title}</p>
 
-                    <div class="main-price flex items-center">
-                        <span class="text-blue-600">${toPersianNumber(item.price.toLocaleString())}</span>
-                        <img src="../images/toman-D-K3lGL1.svg" alt="" class="w-4.5">
+                        <div class="main-price flex items-center">
+                            <span class="text-blue-600 font-bold ${typeof item.price == "number" ? "" : "text-[13px]"}">${toPersianNumber(item.price.toLocaleString())}</span>
+                            <img src="../images/toman-D-K3lGL1.svg" alt="" class="w-5 pr-1 ${typeof item.price == "number" ? "" : "hidden"}">
+                        </div>
                     </div>
                 </div>
                 `
@@ -956,7 +978,7 @@ const showRealTimeImg = () => {
         } else {
             realTimeFooter.insertAdjacentHTML("beforeend",
                 `
-                <div class="footer-mini-box display-flex gap-2 flex-col w-[80px] min-w-0">
+                <div  data-slug="${item.slug}" class="footer-mini-box display-flex gap-2 flex-col w-[80px] min-w-0">
                     <div class="mini-box bg-gray-100 dark:bg-[#414150] display-flex size-[70px] rounded-xl cursor-pointer">
                         <img src="${item.src}" alt="" class="mini-box-img size-[45px]">
                     </div>
@@ -970,6 +992,7 @@ const showRealTimeImg = () => {
         }
         
     })
+
 }
 
 
@@ -1018,6 +1041,7 @@ const desktopDiscountedProducts = () => {
 
         desktopSwiperWrapper.insertAdjacentHTML("beforeend", `
             <div
+                data-slug="${item.slug}"
                 class="swiper-slide bg-white dark:bg-[#414150] p-4 cursor-pointer group/changeColor"
                 data-product-index="${productIndex}"
             >
@@ -1046,7 +1070,7 @@ const desktopDiscountedProducts = () => {
                         <i class="ri-star-fill text-amber-400 pb-1.5"></i>
                     </div>
 
-                    <div class="title text-[14px] dark:text-white leading-5 h-10 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
+                    <div class="title text-[13px] leading-6 dark:text-white leading-5 h-11 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
                         ${item.title}
                     </div>
                 </div>
@@ -1086,6 +1110,7 @@ const mobileDiscountedProducts = () => {
 
         mobileSwiperWrapper.insertAdjacentHTML("beforeend", `
             <div
+                data-slug="${item.slug}"
                 class="swiper-slide bg-white dark:bg-[#414150] p-4 group/changeColor cursor-pointer"
                 data-product-index="${productIndex}"
             >
@@ -1114,7 +1139,7 @@ const mobileDiscountedProducts = () => {
                         <i class="ri-star-fill text-amber-400 pb-1.5"></i>
                     </div>
 
-                    <div class="title text-[14px] dark:text-white leading-5 h-10 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
+                    <div class="title text-[13px] dark:text-white leading-5 h-10 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
                         ${item.title}
                     </div>
                 </div>
@@ -1600,7 +1625,7 @@ const createOilSlideHTML = (item) => {
     
 
     return `
-        <div class="swiper-slide cursor-pointer bg-white dark:bg-[#414150] p-4 group/changeColor">
+        <div data-slug="${item.slug}" class="swiper-slide cursor-pointer bg-white dark:bg-[#414150] p-4 group/changeColor">
             <div class="engine-oil flex h-[20px] justify-between">
                 <div class="color flex flex-col gap-0.5">
                     ${colors}
@@ -1763,7 +1788,7 @@ const categoriesSwiper = $.querySelector(".categories-swiper")
 
 const createProductHTML = (item, index) => {
     return `
-    <div class="product-of-categories p-[15px] border-gray-200 dark:border-gray-700 ${index === 0 ? "border-l border-b" : index === 1 ? "border-b" : index === 2 ? "border-l" : ""}">
+    <div data-slug="${item.slug}" class="product-of-categories p-[15px] border-gray-200 dark:border-gray-700 ${index === 0 ? "border-l border-b" : index === 1 ? "border-b" : index === 2 ? "border-l" : ""}">
         <div class="top-product flex justify-between h-[20px]">
 
             <div class="color flex flex-col gap-0.5 h-[30px]">
@@ -1905,10 +1930,10 @@ const createPopularProduct = (item) => {
     const popularProductsContainer = $.querySelector(".popular-products-container")
     popularProductsContainer.insertAdjacentHTML("beforeend",
         `
-        <div class="products-slide  p-[15px] border-[1.5px] border-l border-b border-gray-100 dark:border-[#262631] group/changeColor cursor-pointer">
+        <div data-slug="${item.slug}" class="products-slide  p-[15px] border-[1.5px] border-l border-b border-gray-100 dark:border-[#262631] group/changeColor cursor-pointer">
             <div class="products-slide-top display-flex justify-start gap-1">
                 <img src="${item.src}" alt="" class="size-[70px]">
-                <h3 class="title group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300 text-[15px] [word-spacing:2px] dark:text-white leading-5 h-10 line-clamp-2 text-start overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
+                <h3 class="title group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300 text-[13px] leading-6 [word-spacing:2px] dark:text-white h-11 line-clamp-2 text-start overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
                     <a href="#">
                         ${item.title}
                     </a>
@@ -2001,6 +2026,7 @@ const desktopFeaturedProducts = () => {
 
         featuredDesktopSwiper.insertAdjacentHTML("beforeend", `
             <div
+                data-slug="${item.slug}"
                 class="swiper-slide bg-white dark:bg-[#414150] p-4 cursor-pointer group/changeColor"
                 data-product-index="${productIndex}"
             >
@@ -2029,7 +2055,7 @@ const desktopFeaturedProducts = () => {
                         <i class="ri-star-fill text-amber-400 pb-1.5"></i>
                     </div>
 
-                    <div class="title text-[14px] dark:text-white leading-5 h-10 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
+                    <div class="title text-[13px] leading-6 dark:text-white leading-5 h-11 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
                         ${item.title}
                     </div>
                 </div>
@@ -2071,6 +2097,7 @@ const mobileFeaturedProducts = () => {
 
         featuredMobileSwiper.insertAdjacentHTML("beforeend", `
             <div
+                data-slug="${item.slug}"
                 class="swiper-slide bg-white dark:bg-[#414150] p-4 group/changeColor cursor-pointer"
                 data-product-index="${productIndex}"
             >
@@ -2099,7 +2126,7 @@ const mobileFeaturedProducts = () => {
                         <i class="ri-star-fill text-amber-400 pb-1.5"></i>
                     </div>
 
-                    <div class="title text-[14px] dark:text-white leading-5 h-10 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
+                    <div class="title text-[13px] leading-6 dark:text-white h-11 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
                         ${item.title}
                     </div>
                 </div>
@@ -2388,17 +2415,17 @@ mobileMediaQuery.addEventListener("change", () => {
 
 const createMechanicalPartsHTML = (item) => {
     return`
-        <div class="swiper-slide !overflow-visible">
-            <div class="relative bg-white dark:bg-[#414150] rounded-3xl p-[20px] mt-[10px] h-[380px]">
+        <div data-slug="${item.slug}" class="swiper-slide !overflow-visible">
+            <div class="relative bg-white dark:bg-[#414150] rounded-3xl p-[20px] mt-[10px]">
 
-                <div class="special-product absolute left-1/2 ${item.isFeatured ? "" : "hidden"} -translate-x-1/2 -top-[10px] z-10 bg-gray-300 dark:bg-[#4a4a5c] text-gray-500 dark:text-white rounded-b-xl rounded-tr-xl text-[13px] py-0.5 px-3">
+                <div class="special-product absolute left-1/2 ${item.isFeatured ? "" : "hidden"} whitespace-nowrap -translate-x-1/2 -top-[10px] z-10 bg-gray-300 dark:bg-[#4a4a5c] text-gray-500 dark:text-white rounded-b-xl rounded-tr-xl text-[13px] py-0.5 px-3">
                     <p>محصول ویژه</p>
                 </div>
-                <div class="colors flex flex-col gap-0.5">
+                <div class="colors absolute top-[20px] right-[20px] flex flex-col gap-0.5">
                     ${item.color.map(color => `<div class="circle ${color} ${color === "bg-white" ? "border border-gray-300" : ""} rounded-full size-2"></div>`).join("")}
                 </div>
-                <img src="${item.src}" alt="" class="size-[170px] my-[10px] display-flex justify-self-center">
-                <p class="display-flex h-[50px] mb-[30px] max-h-[55px] min-h-[55px] text-[14px] dark:text-white">${item.title}</p>
+                <img src="${item.src}" alt="" class="size-[170px] my-[10px] display-flex justify-self-center object-contain">
+                <p class="max-h-[55px] min-h-[55px] text-[13px] leading-6 dark:text-white whitespace-nowrap overflow-hidden text-ellipsis">${item.title}</p>
                 <div class="mechanical-parts-discount flex items-center text-center justify-end gap-1.5  h-[20px]">
     
                     <div class="discount-container ${item.discount ? "" : "hidden"} p-1.5 mb-1.5 bg-amber-500 shadow-lg shadow-amber-400/30 text-[14px] rounded-t-xl rounded-br-xl rounded-bl-sm h-[20px] display-flex">
@@ -2459,7 +2486,7 @@ const mechanicalPartsSwiper = new Swiper(".mechanical-parts-main", {
         0: {
             slidesPerView: 1,
         },
-        350: {
+        380: {
             slidesPerView: 2,
         },
 
@@ -2489,7 +2516,7 @@ const createviewedProduct = (item) => {
         <div class="products-slide  p-[15px] border-[1.5px] border-l border-b border-gray-100 dark:border-[#262631] group/changeColor cursor-pointer">
             <div class="products-slide-top display-flex justify-start gap-1">
                 <img src="${item.src}" alt="" class="size-[70px]">
-                <h3 class="title group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300 text-[14px] dark:text-white leading-5 h-10 line-clamp-2 text-start overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
+                <h3 class="title group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300 text-[13px] dark:text-white leading-6 h-11 line-clamp-2 text-start overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
                     <a href="#">
                         ${item.title}
                     </a>
@@ -2587,6 +2614,7 @@ const desktopBestSellingProducts = () => {
 
         bestSellingDesktopSwiper.insertAdjacentHTML("beforeend", `
             <div
+                data-slug="${item.slug}"
                 class="swiper-slide bg-white dark:bg-[#414150] p-4 cursor-pointer group/changeColor"
                 data-product-index="${productIndex}"
             >
@@ -2615,7 +2643,7 @@ const desktopBestSellingProducts = () => {
                         <i class="ri-star-fill text-amber-400 pb-1.5"></i>
                     </div>
 
-                    <div class="title text-[13px] dark:text-white leading-5 h-10 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
+                    <div class="title text-[13px] dark:text-white leading-6 h-11 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
                         ${item.title}
                     </div>
                 </div>
@@ -2657,6 +2685,7 @@ const mobileBestSellingProducts = () => {
 
         bestSellingMobileSwiper.insertAdjacentHTML("beforeend", `
             <div
+                data-slug="${item.slug}"
                 class="swiper-slide bg-white dark:bg-[#414150] p-4 group/changeColor cursor-pointer"
                 data-product-index="${productIndex}"
             >
@@ -2685,7 +2714,7 @@ const mobileBestSellingProducts = () => {
                         <i class="ri-star-fill text-amber-400 pb-1.5"></i>
                     </div>
 
-                    <div class="title text-[14px] dark:text-white leading-5 h-10 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
+                    <div class="title text-[13px] dark:text-white leading-5 h-10 line-clamp-2 overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
                         ${item.title}
                     </div>
                 </div>
@@ -2976,7 +3005,7 @@ const headlight_PAGINATION_COUNT = productsArray.filter(
 ).length
 const headlightSwiper = $.querySelector(".headlight-swiper")
 
-const headlightPagination = $.querySelector(".headlight-categories-pagination")
+const headlightPagination=$.querySelector(".headlight-pagination")
 
 const createHeadlightProductColors = (colors) => {
     return colors.map(color =>
@@ -2990,7 +3019,7 @@ const createHeadlightSlideHTML = (item) => {
     
 
     return `
-        <div class="swiper-slide cursor-pointer bg-white dark:bg-[#414150] p-4 group/changeColor">
+        <div  data-slug="${item.slug}" class="swiper-slide cursor-pointer bg-white dark:bg-[#414150] p-4 group/changeColor">
             <div class="flex h-[20px] justify-between">
                 <div class="color flex flex-col gap-0.5">
                     ${colors}
@@ -3707,6 +3736,20 @@ function addToLocalStorage() {
     localStorage.setItem("news", JSON.stringify(newsLettersContainer))
 }
 
+toastIcon.addEventListener("click", () => {
+    emailToast.classList.remove(
+            "opacity-100",
+            "translate-y-0",
+            "scale-100"
+        )
+    
+        emailToast.classList.add(
+            "opacity-0",
+            "scale-110",
+            "pointer-events-none"
+        )
+})
+
 
 
 
@@ -3742,6 +3785,45 @@ $.addEventListener("click",(e)=>{
 
 
 
+// support floating
+const supportButton = $.querySelector(".support-button button")
+const supportSymbol = $.querySelector(".support-button i")
+const supportPanel = $.querySelector(".support-panel")
+
+supportButton.addEventListener("click", () => {
+    supportPanel.classList.toggle("open")
+    supportSymbol.classList.toggle("ri-customer-service-fill")
+    supportSymbol.classList.toggle("ri-close-line")
+
+    supportButton.classList.toggle("paused")
+
+    if (supportSymbol.classList.contains("ri-close-line")) {
+        supportButton.classList.add("rounded-tl-xl")
+    } else {
+        supportButton.classList.remove("rounded-tl-xl")
+    }
+
+    console.log(supportButton.classList.contains("paused"))
+})
+$.addEventListener("click", (e) => {
+    if (
+        !supportButton.contains(e.target) &&
+        !supportPanel.contains(e.target) &&
+        supportPanel.classList.contains("open")
+    ) {
+        supportPanel.classList.remove("open")
+        supportSymbol.classList.remove("ri-close-line")
+        supportSymbol.classList.add("ri-customer-service-fill")
+        supportButton.classList.remove("paused")
+        supportButton.classList.remove("rounded-tl-xl")
+    }
+})
+
+
+
+
+
+
 
 const getDataFromLocalStorage = () => {
     const theme = localStorage.getItem("theme");
@@ -3760,6 +3842,7 @@ const getDataFromLocalStorage = () => {
     
 };
 getDataFromLocalStorage()
+
 const empty = () => {
     storyImg.querySelectorAll("img, video").forEach(el => el.remove());
     storyProgressBarContainer.innerHTML = ""
@@ -3800,3 +3883,14 @@ nextBtn.addEventListener("click", nextCircleStory)
 closeBtnStory.addEventListener("click", closeStory)
 pauseBtnStory.addEventListener("click", pauseStory)
 playBtnStory.addEventListener("click", playStory)
+
+
+window.addEventListener("click", (e) => {
+    const product = e.target.closest("[data-slug]")
+    
+    if (product) {
+        const slug = product.dataset.slug
+
+        window.location.href=`../show-product/singleProduct.html?slug=${slug}`
+    }
+})
