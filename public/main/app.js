@@ -255,15 +255,54 @@ $.addEventListener("click", (e) => {
 
 // theme
 const themeSymbol = $.querySelector(".theme i")
-const changeTheme = () => {
-    html.classList.toggle("dark");
-    themeSymbol.classList.toggle("ri-moon-line")
-    themeSymbol.classList.toggle("ri-sun-line")
-    
-    const theme = html.classList.contains("dark") ? "dark" : "light";
 
-    localStorage.setItem("theme", theme);
-};
+const changeTheme = () => {
+    html.classList.toggle("dark")
+
+    const currentTheme = html.classList.contains("dark") ? "dark" : "light"
+
+    localStorage.setItem("theme", currentTheme)
+
+    themeSymbol.classList.toggle(
+        "ri-moon-line",
+        currentTheme !== "dark"
+    )
+
+    themeSymbol.classList.toggle(
+        "ri-sun-line",
+        currentTheme === "dark"
+    )
+}
+
+const themeHandler = () => {
+    const currentTheme = localStorage.getItem("theme")
+
+    if (currentTheme === "dark") {
+        html.classList.add("dark")
+    } else {
+        html.classList.remove("dark")
+    }
+
+    themeSymbol.classList.toggle(
+        "ri-moon-line",
+        currentTheme !== "dark"
+    )
+
+    themeSymbol.classList.toggle(
+        "ri-sun-line",
+        currentTheme === "dark"
+    )
+}
+
+themeSymbol.parentElement.addEventListener("click", changeTheme)
+
+themeHandler()
+
+window.addEventListener("storage", (e) => {
+    if (e.key === "theme") {
+        themeHandler()
+    }
+})
 
 const userSymbol = $.querySelector(".user-symbol")
 userSymbol.addEventListener("click",()=>{
@@ -2513,7 +2552,7 @@ const mechanicalPartsSwiper = new Swiper(".mechanical-parts-main", {
 
 const createviewedProduct = (item) => {
     return`
-        <div class="products-slide  p-[15px] border-[1.5px] border-l border-b border-gray-100 dark:border-[#262631] group/changeColor cursor-pointer">
+        <div  data-slug="${item.slug}" class="products-slide p-[15px] border-[1.5px] border-l border-b border-gray-100 dark:border-[#262631] group/changeColor cursor-pointer">
             <div class="products-slide-top display-flex justify-start gap-1">
                 <img src="${item.src}" alt="" class="size-[70px]">
                 <h3 class="title group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300 text-[13px] dark:text-white leading-6 h-11 line-clamp-2 text-start overflow-hidden group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300">
@@ -3019,7 +3058,7 @@ const createHeadlightSlideHTML = (item) => {
     
 
     return `
-        <div  data-slug="${item.slug}" class="swiper-slide cursor-pointer bg-white dark:bg-[#414150] p-4 group/changeColor">
+        <div data-slug="${item.slug}" class="swiper-slide cursor-pointer bg-white dark:bg-[#414150] p-4 group/changeColor">
             <div class="flex h-[20px] justify-between">
                 <div class="color flex flex-col gap-0.5">
                     ${colors}

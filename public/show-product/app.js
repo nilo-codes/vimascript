@@ -763,8 +763,6 @@ const productsArray = [
     ], seller: "", performance: "", product_ID: "p-1250126", send: "", customer_rating: ""},
 ]
 
-// console.log(productsArray);
-
 
 const toPersianNumber = number => {
     return String(number).replace(/\d/g, digit =>
@@ -774,28 +772,93 @@ const toPersianNumber = number => {
 
 
 const $ = document 
+const htmlElem = $.querySelector("html")
 const titleTab = $.querySelector("title")
 const titleInfo = $.querySelector(".title-info")
 const infoProductContainer = $.querySelector(".info-product-container")
 const topMainInfo = $.querySelector(".top-main-info")
 const productPurchaseInfo = $.querySelector(".product-purchase-info")
+const imgtimer = $.querySelector(".img-timer")
+const productGallery = $.querySelector(".product-gallery")
+const bodyTag = $.querySelector("body")
+const productIdToast = $.querySelector(".product-id-toast")
+const toastTitle = $.querySelector(".toast-title")
+const toastIcon = $.querySelector(".toast-icon")
+const theme = $.querySelector(".theme")
+const themeSymbol = $.querySelector(".theme i")
 
-// console.log(titleTab.innerHTML);
 
+
+// theme
+const themeHandler = () => {
+    const currentTheme = localStorage.getItem("theme")
+
+    if (currentTheme === "dark") {
+        htmlElem.classList.add("dark")
+        themeSymbol.classList.remove("ri-moon-line")
+        themeSymbol.classList.add("ri-sun-line")
+    } else {
+        htmlElem.classList.remove("dark")
+        themeSymbol.classList.remove("ri-sun-line")
+        themeSymbol.classList.add("ri-moon-line")
+    }
+}
+
+theme.addEventListener("click", () => {
+    htmlElem.classList.toggle("dark")
+
+    const currentTheme = htmlElem.classList.contains("dark") ? "dark" : "light"
+
+    localStorage.setItem("theme", currentTheme)
+
+    themeHandler()
+})
+
+themeHandler()
+
+window.addEventListener("storage", (e) => {
+    if (e.key !== "theme") return
+
+    themeHandler()
+})
+const getDataFromLocalStorage = () => {
+    const theme = localStorage.getItem("theme");
+
+    if (theme === "dark") {
+        htmlElem.classList.add("dark");
+    } else {
+        htmlElem.classList.remove("dark");
+    }
+    
+};
+getDataFromLocalStorage()
+
+
+
+window.addEventListener("load", themeHandler)
+
+
+
+// User-selected product
 let UserSelectedProduct = null
-
 const getProductBySlug = () => {
     const params = new URLSearchParams(window.location.search)
     const slug = params.get("slug")
     
     UserSelectedProduct = productsArray.find((item) => item.slug === slug)
-    
+    createProductImage(UserSelectedProduct.src)
+    productType(UserSelectedProduct.type)
 }
 
 
 
+const loadTitle = () => {
+    titleTab.innerHTML = UserSelectedProduct.title
+}
+
 const loadingInfoProduct = () => {
     titleInfo.innerHTML = ""
+    imgtimer.innerHTML = ""
 
     const typeProduct = () => {
         if (UserSelectedProduct.type === "headlight") {
@@ -808,20 +871,39 @@ const loadingInfoProduct = () => {
             return "چراغ خودرو"
         }
     }
+    if (UserSelectedProduct.discount_start_date && UserSelectedProduct.discount_end_date) {
+        imgtimer.insertAdjacentHTML("beforeend", 
+            `
+            <div class="bg-[#0060ff33] display-flex justify-between p-2 rounded-xl whitespace-nowrap w-full">
+                <h2 class="text-[18px] font-bold text-blue-600">فروش ویژه</h2>
+                <div>
+                    <p class="dark:text-white">
+                        <span class="timer-seconds bg-white font-bold dark:bg-black/40 rounded-md px-1.5"></span> :
+                        <span class="timer-minutes bg-white font-bold dark:bg-black/40 rounded-md px-1.5"></span> :
+                        <span class="timer-hours bg-white font-bold dark:bg-black/40 rounded-md px-1.5"></span> :
+                        <span class="timer-days bg-white font-bold dark:bg-black/40 rounded-md px-1.5"></span>
+                    </p>
+                </div>
+            </div>
+            `
+        )
+    }
+    productBestSellingTimer()
+    
 
     titleInfo.insertAdjacentHTML("beforeend",
         `
-        <ul class="display-flex justify-start text-[14px] mt-6 mb-2">
+        <ul class="display-flex justify-start text-[14px] mt-6 mb-2 dark:text-white">
             <li class="ml-2.5">
                 <a href="#" class="font-bold">ویماشاپ</a>
             </li>
-            <li class="display-flex gap-2.5 ml-2.5 text-gray-600">
+            <li class="display-flex gap-2.5 ml-2.5 text-gray-600 dark:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                 </svg>
                 <a href="#">${typeProduct()}</a>
             </li>
-            <li class="display-flex gap-2.5 text-gray-600">
+            <li class="display-flex gap-2.5 text-gray-600 dark:text-white max-[768px]:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                 </svg>
@@ -836,7 +918,89 @@ const loadingInfoProduct = () => {
     purchaseInfoHandler()
 
 }
+let timerInterval = null
+
+const isDiscounted = (item) => {
+    return item.discount &&
+        typeof item.price === "number" &&
+        item.previous_price
+}
+
+const productBestSellingTimer = () => {
+    if (timerInterval) {
+        clearInterval(timerInterval)
+    }
+
+    const updateTimer = () => {
+        const now = new Date()
+
+        if (
+            !UserSelectedProduct.discount_start_date ||
+            !UserSelectedProduct.discount_end_date ||
+            !isDiscounted(UserSelectedProduct)
+        ) {
+            imgtimer.classList.add("hidden")
+            return
+        }
+
+        const start = new Date(UserSelectedProduct.discount_start_date)
+        const end = new Date(UserSelectedProduct.discount_end_date)
+
+        if (now < start || now >= end) {
+            imgtimer.classList.add("hidden")
+            return
+        }
+
+        imgtimer.classList.remove("hidden")
+
+        const remainingTime = end - now
+
+        const days = Math.floor(
+            remainingTime / (1000 * 60 * 60 * 24)
+        )
+
+        const hours = Math.floor(
+            (remainingTime % (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        )
+
+        const minutes = Math.floor(
+            (remainingTime % (1000 * 60 * 60)) /
+            (1000 * 60)
+        )
+
+        const seconds = Math.floor(
+            (remainingTime % (1000 * 60)) /
+            1000
+        )
+
+        const timerDays = imgtimer.querySelector(".timer-days")
+        const timerHours = imgtimer.querySelector(".timer-hours")
+        const timerMinutes = imgtimer.querySelector(".timer-minutes")
+        const timerSeconds = imgtimer.querySelector(".timer-seconds")
+
+        if (
+            !timerDays ||
+            !timerHours ||
+            !timerMinutes ||
+            !timerSeconds
+        ) {
+            return
+        }
+
+        timerDays.textContent = toPersianNumber(String(days).padStart(2, "0"))
+        timerHours.textContent = toPersianNumber(String(hours).padStart(2, "0"))
+        timerMinutes.textContent = toPersianNumber(String(minutes).padStart(2, "0"))
+        timerSeconds.textContent = toPersianNumber(String(seconds).padStart(2, "0"))
+    }
+
+    updateTimer()
+    timerInterval = setInterval(updateTimer, 1000)
+}
+
+
 const imgContainer = $.querySelector(".img-container")
+
 const createProductImages = (images) => {
     imgContainer.innerHTML = ""
     const imageArray = Array.isArray(images) ? images : [images]
@@ -844,16 +1008,16 @@ const createProductImages = (images) => {
     const mainImage = imageArray[0]
 
     const slides = imageArray.map((image, index) => 
-        `<li class="${index === imageArray.length - 1 ? "relative" : ""} cursor-pointer">
-            <img src="${image}" alt="" class="w-[70px] opacity-70 border-2 border-gray-300 p-1 rounded-2xl">
+        `<li class="img-slide ${index === imageArray.length - 1 ? "relative" : ""} cursor-pointer">
+            <img src="${image}" alt="" class="w-[70px] opacity-70 border-2 border-gray-300 dark:border-[#414150] dark:bg-[#1c1c25] p-1 rounded-2xl">
         </li>`
     ).join("")
             
     imgContainer.insertAdjacentHTML("beforeend",
             `
             <div>
-                <div class="overflow-hidden my-5 rounded-2xl cursor-pointer">
-                    <img src="${mainImage}" alt="" class="img-zoom w-[400px] transition-transform duration-200 ease-in hover:scale-200">
+                <div class="img-slide overflow-hidden my-5 rounded-2xl cursor-pointer">
+                    <img src="${mainImage}" alt="" class="img-zoom w-full max-w-[400px] transition-transform duration-200 ease-in hover:scale-200">
                 </div>
         
                 <ul class="img-product-slides display-flex gap-2.5">
@@ -862,6 +1026,21 @@ const createProductImages = (images) => {
             </div>
         `
     )
+
+    // open slider img
+    const imgs = $.querySelectorAll(".img-slide")
+
+    imgs.forEach(img => {
+        img.addEventListener("click", () => {
+            productGallery.classList.toggle("hidden")
+            bodyTag.classList.toggle("overflow-x-hidden")
+            bodyTag.classList.toggle("overflow-hidden")
+            createProductImages(UserSelectedProduct.src)
+        })
+    })
+
+
+    // img zoom
     const imgZoom = imgContainer.querySelector(".img-zoom")
     imgZoom.addEventListener("mousemove", (e) => {
     const rect = imgZoom.getBoundingClientRect()
@@ -870,6 +1049,10 @@ const createProductImages = (images) => {
     const y = ((e.clientY - rect.top) / rect.height) * 100
 
     imgZoom.style.transformOrigin = `${x}% ${y}%`
+
+
+    
+    
 })
 }
 
@@ -877,9 +1060,9 @@ const mainInfoHandler = () => {
     topMainInfo.innerHTML = ""
     const features = UserSelectedProduct.key_features.map((item) => {
         return`
-        <li class="bg-[#f2f5fc] p-2 rounded-xl flex gap-2 flex-col">
-            <p class="text-gray-400 text-[12px]">${item.title}</p>
-            <p class="text-[13px] flex justify-self-start">${item.value}</p>
+        <li class="bg-[#f2f5fc] dark:bg-[#414150] p-2 rounded-xl flex gap-2 flex-col whitespace-nowrap">
+            <p class="text-[#bbb] text-[12px]">${item.title}</p>
+            <p class="text-[13px] flex justify-self-start dark:text-white">${item.value}</p>
         </li>
         `
     }).join("")
@@ -887,181 +1070,243 @@ const mainInfoHandler = () => {
     
     topMainInfo.insertAdjacentHTML("afterbegin",
         `
-        <a href="#" class="text-[14px] hover:text-cyan-500 transition-colors duration-300">سایپا</a>
+        <div class="display-flex justify-between">
+            <a href="#" class="text-[14px] hover:text-cyan-500 transition-colors duration-300 dark:text-white">سایپا</a>
+            <span class="text-gray-400 text-[13px] bg-gray-100 p-0.5 px-2 rounded-lg ${UserSelectedProduct.isFeatured ? "" : "hidden"}">محصول ویژه</span>
+        </div>
         <div>
-            <h3 class="font-bold">${UserSelectedProduct.title}</h3>
-            <div class="product-en flex items-center relative text-[12px] text-gray-400">
-                <span class="inline-block z-40 bg-white pl-2">${UserSelectedProduct.en_title}</span>
+            <h3 class="font-bold max-[768px]:text-[14px] dark:text-white">${UserSelectedProduct.title}</h3>
+            <div class="product-en flex items-center relative text-[12px] max-[768px]:text-[10px] text-gray-400 before:content-[''] before:absolute before:right-0 before:w-full before:h-px before:border-b before:border-dashed before:border-[#e5e9ec] dark:before:border-[#4a4a5c]">
+                <span class="inline-block z-40 bg-white dark:bg-[#353542] pl-2">${UserSelectedProduct.en_title}</span>
             </div>
         </div>
-        <div class="star text-[13px]">
+        <div class="star text-[13px] dark:text-white">
             <i class="ri-star-fill icon me-1 text-amber-400"></i>
             ${UserSelectedProduct.star}
         </div>
         <div class="${UserSelectedProduct.color.length === 0 ? "hidden" : ""}">
-            <h5 class="text-[13px] font-bold">رنگ:</h5>
+            <h5 class="text-[13px] font-bold dark:text-white">رنگ:</h5>
             <ul class="display-flex justify-start gap-2 mt-1.5">
 
-                ${UserSelectedProduct.color.map(color => `<li class="circle ${color} ${color === "bg-white" ? "border border-gray-300" : ""} rounded-full size-7"></li>`).join("")}
+                ${UserSelectedProduct.color.map((color, index) => `
+                    <li class="circle ${color} ${color === "bg-white" ? "border-[1px] border-gray-300" : ""} rounded-full size-7 cursor-pointer
+                        ${index === 0 ? "scale-110 outline-2 outline-cyan-500 outline-offset-2" : ""} relative">
+                        ${index === 0 ? `
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-5 absolute top-1 right-1 text-white">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>` : ""}
+                    </li>`).join("")}
             </ul>
         </div>
         <div class="${UserSelectedProduct.warranty.length === 0 ? "hidden" : ""}">
-            <h5 class="text-[13px] font-bold">گارانتی:</h5>
-            <div class="bg-[#eff3f8] display-flex gap-2 rounded-lg outline-2 outline-cyan-400 outline-offset-2 w-full max-w-[160px] p-1 mt-2">
+            <h5 class="text-[13px] font-bold dark:text-white">گارانتی:</h5>
+            <div class="bg-[#eff3f8] dark:bg-[#414150] dark:text-white display-flex gap-2 rounded-lg outline-2 outline-cyan-400 outline-offset-2 w-fit max-w-[200px] p-1 mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-4 text-cyan-500 ">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                 </svg>
                 <ul>
-                     ${UserSelectedProduct.warranty.length === 0 ? "" : UserSelectedProduct.warranty.map(warranty => `<li class="text-[14px]">${warranty}</li>`).join("")}
+                    ${UserSelectedProduct.warranty ? `<li class="text-[14px] whitespace-nowrap">${UserSelectedProduct.warranty}</li>` : ""}
                 </ul>
             </div>
         </div>
         <div>
-            <h5 class="text-[13px] font-bold">خصوصیات برجسته:</h5>
-            <ul class="display-flex justify-start gap-2.5 mt-3">
+            <h5 class="text-[13px] font-bold dark:text-white">خصوصیات برجسته:</h5>
+            <ul class="display-flex justify-start gap-2.5 mt-3 flex-wrap">
                 ${features}
             </ul>
         </div>
-        <div class="display-flex justify-start gap-2 border-2 border-[#f7f8fa] rounded-2xl p-2 w-fit max-w-full ${UserSelectedProduct.seller.length === 0 ? "hidden" : ""}">
+        <div class="display-flex justify-start text-start gap-2 border-2 border-[#f7f8fa] dark:border-0 dark:bg-[#414150] rounded-2xl p-2 w-fit max-w-full ${UserSelectedProduct.seller.length === 0 ? "hidden" : ""}">
             <div class="bg-[#eff2f5] display-flex gap-2 text-gray-400 p-0.5 px-1.5 rounded-lg">
                 <i class="ri-calendar-todo-line"></i>
-                <p class="text-gray-950 text-[13px] mt-1">1405/06/17</p>
+                <p class="text-gray-950 text-[12px] mt-1">1405/06/17</p>
             </div>
-            <p class="text-[14px]">موجودی و قیمت محصول بروز است</p>
+            <p class="text-[13px] dark:text-white">موجودی و قیمت محصول بروز است</p>
         </div>
-        <div class="display-flex justify-start items-start gap-2 border-2 border-[#f7f8fa] rounded-2xl p-2 w-full max-w-[630px]">
+        <div class="display-flex justify-start items-start gap-2 border-2 border-[#f7f8fa] dark:border-0 dark:bg-[#414150] rounded-2xl p-2 w-full max-w-[630px]">
             <i class="ri-information-fill text-gray-300 text-[20px]"></i>
-            <p class="text-[13px] text-start">درخواست مرجوع کردن کالا در گروه چراغ خودرو با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد  (در صورت پلمب بودن، کالا نباید باز شده باشد).</p>
+            <p class="text-[13px] text-start dark:text-[#bbb]">درخواست مرجوع کردن کالا در گروه چراغ خودرو با دلیل "انصراف از خرید" تنها در صورتی قابل تایید است که کالا در شرایط اولیه باشد  (در صورت پلمب بودن، کالا نباید باز شده باشد).</p>
         </div>
         `
     )
+    colorHandler()
 }
+
+const colorHandler = () => {
+    const productColors = [...$.querySelectorAll(".circle")]
+
+    const findColor = productColors.filter(item => {
+        return item.parentElement.tagName === "UL"
+    })
+
+    findColor.forEach(color => {
+        color.addEventListener("click", () => {
+
+            findColor.forEach(item => {
+                item.classList.remove(
+                    "scale-110",
+                    "outline-2",
+                    "outline-cyan-500",
+                    "outline-offset-2"
+                )
+
+                item.querySelector("svg")?.remove()
+            })
+
+            color.classList.add(
+                "scale-110",
+                "outline-2",
+                "outline-cyan-500",
+                "outline-offset-2"
+            )
+
+            color.insertAdjacentHTML("beforeend", `
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-5 absolute top-1 right-1 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+            `)
+        })
+    })
+}
+
 const purchaseInfoHandler = () => {
     productPurchaseInfo.innerHTML = ""
     productPurchaseInfo.insertAdjacentHTML("beforeend",
         `
-        <div class="bg-[#f2f5fc] p-4 rounded-2xl mb-5">
-                        <h3 class="font-bold text-[15px]">فروشنده</h3>
-                        <ul>
-                            <li class="display-flex justify-start gap-2 border-b-[1px] border-b-[#e5e9ec] border-dashed py-[12px]">
-                                <div class="${UserSelectedProduct.seller.length === 0 ? "hidden" : ""}">
-                                    <div class="bg-white w-full max-w-[35px] display-flex rounded-xl border-[1px] border-gray-200">
-                                        <img src="./imgs/file.1739249780.66876.webp" alt="" class="w-[40px] p-1">
+        <div class="bg-[#f2f5fc] dark:bg-[#414150] p-4 rounded-2xl mb-5">
+            <h3 class="font-bold text-[15px] max-[1175px]:text-[14px] dark:text-white">فروشنده</h3>
+            <ul>
+                <li class="display-flex justify-start gap-2 border-b-[1px] border-b-[#e5e9ec] dark:border-b-[#353542] border-dashed py-[12px]">
+                    <div class="${UserSelectedProduct.seller.length === 0 ? "hidden" : ""} display-flex gap-2">
+                        <div class="bg-white w-full max-w-[35px] display-flex rounded-xl border-[1px] border-gray-200">
+                            <img src="./imgs/file.1739249780.66876.webp" alt="" class="w-[40px] p-1 ${UserSelectedProduct.seller === "ویماشاپ" ? "" : "hidden"}">
+                            <img src="../imgs/img-articles/article-profile/store-logo.png" alt="" class="w-[40px] p-1 ${UserSelectedProduct.seller === "ویماشاپ" ? "hidden" : ""}">
 
-                                    </div>
-                                    <a href="#" class="text-[14px] hover:text-cyan-400 transition-colors duration-300">
-                                        ${UserSelectedProduct.seller}
-                                        <i class="ri-verified-badge-fill verify me-0 text-[12px] text-blue-500"></i>
-                                    </a>
-                                    <div class="">
-                                        <span class="divider"></span>
-                                        <span class="text-gray-400 text-[14px]">${UserSelectedProduct.seller === "ویماشاپ" ? "فروشگاه اصلی" : "فروشنده"}</span>
-                                    </div>
-                                </div>
-
-                                <div class="${UserSelectedProduct.seller.length === 0 ? "" : "hidden"} display-flex gap-1">
-                                    <i class="ri-error-warning-line"></i>
-                                    <span class="text-[13px] font-bold">فروشنده ای یافت نشد</span>
-                                </div>
-                            </li>
-
-                            <li class="${UserSelectedProduct.seller.length === 0 ? "hidden" : ""} text-[14px] display-flex justify-start gap-2 border-b-[1px] border-b-[#e5e9ec] border-dashed py-[12px]">
-                                <i class="ri-donut-chart-fill"></i>
-                                <span>عملکرد</span>
-                                <span class="divider"></span>
-                                <span class="text-green-700 font-bold">عالی</span>
-                            </li>
-
-                            <li class="${UserSelectedProduct.seller.length === 0 ? "" : "border-b-[1px] border-b-[#e5e9ec] border-dashed"} text-[14px] display-flex justify-start gap-2 py-[12px]">
-                                <i class="ri-qr-code-line"></i>
-                                <span>شناسه محصول</span>
-                                <span class="divider"></span>
-                                <span class="text-gray-400 relative top-0 group cursor-pointer">p-4895867
-                                    <div class="tooltip bg-gray-300 text-[13px] text-gray-950 p-2 rounded-lg absolute bottom-7 -right-6 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">کپی شناسه محصول</div>
-                                </li>
-                            </span>
-                            <li class="${UserSelectedProduct.seller.length === 0 ? "hidden" : ""} text-[14px] display-flex justify-start gap-2 border-b-[1px] border-b-[#e5e9ec] border-dashed py-[12px]">
-                                <i class="ri-truck-line"></i>
-                                <span>ارسال فروشگاه اصلی</span>
-                                <span class="divider"></span>
-                                <span class="text-gray-400 text-[13px]">آماده ارسال</span>
-                            </li>
-                            <li class="${UserSelectedProduct.seller.length === 0 ? "hidden" : ""} flex gap-2 text-[#13deb9] text-[12px] pt-[12px]">
-                                <span class="bg-[#13deb91a] p-1 rounded-lg group ">کالای اصل
-                                    
-                                    <div class="tooltip bg-gray-300 text-[13px] text-gray-950 p-2 rounded-lg text-center fixed bottom-[22.5rem] left-[12rem] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 w-full max-w-[200px] pointer-events-none">کالای اصل به کالایی گفته میشود که توسط برند ثبت شده ای تولید شده باشد</div>
-                                </span>
-                                <span class="divider"></span>
-                                <span class="bg-[#13deb91a] p-1 rounded-lg">کالای نو</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="border-t-[1px] pt-3 border-gray-300 border-dashed">
-
-                        <div class="relative h-[20px] overflow-hidden ${UserSelectedProduct.seller.length === 0 ? "hidden" : ""}">
-                            <span class="text-[13px] viewers-text absolute inset-0">
-                                👁️ + <b>200</b> نفر این کالا را مشاهده کرده‌اند
-                            </span>
-
-                            <span class="text-[13px] viewers-text absolute inset-0">
-                                👁️ + <b>200</b> نفر این کالا را مشاهده کرده‌اند
-                            </span>
                         </div>
+                        <a href="#" class="text-[14px] max-[1175px]:text-[13px] dark:text-white hover:text-cyan-400 transition-colors duration-300">
+                            ${UserSelectedProduct.seller}
+                            <i class="ri-verified-badge-fill verify me-0 text-[12px] text-blue-500"></i>
+                        </a>
+                        <div class="">
+                            <span class="divider"></span>
+                            <span class="text-gray-400 text-[14px] max-[1175px]:text-[12px]">${UserSelectedProduct.seller === "ویماشاپ" ? "فروشگاه اصلی" : "فروشنده"}</span>
+                        </div>
+                    </div>
 
-                        <div class="display-flex justify-between mt-2 ${UserSelectedProduct.seller.length === 0 ? "hidden" : ""}">
-                            <div class="bg-[#f2f5fa] p-1.5 rounded-lg display-flex gap-2">
-                                <span>
-                                    <i class="ri-add-line text-[#aeb4be]"></i>
-                                </span>
-                                <input class="w-full max-w-[50px] bg-white p-0.5 rounded-md outline-0 flex text-center" value="1" type="text" minlength="1" maxlength="4" autocomplete="off">
-                                <span>
-                                    <i class="ri-subtract-line text-[#aeb4be]"></i>
-                                </span>
-                            </div>
+                    <div class="${UserSelectedProduct.seller.length === 0 ? "" : "hidden"} display-flex gap-1">
+                        <i class="ri-error-warning-line"></i>
+                        <span class="text-[13px] font-bold">فروشنده ای یافت نشد</span>
+                    </div>
+                </li>
+
+                <li class="${UserSelectedProduct.seller.length === 0 ? "hidden" : ""} text-[14px] max-[1175px]:text-[13px] display-flex justify-start gap-2 border-b-[1px] border-b-[#e5e9ec] dark:border-b-[#353542] border-dashed py-[12px]">
+                    <i class="ri-donut-chart-fill dark:text-white"></i>
+                    <span class="dark:text-white">عملکرد</span>
+                    <span class="divider"></span>
+                    <span class="text-green-700 font-bold">${UserSelectedProduct.performance}</span>
+                </li>
+
+                <li class="${UserSelectedProduct.seller.length === 0 ? "" : "border-b-[1px] border-b-[#e5e9ec] dark:border-b-[#353542] border-dashed"} text-[14px] max-[1175px]:text-[13px] display-flex justify-start gap-2 py-[12px]">
+                    <i class="ri-qr-code-line dark:text-white"></i>
+                        <span class="dark:text-white">شناسه محصول</span>
+                        <span class="divider"></span>
+                        <span class="product_ID text-gray-400 relative top-0 group cursor-pointer select-none">${toPersianNumber(UserSelectedProduct.product_ID)}
+                        <div class="tooltip bg-gray-300 text-[13px] text-gray-950 p-2 rounded-lg absolute bottom-7 -right-6 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">کپی شناسه محصول</div>
+                    </li>
+                </span>
+                <li class="${UserSelectedProduct.seller.length === 0 ? "hidden" : ""} text-[14px] max-[1175px]:text-[13px] display-flex justify-start gap-2 border-b-[1px] border-b-[#e5e9ec] dark:border-b-[#353542] border-dashed py-[12px]">
+                    <i class="ri-truck-line dark:text-white"></i>
+                    <span class="flex text-start dark:text-white">ارسال فروشگاه اصلی</span>
+                    <span class="divider"></span>
+                    <span class="text-gray-400 text-[13px]">${UserSelectedProduct.send}</span>
+                </li>
+                <li class="${UserSelectedProduct.seller.length === 0 ? "hidden" : ""} flex gap-2 text-[#13deb9] text-[12px] max-[1175px]:text-[11px] pt-[12px]">
+                    <span class="bg-[#13deb91a] p-1 rounded-lg group relative">کالای اصل
+                        
+                        <div class="tooltip bg-gray-300 text-[13px] text-gray-950 p-2 rounded-lg text-center absolute bottom-[2.20rem] -right-[70px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 inline-block w-[200px] pointer-events-none">کالای اصل به کالایی گفته میشود که توسط برند ثبت شده ای تولید شده باشد</div>
+                    </span>
+                    <span class="divider"></span>
+                    <span class="bg-[#13deb91a] p-1 rounded-lg">کالای نو</span>
+                </li>
+            </ul>
+        </div>
+        <div class="border-t-[1px] pt-3 border-gray-300 dark:border-[#4a4a5c] border-dashed">
+
+            <div class="relative h-[20px] dark:text-white overflow-hidden ${UserSelectedProduct.seller.length === 0 ? "hidden" : ""}">
+                <span class="text-[13px] viewers-text absolute inset-0">
+                    👁️ + <b>${toPersianNumber(UserSelectedProduct.viewed)}</b> نفر این کالا را مشاهده کرده‌اند
+                </span>
+
+                <span class="text-[13px] viewers-text absolute inset-0">
+                    👁️ + <b>${toPersianNumber(UserSelectedProduct.viewed)}</b> نفر این کالا را مشاهده کرده‌اند
+                </span>
+            </div>
+
+            <div class="display-flex justify-between mt-2 ${UserSelectedProduct.seller.length === 0 ? "hidden" : ""}">
+                <div class="bg-[#f2f5fa] dark:bg-[#414150] dark:border-[1px] dark:border-[#4a4a5c] p-1.5 rounded-lg display-flex gap-2">
+                    <span class="add-product-number cursor-pointer">
+                        <i class="ri-add-line  text-[#aeb4be]"></i>
+                    </span>
+                    <input class="quantity-input w-full max-w-[50px] bg-white dark:bg-[#353542] dark:text-white p-0.5 rounded-md outline-0 flex text-center" value="۱" type="text" minlength="1" maxlength="4" autocomplete="off"">
+                    <span class="subtract-product-number cursor-pointer">
+                        <i class="ri-subtract-line text-[#aeb4be]"></i>
+                    </span>
+                </div>
                             
-                            <div>
-                                <div class="flex justify-end gap-1">
-                                    <span class="text-[14px] font-bold text-amber-500 line-through">${UserSelectedProduct.previous_price}</span>
-                                    <div class="discount-container p-1.5 bg-amber-500 shadow-lg shadow-amber-400/30 text-[14px] rounded-t-xl rounded-br-xl rounded-bl-sm h-[20px] display-flex ">
-                                        <p class="flex justify-between display-flex gap-0.5">
-                                            <i class="ri-percent-fill text-[11px] font-bold"></i>
-                                            <span class="text-white text-[13px] pt-1">
-                                                ${UserSelectedProduct.discount}
-                                            </span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="flex justify-end gap-1">
-                                    <span class="text-[24px] font-bold">${typeof UserSelectedProduct.price === "number" ? UserSelectedProduct.previous_price : ""}</span>
-                                    <img src="../images/toman-D-K3lGL1.svg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" class="bg-blue-600 text-white w-full py-2 rounded-2xl font-bold mt-2 shadow-lg shadow-blue-200 hover:bg-blue-500 hover:shadow-none transition-colors duration-300 cursor-pointer">افزودن به سبد خرید</button>
-                        <div class="bg-[#9ce76a1a] mt-5 display-flex justify-start p-2 rounded-3xl gap-2">
-                            <img src="./imgs/torobpay.png" alt="" class="bg-[#9ce76a] w-[50px] rounded-2xl p-0.5">
-                            <div class="flex flex-col text-start">
-                                <span class="text-[13px] font-bold">پرداخت اقساطی با ترب پی</span>
-                                <span class="text-[11px]">۴ قسط بدون کارمزد، ماهانه 100,000 تومان</span>
-                            </div>
-                        </div>
-                        <div class="display-flex justify-between mt-3">
-                            <div>
-                                <i class="ri-copper-coin-fill text-warning me-1 text-amber-400"></i>
-                                <span class="text-[13px] text-gray-500">
-                                    امتیاز باشگاه مشتریان
+                <div>
+                    <div class="flex justify-end gap-1 ${UserSelectedProduct.previous_price.length === 0 ? "hidden" : ""}">
+                        <span class="text-[14px] font-bold text-amber-500 line-through">${toPersianNumber(UserSelectedProduct.previous_price.toLocaleString())}</span>
+                        <div class="discount-container p-1.5 bg-amber-500 shadow-lg shadow-amber-400/30 text-[14px] rounded-t-xl rounded-br-xl rounded-bl-sm h-[20px] display-flex ">
+                            <p class="flex justify-between display-flex gap-0.5">
+                                <i class="ri-percent-fill text-[11px] font-bold"></i>
+                                <span class="text-white text-[13px] pt-1">
+                                    ${toPersianNumber(UserSelectedProduct.discount)}
                                 </span>
-                            </div>
-                            <div class="text-[13px]">
-                                <span class="text-[14px] font-bold">۴۰</span>
-                                امتیاز
-                            </div>
+                            </p>
                         </div>
                     </div>
+                    <div class="flex justify-end gap-1 mt-2">
+                        <span class="text-[24px] max-[1175px]:text-[15px] font-bold dark:text-white">${typeof UserSelectedProduct.price === "number" ? toPersianNumber(UserSelectedProduct.price.toLocaleString()) : ""}</span>
+                        <img src="../images/toman-D-K3lGL1.svg" alt="" class="max-[1175px]:w-[20px]">
+                    </div>
+                </div>
+            </div>
+                        
+            <button type="submit" class="bg-blue-600 text-white w-full py-2 rounded-2xl font-bold mt-2 shadow-lg shadow-blue-200 hover:bg-blue-500 dark:shadow-blue-900 dark:hover:bg-blue-700 hover:shadow-none transition-colors duration-300 cursor-pointer max-[1175px]:text-[14px]">${UserSelectedProduct.seller.length === 0 ? UserSelectedProduct.price : "افزودن به سبد خرید"}</button>
+            <div class="bg-[#9ce76a1a] dark:bg-[#414150] mt-5 display-flex justify-start p-2 rounded-3xl gap-2 ${UserSelectedProduct.seller.length === 0 ? "hidden" : ""}">
+                <img src="./imgs/torobpay.png" alt="" class="bg-[#9ce76a] w-[50px] rounded-2xl p-0.5">
+                <div class="flex flex-col text-start">
+                    <span class="text-[13px] font-bold whitespace-nowrap dark:text-white">پرداخت اقساطی با ترب پی</span>
+                    <span class="text-[11px] dark:text-gray-300">۴ قسط بدون کارمزد، ماهانه 100,000 تومان</span>
+                </div>
+            </div>
+            <div class="display-flex justify-between mt-3 ${UserSelectedProduct.seller.length === 0 ? "hidden" : ""}">
+                <div>
+                    <i class="ri-copper-coin-fill text-warning me-1 text-amber-400"></i>
+                    <span class="text-[13px] text-gray-500 dark:text-white">
+                        امتیاز باشگاه مشتریان
+                    </span>
+                </div>
+                <div class="text-[13px] dark:text-white">
+                    <span class="text-[14px] font-bold">${toPersianNumber(UserSelectedProduct.customer_rating)}</span>
+                    امتیاز
+                </div>
+            </div>
+        </div>
         `
     )
+    
+    const quantityInput = $.querySelector(".quantity-input")
+
+    quantityInput.addEventListener("input", (e) => {
+        e.target.value = e.target.value.replace(/[0-9]/g, number => {
+            return "۰۱۲۳۴۵۶۷۸۹"[number]
+        })
+    })
+
     switchViewers()
+    copyProductID()
 }
+
 
 const switchViewers = () => {
     const viewers = document.querySelectorAll(".viewers-text");
@@ -1092,6 +1337,748 @@ const switchViewers = () => {
 }
 
 
+// copy product id \ toast
+const copyProductID = (e) => {
+    const productIDElem = $.querySelector(".product_ID")
+
+    productIDElem.addEventListener("click", async (e) => {
+        try {
+            const id = e.target.innerHTML.replace(/[۰-۹]/g, n => "۰۱۲۳۴۵۶۷۸۹".indexOf(n))
+            await navigator.clipboard.writeText(id)
+            showGoodToastBox()
+        } catch (error) {
+            // codes
+            showbadToastBox()
+        }        
+    })
+}
+
+const showGoodToastBox = () => {
+    toastTitle.innerHTML = ""
+    toastTitle.innerHTML = "شناسه محصول کپی شد"
+
+    toastIcon.classList.remove("text-red-200")
+    toastIcon.classList.add("text-[#36dcba]")
+
+    // ظاهر شدن از پایین به بالا
+    productIdToast.classList.remove(
+        "opacity-0",
+        "translate-y-10",
+        "pointer-events-none",
+        "bg-red-400"
+    )
+    
+    productIdToast.classList.add(
+        "opacity-100",
+        "translate-y-0",
+        "scale-100",
+        "bg-[#1abc9c]"
+    )
+    
+    setTimeout(() => {
+        // بزرگ شدن + محو شدن
+        productIdToast.classList.remove(
+            "opacity-100",
+            "translate-y-0",
+            "scale-100"
+        )
+    
+        productIdToast.classList.add(
+            "opacity-0",
+            "scale-110",
+            "pointer-events-none"
+        )
+    }, 3000)
+
+}
+const showbadToastBox = () => {
+    toastTitle.innerHTML = ""
+    toastTitle.innerHTML = "شناسه محصول کپی نشد"
+
+    toastIcon.classList.remove("text-[#36dcba]")
+    toastIcon.classList.add("text-red-200")
+
+    // ظاهر شدن از پایین به بالا
+    productIdToast.classList.remove(
+        "opacity-0",
+        "translate-y-10",
+        "pointer-events-none",
+        "bg-[#1abc9c]"
+    )
+
+    productIdToast.classList.add(
+        "opacity-100",
+        "translate-y-0",
+        "scale-100",
+        "bg-red-400"
+    )
+
+    setTimeout(() => {
+        // بزرگ شدن + محو شدن
+        productIdToast.classList.remove(
+            "opacity-100",
+            "translate-y-0",
+            "scale-100"
+        )
+
+        productIdToast.classList.add(
+            "opacity-0",
+            "scale-110",
+            "pointer-events-none"
+        )
+    }, 3000)
+}
+toastIcon.addEventListener("click", () => {
+    productIdToast.classList.remove(
+        "opacity-100",
+        "translate-y-0",
+        "scale-100"
+    )
+
+    productIdToast.classList.add(
+        "opacity-0",
+        "scale-110",
+        "pointer-events-none"
+    )
+})
+
+
+
+//! start
+// const products = [
+//   {
+//     id: 1,
+//     title:
+//       "لپ تاپ 15.6 اینچی لنوو مدل IdeaPad Slim 3 15IRH8-i7 13620H 16GB 512SSD",
+//     price: 32_000_000,
+//     img: "./imgs/image01.png",
+//     description:
+//       "این لپ‌تاپ لنوو با پردازنده‌ی قدرتمند i7 نسل ۱۳ و ۱۶ گیگابایت رم، مناسب برای کارهای روزمره و سنگین. حافظه ۵۱۲ گیگابایتی SSD عملکرد سریعی را فراهم می‌کند.",
+//   },
+//   {
+//     id: 2,
+//     title:
+//       "لپ تاپ 14 اینچی ایسوس مدل VivoBook R465FA - Core i5 1135G7 8GB 256SSD",
+//     price: 27_000_000,
+//     img: "./imgs/image02.png",
+//     description:
+//       "لپ‌تاپ اقتصادی ایسوس با پردازنده i5 نسل ۱۱، دارای ۸ گیگابایت رم و ۲۵۶ گیگابایت حافظه SSD، مناسب برای استفاده روزمره و سبک.",
+//   },
+//   {
+//     id: 3,
+//     title: "لپ تاپ 13.3 اینچی اپل مدل MacBook Air 2020 M1 8GB 256SSD",
+//     price: 55_000_000,
+//     img: "./imgs/image03.png",
+//     description:
+//       "مک‌بوک ایر با پردازنده M1 و ۸ گیگابایت رم، ایده‌آل برای کاربران حرفه‌ای اپل که به دنبال سرعت و عملکرد بالا در یک بدنه سبک هستند.",
+//   },
+//   {
+//     id: 4,
+//     title: "لپ تاپ 16 اینچی اچ‌پی مدل Envy x360 - Ryzen 7 5700U 16GB 512SSD",
+//     price: 47_000_000,
+//     img: "./imgs/image04.png",
+//     description:
+//       "لپ‌تاپ تبدیل‌پذیر اچ‌پی با پردازنده Ryzen 7 و ۱۶ گیگابایت رم، مناسب برای کارهای گرافیکی و مالتی‌مدیا. صفحه‌نمایش ۱۶ اینچی و کیفیت ساخت عالی.",
+//   },
+//   {
+//     id: 5,
+//     title: "لپ تاپ 15.6 اینچی دل مدل G5 15 SE - Ryzen 5 4600H 8GB 512SSD",
+//     price: 36_000_000,
+//     img: "./imgs/image05.png",
+//     description:
+//       "لپ‌تاپ گیمینگ دل با پردازنده Ryzen 5 و ۸ گیگابایت رم، مناسب برای گیمرها و کاربران حرفه‌ای که به دنبال عملکرد قوی هستند.",
+//   },
+//   {
+//     id: 6,
+//     title:
+//       "لپ تاپ 15.6 اینچی ایسر مدل Nitro 5 AN515-45 - Ryzen 7 5800H 16GB 1TB SSD",
+//     price: 54_000_000,
+//     img: "./imgs/image06.png",
+//     description:
+//       "یک لپ‌تاپ گیمینگ قدرتمند از ایسر با پردازنده Ryzen 7 و ۱۶ گیگابایت رم. دارای ۱ ترابایت حافظه SSD برای بازی‌های حجیم و اجرای سریع.",
+//   },
+//   {
+//     id: 7,
+//     title:
+//       "لپ تاپ 14 اینچی لنوو مدل ThinkPad X1 Carbon Gen 9 - Core i7 1165G7 16GB 1TB SSD",
+//     price: 62_000_000,
+//     img: "./imgs/image07.png",
+//     description:
+//       "لپ‌تاپ حرفه‌ای و باکیفیت از سری ThinkPad با پردازنده i7 و ۱۶ گیگابایت رم. مناسب برای کاربران تجاری و حرفه‌ای که به دنبال کیفیت ساخت بالا و امنیت هستند.",
+//   },
+//   {
+//     id: 8,
+//     title: "لپ تاپ 13.3 اینچی دل مدل XPS 13 - Core i7 1185G7 16GB 512SSD",
+//     price: 71_000_000,
+//     img: "./imgs/image08.png",
+//     description:
+//       "لپ‌تاپ دل XPS با طراحی زیبا و پردازنده i7، ۱۶ گیگابایت رم و صفحه‌نمایش باکیفیت، انتخابی عالی برای کاربران حرفه‌ای و علاقه‌مندان به تکنولوژی.",
+//   },
+//   {
+//     id: 9,
+//     title: "لپ تاپ 14 اینچی ایسوس مدل ZenBook 14 - Ryzen 5 5500U 8GB 512SSD",
+//     price: 38_000_000,
+//     img: "./imgs/image09.png",
+//     description:
+//       "لپ‌تاپ سبک و زیبا از سری ZenBook با پردازنده Ryzen 5 و ۸ گیگابایت رم. مناسب برای کارهای روزمره و سبک با باتری قوی.",
+//   },
+//   {
+//     id: 10,
+//     title:
+//       "لپ تاپ 15.6 اینچی ام‌اس‌آی مدل GF63 Thin 11SC - Core i5 11400H 16GB 512SSD",
+//     price: 46_000_000,
+//     img: "./imgs/image10.png",
+//     description:
+//       "لپ‌تاپ قدرتمند MSI با پردازنده i5 نسل ۱۱، ۱۶ گیگابایت رم و کارت گرافیک مناسب. گزینه‌ای عالی برای گیمرها و کاربران حرفه‌ای.",
+//   },
+//   {
+//     id: 11,
+//     title: "لپ تاپ 15.6 اینچی اچ‌پی مدل Pavilion 15 - Core i5 1235U 8GB 512SSD",
+//     price: 34_000_000,
+//     img: "./imgs/image11.png",
+//     description:
+//       "لپ‌تاپ اقتصادی اچ‌پی با پردازنده i5 نسل ۱۲، ۸ گیگابایت رم و ۵۱۲ گیگابایت حافظه SSD، مناسب برای استفاده‌های روزمره و تجاری.",
+//   },
+//   {
+//     id: 12,
+//     title: "لپ تاپ 16 اینچی اپل مدل MacBook Pro 2021 M1 Pro 16GB 1TB SSD",
+//     price: 85_000_000,
+//     img: "./imgs/image12.png",
+//     description:
+//       "مک‌بوک پرو با پردازنده M1 Pro و ۱۶ گیگابایت رم، مناسب برای کاربران حرفه‌ای اپل که به دنبال عملکرد بی‌نظیر در کارهای سنگین و حرفه‌ای هستند.",
+//   },
+// ];
+
+// const productContainer = document.querySelector(".wrapper")
+// const basketContainer = document.querySelector(".basket-main")
+// const basketIcone = document.querySelector(".basket_icone")
+// const basketScreen = document.querySelector(".basket-screen")
+// const closeBasketX = document.querySelector(".close-basket")
+// const count = document.querySelector(".count")
+// const clearAllBtn = document.querySelector(".clear-button")
+// const productAllCount = document.querySelector(".products-count")
+// const totalPrice = document.querySelector(".total-price")
+
+
+
+// let basketsUser = []
+
+// const showProducts = () => {
+//   products.forEach((product) => {
+//       productContainer.insertAdjacentHTML("beforeend",
+//           `<article>
+//             <header class="product-header">
+//               <img
+//                 src="${product.img}"
+//                 class="product-img"
+//                 alt=""
+//               />
+//             </header>
+//             <main class="product-body">
+//               <h3 class="product-title">
+//                 ${product.title}
+//               </h3>
+//               <p class="desc">
+//                 ${product.description}
+//               </p>
+//             </main>
+//             <footer class="product-footer">
+//               <p class="price">${product.price.toLocaleString()} ت</p>
+//               <button class="add-to-cart" onclick="addProductToBasket(${
+//                 product.id
+//               })">
+//                 <i class="bx bx-cart-alt"></i>
+//                 افزودن به سبد
+//               </button>
+//             </footer>
+//           </article>`
+//       )
+//   })
+
+// }
+
+// const addProductToBasket = (productId) => {
+//   const userProduct = products.find((product) => product.id == productId)
+
+//   const isProductInBasket = basketsUser.some((item) => item.id == userProduct.id)
+  
+//   if (isProductInBasket) {
+//     plusNumberProduct(productId)
+//   } else {
+//     const basketNewProduct = {
+//       ...userProduct,
+//       count: 1
+//     }
+//     basketsUser.push(basketNewProduct)
+
+//   }
+  
+  
+  
+//   goToDomBasket(basketsUser)
+//   setToLocalStorage(basketsUser)
+// }
+
+// const goToDomBasket = (basketsUser) => {
+//   basketContainer.innerHTML = ""
+//   if (basketsUser.length) {
+//     basketsUser.forEach((item) => {
+//       basketContainer.insertAdjacentHTML("beforeend",
+//         `<article class="basket-item">
+//             <div class="flex-center">
+//               <img src="${item.img}" alt="" />
+//               <div class="basket-item_details">
+//                 <p class="basket-item_title">
+//                  ${item.title}
+//                   512SSD
+//                 </p>
+//                 <p class="basket-item_price">${item.price.toLocaleString()}</p>
+//               </div>
+//               <div class="before">
+//                 <div class="buttons">
+//                   <button class="increase" onClick="plusNumberProduct(${item.id})">
+//                     <i class="bx bx-plus"></i>
+//                   </button>
+//                   <button class="remove-button" onClick="removeProduct(${item.id})">
+//                     <!-- Boxicons trash icon -->
+//                     <i class="bx bx-trash"></i>
+//                   </button>
+//                   <button class="decrease" onClick="minusNumberProduct(${item.id})">
+//                     <!-- Decrease icon -->
+//                     <i class="bx bx-minus"> </i>
+//                   </button>
+//                 </div>
+//                 <div class="product-count-card">
+//                   <span>تعداد:</span>
+//                   <span class="product-count">${item.count}</span>
+//                 </div>
+//               </div>
+//             </div>
+//           </article>`
+//       )
+//     })
+//   } else {
+//     basketContainer.innerHTML = `<p class="empty-basket">
+//             سبد خرید شما خالی می باشد :(
+//        </p>`
+//   }
+//   numberOfBasket(basketsUser)
+//   priceCalculation(basketsUser)
+// }
+
+
+
+// const setToLocalStorage = (basketsUser) => localStorage.setItem("basket", JSON.stringify(basketsUser))
+// const getDataFromLocalStorage = () => {
+//   const localStorageUser = JSON.parse(localStorage.getItem("basket"))
+//   if (localStorageUser) {
+//     basketsUser = localStorageUser
+//   }
+
+//   goToDomBasket(basketsUser)
+//   showProducts()
+// }
+
+
+
+// const numberOfBasket = (localStorageUser) => {
+//   if (localStorageUser) {
+//     const numberOfBaskets =  localStorageUser.length;
+//     count.innerHTML = numberOfBaskets
+//     productAllCount.innerHTML = `(${numberOfBaskets})`
+//   }
+// }
+
+
+
+// const removeProduct = (basketUserId) => {
+//   const indexDelProduct = basketsUser.findIndex((item) => item.id == +basketUserId)
+//   basketsUser.splice(indexDelProduct, 1)
+  
+//   setToLocalStorage(basketsUser)
+//   goToDomBasket(basketsUser)
+
+// }
+// const clearBasket = () => {
+//   basketsUser.splice(0 , basketsUser.length)
+
+//   setToLocalStorage(basketsUser)
+//   goToDomBasket(basketsUser)
+// }
+
+
+// const plusNumberProduct = (productId) => {
+//   const findToPlus = basketsUser.find((item) => item.id == productId)
+//   findToPlus.count += 1
+
+//   setToLocalStorage(basketsUser)
+//   goToDomBasket(basketsUser)
+// }
+
+// const minusNumberProduct = (productId) => {
+  
+//   const findToMinus = basketsUser.find((item) => item.id == productId)
+//   findToMinus.count -= 1
+//   console.log(findToMinus);
+  
+//   if (findToMinus.count == 0) {
+//     removeProduct(productId)
+//   }
+  
+//   setToLocalStorage(basketsUser)
+//   goToDomBasket(basketsUser)
+  
+// }
+
+// const priceCalculation = () => {
+//   let calculation = 0
+//   basketsUser.forEach((item) => calculation += item.price * item.count)
+//   totalPrice.innerHTML = calculation.toLocaleString()
+//   calculation = 0
+  
+// }
+
+// const showBasket = () => basketScreen.classList.remove("hidden")
+// const hideBasket = () => basketScreen.classList.add("hidden")
+
+
+// basketIcone.addEventListener("click", showBasket)
+// closeBasketX.addEventListener("click", hideBasket)
+// clearAllBtn.addEventListener("click", clearBasket)
+
+
+// opened imges
+//! end
+
+
+const productSlider = document.querySelector(".product-slider")
+const productTrack = document.querySelector(".product-track")
+const productPrev = document.querySelector(".product-prev")
+const productNext = document.querySelector(".product-next")
+const currentImage = document.querySelector(".current-image")
+const totalImages = document.querySelector(".total-images")
+const fullscreenBtn = $.querySelector(".fullscreen-btn")
+const closeFullscreen = $.querySelector(".close-fullscreen")
+const closeSlidesBtn = $.querySelector(".close-slides-btn")
+const productThumbnailsContainer = document.querySelector(".product-thumbnails")
+
+
+let productThumbnails = []
+
+// close slider img
+closeSlidesBtn.addEventListener("click", () => {
+    productGallery.classList.toggle("hidden")
+    bodyTag.classList.toggle("overflow-x-hidden")
+    bodyTag.classList.toggle("overflow-hidden")
+    document.exitFullscreen()
+})
+
+
+
+// Full-screen and inverted
+fullscreenBtn.addEventListener("click", () => {
+    productGallery.requestFullscreen()
+})
+
+closeFullscreen.addEventListener("click", () => {
+    document.exitFullscreen()
+})
+
+document.addEventListener("fullscreenchange", () => {
+    if (document.fullscreenElement) {
+        closeFullscreen.classList.remove("hidden")
+        fullscreenBtn.classList.add("hidden")
+    } else {
+        closeFullscreen.classList.add("hidden")
+        fullscreenBtn.classList.remove("hidden")
+    }
+})
+
+
+
+
+const createProductImage = (images) => {
+    productTrack.innerHTML = ""
+    imgContainer.innerHTML = ""
+
+    const imageArray = Array.isArray(images) ? images : [images]
+
+    productThumbnailsContainer.innerHTML = imageArray.map((image, index) => `
+    <li class="cursor-pointer shrink-0">
+        <img
+            src="${image}"
+            alt=""
+            class="w-[80px] bg-white rounded-xl ${index !== 0 ? "opacity-50" : ""}"
+        >
+    </li>
+`).join("")
+const galleryThumbnails = productThumbnailsContainer.querySelectorAll("img")
+
+galleryThumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener("click", () => {
+        if (hasDragged) return
+
+        galleryThumbnails.forEach((item) => {
+            item.classList.add("opacity-50")
+        })
+
+        thumbnail.classList.remove("opacity-50")
+
+        fadeToImage(index)
+    })
+})
+
+    const slides = imageArray.map((image) => `
+        <li class="img-slide cursor-pointer">
+            <img src="${image}" alt="" class="w-[70px] opacity-70 border-2 border-gray-300 p-1 rounded-2xl">
+        </li>
+    `).join("")
+
+    productTrack.innerHTML = imageArray.map(image => `
+        <div class="min-w-full flex justify-center items-center">
+            <img src="${image}" alt="" class="w-full max-w-[500px] h-auto bg-white pointer-events-none">
+        </div>
+    `).join("")
+
+    imgContainer.insertAdjacentHTML("beforeend", `
+        <ul class="img-product-slides display-flex gap-2.5">
+            ${slides}
+        </ul>
+    `)
+
+    productThumbnails = imgContainer.querySelectorAll(".img-slide img")
+
+    productThumbnails.forEach((thumbnail, index) => {
+        thumbnail.addEventListener("click", () => {
+            if (hasDragged) return
+
+            fadeToImage(index)
+        })
+    })
+
+    currentProductIndex = 0
+
+    updateThumbnails()
+    updateButtons()
+    updateCounter()
+}
+
+
+// Image movement
+let currentProductIndex = 0
+let isDragging = false
+let startX = 0
+let currentX = 0
+let hasDragged = false
+
+const updateCounter = () => {
+    if (currentImage) currentImage.textContent = currentProductIndex + 1
+    if (totalImages) totalImages.textContent = productThumbnails.length
+}
+
+const updateButtons = () => {
+    const isFirst = currentProductIndex === 0
+    const isLast = currentProductIndex === productThumbnails.length - 1
+
+    productNext.disabled = isFirst
+    productPrev.disabled = isLast
+
+    productNext.classList.toggle("text-gray-400", isFirst)
+    productNext.classList.toggle("text-white", !isFirst)
+
+    productPrev.classList.toggle("text-gray-400", isLast)
+    productPrev.classList.toggle("text-white", !isLast)
+
+    productNext.classList.toggle("cursor-not-allowed", isFirst)
+    productNext.classList.toggle("cursor-pointer", !isFirst)
+
+    productPrev.classList.toggle("cursor-not-allowed", isLast)
+    productPrev.classList.toggle("cursor-pointer", !isLast)
+}
+
+const updateThumbnails = () => {
+    productThumbnails.forEach((thumbnail, index) => {
+        thumbnail.classList.toggle(
+            "opacity-50",
+            index !== currentProductIndex
+        )
+    })
+
+    const galleryThumbnails = productThumbnailsContainer.querySelectorAll("img")
+
+    galleryThumbnails.forEach((thumbnail, index) => {
+        thumbnail.classList.toggle(
+            "opacity-50",
+            index !== currentProductIndex
+        )
+    })
+}
+
+const moveSlider = (index) => {
+    if (index < 0 || index >= productThumbnails.length) return
+
+    currentProductIndex = index
+
+    productTrack.style.transition = "transform 300ms ease"
+    productTrack.style.transform = `translateX(${index * 100}%)`
+
+    updateThumbnails()
+    updateButtons()
+    updateCounter()
+}
+
+const fadeToImage = (index) => {
+    if (index < 0 || index >= productThumbnails.length) return
+    if (index === currentProductIndex) return
+
+    const targetImage =
+        productTrack.children[index]?.querySelector("img")
+
+    if (!targetImage) return
+
+    const fadeImage = document.createElement("img")
+
+    fadeImage.src = targetImage.src
+    fadeImage.alt = targetImage.alt || ""
+
+    fadeImage.className =
+        "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] bg-white pointer-events-none z-10 opacity-0"
+
+    productSlider.classList.add("relative")
+    productSlider.appendChild(fadeImage)
+
+    requestAnimationFrame(() => {
+        fadeImage.style.transition = "opacity 150ms ease"
+        fadeImage.style.opacity = "1"
+    })
+
+    setTimeout(() => {
+        currentProductIndex = index
+
+        productTrack.style.transition = "none"
+        productTrack.style.transform = `translateX(${index * 100}%)`
+
+        updateThumbnails()
+        updateButtons()
+        updateCounter()
+
+        fadeImage.remove()
+    }, 150)
+}
+
+productPrev.addEventListener("click", () => {
+    if (hasDragged) return
+
+    if (currentProductIndex < productThumbnails.length - 1) {
+        fadeToImage(currentProductIndex + 1)
+    }
+})
+
+productNext.addEventListener("click", () => {
+    if (hasDragged) return
+
+    if (currentProductIndex > 0) {
+        fadeToImage(currentProductIndex - 1)
+    }
+})
+
+
+productSlider.addEventListener("mousedown", (e) => {
+    if (e.button !== 0) return
+
+    isDragging = true
+    hasDragged = false
+    startX = e.clientX
+    currentX = e.clientX
+
+    productTrack.style.transition = "none"
+
+    productSlider.classList.remove("cursor-grab")
+    productSlider.classList.add("cursor-grabbing")
+})
+
+productSlider.addEventListener("mousemove", (e) => {
+    if (!isDragging) return
+
+    currentX = e.clientX
+
+    const difference = currentX - startX
+
+    if (Math.abs(difference) > 5) {
+        hasDragged = true
+    }
+
+    const dragPercent =
+        (difference / productSlider.offsetWidth) * 100
+
+    productTrack.style.transform =
+        `translateX(${currentProductIndex * 100 + dragPercent}%)`
+})
+
+const finishDrag = () => {
+    if (!isDragging) return
+
+    isDragging = false
+
+    productSlider.classList.remove("cursor-grabbing")
+    productSlider.classList.add("cursor-grab")
+
+    const difference = currentX - startX
+
+    if (Math.abs(difference) >= 50) {
+        if (
+            difference > 0 &&
+            currentProductIndex < productThumbnails.length - 1
+        ) {
+            moveSlider(currentProductIndex + 1)
+        } else if (
+            difference < 0 &&
+            currentProductIndex > 0
+        ) {
+            moveSlider(currentProductIndex - 1)
+        } else {
+            moveSlider(currentProductIndex)
+        }
+    } else {
+        moveSlider(currentProductIndex)
+    }
+
+    setTimeout(() => {
+        hasDragged = false
+    }, 0)
+}
+
+productSlider.addEventListener("mouseup", finishDrag)
+
+productSlider.addEventListener("mouseleave", () => {
+    if (isDragging) {
+        finishDrag()
+    }
+})
+
+productSlider.addEventListener("dragstart", (e) => {
+    e.preventDefault()
+})
+
+productSlider.addEventListener("click", (e) => {
+    if (hasDragged) {
+        e.preventDefault()
+        e.stopPropagation()
+    }
+}, true)
+
+window.addEventListener("resize", () => {
+    productTrack.style.transition = "none"
+    productTrack.style.transform =
+        `translateX(${currentProductIndex * 100}%)`
+})
+
+
+updateThumbnails()
+updateButtons()
+updateCounter()
+moveSlider(0)
+
 
 
 
@@ -1112,27 +2099,33 @@ const switchViewers = () => {
 
 
 // Related Products
+const productType = () => {
+    if (!UserSelectedProduct) return []
 
-const headlight_PAGINATION_COUNT = productsArray.filter(
-    item => item.type === "headlight"
-).length
-const headlightSwiper = $.querySelector(".headlight-swiper")
+    return productsArray.filter(item => {
+        return item.type === UserSelectedProduct.type &&
+               item.slug !== UserSelectedProduct.slug
+    })
+}
+const similarProducts = () => {
+    return productType()
+}
 
-const headlightPagination=$.querySelector(".headlight-pagination")
+const similarSwiper = $.querySelector(".related-products-swiper")
+const similarPagination = $.querySelector(".related-products-pagination")
 
-const createHeadlightProductColors = (colors) => {
+const createProductColors = (colors) => {
     return colors.map(color =>
         `<div class="circle ${color} ${color === "bg-white" ? "border border-gray-300" : ""} rounded-full size-2"></div>`
     ).join("")
 }
 
-const createHeadlightSlideHTML = (item) => {
-
-    const colors = createHeadlightProductColors(item.color)
-    
+const createSlideHTML = (item) => {
+    const imageSrc = Array.isArray(item.src) ? item.src[0] : item.src
+    const colors = createProductColors(item.color)
 
     return `
-        <div  data-slug="${item.slug}" class="swiper-slide cursor-pointer bg-white dark:bg-[#414150] p-4 group/changeColor">
+        <div data-slug="${item.slug}" class="swiper-slide cursor-pointer bg-white dark:bg-[#414150] p-4 group/changeColor">
             <div class="flex h-[20px] justify-between">
                 <div class="color flex flex-col gap-0.5">
                     ${colors}
@@ -1146,13 +2139,15 @@ const createHeadlightSlideHTML = (item) => {
                     </p>
                 </div>
             </div>
+
             <div class="box-img display-flex w-full mt-[20px]">
                 <img
-                    src="${item.src}"
+                    src="${imageSrc}"
                     alt=""
                     class="mx-auto size-[110px] object-contain"
                 >
             </div>
+
             <div class="box-info my-2 mb-4">
                 <div class="title text-[13px] min-h-[40px] group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300 dark:text-white text-base/loose line-clamp-2">
                     <p>
@@ -1160,11 +2155,13 @@ const createHeadlightSlideHTML = (item) => {
                     </p>
                 </div>
             </div>
+
             <div class="strikethrough-price h-[20px] text-gray-400 dark:text-white/70 line-through text-[13px] flex justify-end">
                 <p>
                     ${toPersianNumber(item.previous_price.toLocaleString())}
                 </p>
             </div>
+
             <div class="price-container flex justify-between">
                 <div class="star">
                     <span class="oil-star-text text-[15px] dark:text-white">
@@ -1172,37 +2169,43 @@ const createHeadlightSlideHTML = (item) => {
                     </span>
                     <i class="ri-star-fill oil-star text-amber-400 pb-1.5"></i>
                 </div>
+
                 <div class="box-price text-[14px] max-[450px]:!text-[13px] ${typeof item.price == "number" ? "" : "font-bold"} display-flex gap-1 dark:text-white">
                     <p>
                         ${toPersianNumber(item.price.toLocaleString())}
                     </p>
-                    <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price == "number" ? "" : "hidden"}">
+
+                    <img
+                        src="../images/toman-D-K3lGL1.svg"
+                        alt=""
+                        class="size-4 pb-1 ${typeof item.price == "number" ? "" : "hidden"}"
+                    >
                 </div>
             </div>
         </div>
     `
 }
+const addSimilarProducts = () => {
+    const products = similarProducts()
 
-const addHeadlightProducts = () => {
-    const headlightProducts = productsArray.filter(item => item.type === "headlight")
-
-    if (!headlightProducts.length) return
+    if (!products.length) return
 
     const slides = []
 
-    for (let i = 0; i < headlight_PAGINATION_COUNT; i++) {
-        slides.push(headlightProducts[i % headlightProducts.length])
+    for (let i = 0; i < productType().length; i++) {
+        slides.push(products[i % products.length])
     }
 
-    // Duplicate so loop has enough slides at 6-per-view
-    headlightSwiper.innerHTML = [...slides, ...slides].map(createHeadlightSlideHTML).join("")
+    similarSwiper.innerHTML = [...slides, ...slides]
+        .map(createSlideHTML)
+        .join("")
 }
 
-const renderHeadlightPagination = () => {
-    headlightPagination.innerHTML = ""
+const renderSimilarPagination = () => {
+    similarPagination.innerHTML = ""
 
-    for (let i = 0; i < headlight_PAGINATION_COUNT; i++) {
-        headlightPagination.insertAdjacentHTML(
+    for (let i = 0; i < productType().length; i++) {
+        similarPagination.insertAdjacentHTML(
             "beforeend",
             `
             <span
@@ -1213,81 +2216,116 @@ const renderHeadlightPagination = () => {
         )
     }
 }
+const updateSimilarPagination = (swiper) => {
+    const bullets = similarPagination.querySelectorAll("span")
 
-const updateHeadlightPagination = (swiper) => {
-    
-    const bullets = headlightPagination.querySelectorAll("span")
-    const activeIndex = swiper.realIndex % headlight_PAGINATION_COUNT
+    if (!bullets.length) return
+
+    const activeIndex = swiper.realIndex % productType().length
 
     bullets.forEach((bullet, index) => {
-        bullet.classList.toggle("active-pagination-product", index === activeIndex)
-        bullet.classList.toggle("not-active-pagination-product", index !== activeIndex)
+        bullet.classList.toggle(
+            "active-pagination-product",
+            index === activeIndex
+        )
+
+        bullet.classList.toggle(
+            "not-active-pagination-product",
+            index !== activeIndex
+        )
     })
 }
+const createSimilarProductsSwiper = () => {
+    addSimilarProducts()
+    renderSimilarPagination()
 
-addHeadlightProducts()
-renderHeadlightPagination()
+    const similarSwiperInstance = new Swiper(".related-products-container", {
+        rtl: true,
+        slidesPerView: 6,
+        slidesPerGroup: 1,
+        spaceBetween: 3,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0,
+        centeredSlides: false,
+        loop: true,
+        loopAdditionalSlides: productType().length,
+        speed: 800,
+        watchOverflow: true,
+        observer: true,
+        observeParents: true,
 
-const headlightSwiperInstance = new Swiper(".headlight-container", {
-    rtl: true,
-    slidesPerView: 6,
-    slidesPerGroup: 1,
-    spaceBetween: 3,
-    slidesOffsetBefore: 0,
-    slidesOffsetAfter: 0,
-    centeredSlides: false,
-    loop: true,
-    loopAdditionalSlides: headlight_PAGINATION_COUNT,
-    speed: 800,
-    watchOverflow: true,
-    observer: true,
-    observeParents: true,
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-    },
-    breakpoints: {
-        0: {
-            slidesPerView: 1
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
         },
-        360: {
-            slidesPerView: 2
+
+        breakpoints: {
+            0: {
+                slidesPerView: 1
+            },
+            360: {
+                slidesPerView: 2
+            },
+            600: {
+                slidesPerView: 3
+            },
+            770: {
+                slidesPerView: 4
+            },
+            1000: {
+                slidesPerView: 5
+            },
+            1200: {
+                slidesPerView: 6
+            }
         },
-        600: {
-            slidesPerView: 3
-        },
-        770: {
-            slidesPerView: 4
-        },
-        1000: {
-            slidesPerView: 5
-        },
-        1200: {
-            slidesPerView: 6
+
+        on: {
+            init(swiper) {
+                swiper.slideToLoop(0, 0)
+                updateSimilarPagination(swiper)
+            },
+
+            slideChange(swiper) {
+                updateSimilarPagination(swiper)
+            }
         }
-    },
-    on: {
-        init(swiper) {
-            swiper.slideToLoop(0, 0)
-            updateHeadlightPagination(swiper)
-        },
-        slideChange(swiper) {
-            updateHeadlightPagination(swiper)
-        }
+    })
+
+    similarPagination.addEventListener("click", (event) => {
+        const bullet = event.target.closest("span")
+
+        if (!bullet) return
+
+        const target = Number(bullet.dataset.index)
+
+        similarSwiperInstance.slideToLoop(target, 800)
+    })
+}
+const similarProductsTitle = () => {
+    const title = $.querySelector(".related-products-title")
+
+    if (!UserSelectedProduct) return
+
+    if (UserSelectedProduct.type === "headlight") {
+        title.textContent = "هدلایت"
+    } else if (UserSelectedProduct.type === "engine oil") {
+        title.textContent = "روغن موتور"
+    } else if (UserSelectedProduct.type === "mechanical parts") {
+        title.textContent = "لوازم مکانیکی"
+    } else if (UserSelectedProduct.type === "vehicle light") {
+        title.textContent = "چراغ خودرو"
+    } else {
+        title.textContent = "محصولات مشابه"
     }
+}
+
+
+window.addEventListener("load", () => {
+    getProductBySlug()
+    loadingInfoProduct()
+    similarProductsTitle()
+    createSimilarProductsSwiper()
 })
-
-headlightPagination.addEventListener("click", (event) => {
-    const bullet = event.target.closest("span")
-
-    if (!bullet) return
-
-    const target = Number(bullet.dataset.index)
-
-    headlightSwiperInstance.slideToLoop(target, 800)
-})
-
-
-
-window.addEventListener("load", getProductBySlug)
 window.addEventListener("load", loadingInfoProduct)
+window.addEventListener("load", loadTitle)
