@@ -561,19 +561,13 @@ const openStory = (e, storyIndex = 0) => {
 
     
     // img & video
-    if (userSelectedStory[1].src.includes("mp4")) {
-        storyImg.insertAdjacentHTML("beforeend",
-            `
-            <video autoplay muted playsinline src="${userSelectedStory[1].src}" class="video-story pointer-events-none select-none w-full h-[calc(100%-90px)] rounded-xl object-cover">
-            `
-        )
+   if (userSelectedStory[1].src.includes("mp4"))
+    { storyImg.insertAdjacentHTML("beforeend", 
+    `<video autoplay muted playsinline src="${userSelectedStory[1].src}" alt="" class="video-story pointer-events-none select-none w-full h-full rounded-xl object-cover">` ) 
     } else {
-        storyImg.insertAdjacentHTML("beforeend",
-            `
-            <img src="${userSelectedStory[1].src}" alt="" class="img-story pointer-events-none select-none w-full h-[calc(100%-90px)] rounded-xl object-cover bg-black">
-            `
-        )
-    }
+         storyImg.insertAdjacentHTML("beforeend", 
+         `<img src="${userSelectedStory[1].src}" alt="" class="img-story pointer-events-none select-none w-full h-full rounded-xl object-cover bg-black"> `)
+         }
     
 
     headStoryTitle.innerHTML = userSelectedStory[1].title
