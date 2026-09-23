@@ -37,7 +37,7 @@
                                     <li><a href="#" class="hover:bg-gray-100 block p-2 dark:hover:bg-[#43434f]">پرسش های متداول</a></li>
                                     <li><a href="#" class="hover:bg-gray-100 block p-2 dark:hover:bg-[#43434f]">تماس با ما</a></li>
                                     <li class="display-flex">
-                                        <a href="#" class="hover:bg-gray-100 block w-[150px] h-[40px] text-gray-500 flex items-center justify-center dark:text-white dark:hover:bg-[#43434f]">09999999999
+                                        <a href="#" class="hover:bg-gray-100 block w-[150px] h-[40px] text-gray-500 flex items-center justify-center dark:text-white dark:hover:bg-[#43434f]">۰۲۱۱۲۳۴۵۶۷
                                            <i class="ri-customer-service-2-fill border-r border-gray-300 pr-1 mr-2"></i>
                                         </a>
                                     </li>
@@ -70,9 +70,38 @@
                      
                     <i class="user-symbol ri-user-6-fill cursor-pointer text-[20px] max-[860px]:text-[17px]"></i>
 
-                    <div class="shopping-cart text-[13px] !flex max-[860px]:!hidden bg-blue-600 text-white p-1 rounded-lg w-[100px] display-flex gap-1.5 shadow-blue-200 shadow-lg dark:shadow-blue-800 dark:shadow-md hover:scale-105 transition duration-300 ease-in">
+                    <div class="relative shopping-cart z-[100] text-[13px] !flex max-[860px]:!hidden bg-blue-600 text-white p-1 rounded-lg w-[100px] display-flex gap-1.5 shadow-blue-200 shadow-lg dark:shadow-blue-800 dark:shadow-md hover:scale-105 transition duration-300 ease-in group/openCart">
                         <a href="#">سبد خرید</a>
                         <span class="number-of-products bg-blue-300 text-white dark:bg-white dark:text-black size-4 rounded display-flex">۰</span>
+                        <div class="absolute top-10 -left-[19px] bg-white dark:bg-[#353542] w-[330px] z-50 p-4 rounded-xl opacity-0 invisible group-hover/openCart:opacity-100 group-hover/openCart:visible transition-all duration-300 ease-in-out shadow-lg shadow-gray-300 dark:shadow-gray-800">
+                            <div class="border-b-[3px] border-b-[#f6f6f6] dark:border-[#414150] text-gray-950 display-flex justify-between pb-2">
+                                <div class="display-flex gap-1 dark:text-white">
+                                    <span class="whitespace-nowrap">مشاهده سبد خرید</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-3">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                    </svg>
+    
+                                </div>
+                                <div class="display-flex gap-1 dark:text-gray-300">
+                                    <span class="quantity-items">3</span>
+                                    کالا
+                                </div>
+
+                            </div>
+                            <div class="main-cart border-b-[3px] border-b-[#f6f6f6] dark:border-[#414150] overflow-x-hidden min-w-0 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 -pe-10">
+                                <!-- loaded from js -->
+                            </div>
+                            <div class="text-gray-900 display-flex justify-between pt-4">
+                                <div class="flex flex-col items-start">
+                                    <h5 class="text-gray-400">مبلغ قابل پرداخت:</h5>
+                                    <div class="display-flex gap-1">
+                                        <span class="font-bold price-container text-[15px] dark:text-white">7.750.000</span>
+                                        <img src="../../images/toman-D-K3lGL1.svg" alt="" class="size-4">
+                                    </div>
+                                </div>
+                                <button class="complete-order bg-blue-600 text-white p-1 px-3 rounded-lg hover:bg-blue-500 dark:hover:bg-blue-700 transition-colors duration-300 cursor-pointer">تکمیل سفارش</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="relative !hidden max-[860px]:!block">
                         <i class="ri-shopping-cart-line text-[17px] cursor-pointer"></i>
@@ -80,7 +109,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <a href="../user/dashboard/index.html"></a> -->
 
             <!-- nav -->
             <nav class="navbar display-flex justify-between border-gray-300 dark:border-gray-600 border-dashed border-b mb-5 mt-[20px] relative z-50">
@@ -175,7 +203,7 @@
                     </ul>
                 </div>
                 <div class="call-us display-flex flex-row text-gray-500 dark:text-white gap-2">
-                    <a href="#" class="inline-block border-gray pl-2.5">09999999999</a>
+                    <a href="#" class="inline-block border-gray pl-2.5 mb-2">۰۲۱۱۲۳۴۵۶۷</a>
                     <i class="ri-customer-service-2-fill"></i>
                 </div>
             </nav>
@@ -209,7 +237,7 @@
 
                         <div class="flex flex-col">
                             <span class="text-[17px] font-bold dark:text-white">لورم ایپسوم</span>
-                            <span class="text-[12px] text-gray-500 dark:text-gray-400">09999999999</span>
+                            <span class="text-[12px] text-gray-500 dark:text-gray-400">۰۲۱۱۲۳۴۵۶۷</span>
                         </div>
                     </div>
                     <div class="border-b-[3px] dark:text-white border-[#f6f6f6] dark:border-[#414150] gap-[clamp(6px,0.6vw,8px)] py-[clamp(10px,1.5vw,20px)] flex flex-col">
@@ -343,7 +371,7 @@
         
                                 <div class="flex flex-col">
                                     <span class="text-[17px] font-bold">لورم ایپسوم</span>
-                                    <span class="text-[12px] text-gray-500">09999999999</span>
+                                    <span class="text-[12px] text-gray-500">۰۲۱۱۲۳۴۵۶۷</span>
                                 </div>
                             </div>
                             <div class="border-b-[3px] border-[#f6f6f6] dark:border-[#414150] gap-[clamp(6px,0.6vw,8px)] py-[clamp(10px,1.5vw,20px)] flex flex-col">
@@ -555,7 +583,7 @@
                         <div class="pr-2">
                             <h3 class="font-bold mb-[15px] max-[992px]:mt-[40px] dark:text-white">علاقه مندی های اخیر</h3>
 
-                            <div class="flex bg-[#e3edf866] dark:bg-[#414150] rounded-2xl grid grid-rows-3">
+                            <div class="favorite-container flex bg-[#e3edf866] dark:bg-[#414150] rounded-2xl grid grid-rows-3">
                                 <div class="min-h-[130px] w-full p-3 border-b-[1px] border-gray-200 dark:border-[#353542]">
             
                                     <div class="products-slide relative group/changeColor cursor-pointer w-full flex flex-col justify-between">
@@ -699,7 +727,7 @@
                     </div>
                     <div class="text-gray-500 dark:text-white whitespace-nowrap">
                         <i class="ri-customer-service-2-fill"></i>
-                        <a href="#" class=" border-gray pl-1.5">0211234567</a>
+                        <a href="#" class=" border-gray pl-1.5">۰۲۱۱۲۳۴۵۶۷</a>
                     </div>
                 </div>
 

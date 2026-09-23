@@ -247,7 +247,7 @@ const productsArray = [
             value: "4001-5000"
         },
     ], seller: "", performance: "", product_ID: "p-3080518", send: "", customer_rating: ""},
-    {id: 11,title: "کمپرسور هوا فندکی کنزاکس مدل 5417", en_title: "Kenzax lighter air compressor model 5417", price: 3_250_000, src: "../images/file.1736704448.36439.webp", color: ["g-yellow-400", "bg-black"], previous_price: "", discount: "", star: 4.6, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 310, sales: 69, slug: "p11", warranty: "12 ماهه شرکتی",
+    {id: 11,title: "کمپرسور هوا فندکی کنزاکس مدل 5417", en_title: "Kenzax lighter air compressor model 5417", price: 3_250_000, src: "../images/file.1736704448.36439.webp", color: ["bg-yellow-400", "bg-black"], previous_price: "", discount: "", star: 4.6, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 310, sales: 69, slug: "p11", warranty: "12 ماهه شرکتی",
         key_features: [
         {
             title: "تعداد خروجی هوا:",
@@ -821,17 +821,6 @@ window.addEventListener("storage", (e) => {
 
     themeHandler()
 })
-const getDataFromLocalStorage = () => {
-    const theme = localStorage.getItem("theme");
-
-    if (theme === "dark") {
-        htmlElem.classList.add("dark");
-    } else {
-        htmlElem.classList.remove("dark");
-    }
-    
-};
-getDataFromLocalStorage()
 
 
 
@@ -846,8 +835,9 @@ const getProductBySlug = () => {
     const slug = params.get("slug")
     
     UserSelectedProduct = productsArray.find((item) => item.slug === slug)
+    
     createProductImage(UserSelectedProduct.src)
-    productType(UserSelectedProduct.type)
+    productType(UserSelectedProduct.type)    
 }
 
 
@@ -1067,7 +1057,12 @@ const mainInfoHandler = () => {
         `
     }).join("")
     
-    
+    const today = new Intl.DateTimeFormat("fa-IR-u-ca-persian", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+    }).format(new Date()).replace(/-/g, "/")
+
     topMainInfo.insertAdjacentHTML("afterbegin",
         `
         <div class="display-flex justify-between">
@@ -1118,7 +1113,7 @@ const mainInfoHandler = () => {
         <div class="display-flex justify-start text-start gap-2 border-2 border-[#f7f8fa] dark:border-0 dark:bg-[#414150] rounded-2xl p-2 w-fit max-w-full ${UserSelectedProduct.seller.length === 0 ? "hidden" : ""}">
             <div class="bg-[#eff2f5] display-flex gap-2 text-gray-400 p-0.5 px-1.5 rounded-lg">
                 <i class="ri-calendar-todo-line"></i>
-                <p class="text-gray-950 text-[12px] mt-1">1405/06/17</p>
+                <p class="text-gray-950 text-[12px] mt-1">${today}</p>
             </div>
             <p class="text-[13px] dark:text-white">موجودی و قیمت محصول بروز است</p>
         </div>
@@ -1128,9 +1123,14 @@ const mainInfoHandler = () => {
         </div>
         `
     )
-    colorHandler()
+
+    if (UserSelectedProduct.color.length !== 0) {
+        colorHandler()
+    }
 }
 
+
+let selectedColor = null
 const colorHandler = () => {
     const productColors = [...$.querySelectorAll(".circle")]
 
@@ -1138,8 +1138,11 @@ const colorHandler = () => {
         return item.parentElement.tagName === "UL"
     })
 
+    selectedColor = [...findColor[0].classList].find(item => item.startsWith("bg-"))
     findColor.forEach(color => {
         color.addEventListener("click", () => {
+            console.log([...color.classList])
+            selectedColor = [...color.classList].find(item => item.startsWith("bg-"))
 
             findColor.forEach(item => {
                 item.classList.remove(
@@ -1209,7 +1212,7 @@ const purchaseInfoHandler = () => {
                     <i class="ri-qr-code-line dark:text-white"></i>
                         <span class="dark:text-white">شناسه محصول</span>
                         <span class="divider"></span>
-                        <span class="product_ID text-gray-400 relative top-0 group cursor-pointer select-none">${toPersianNumber(UserSelectedProduct.product_ID)}
+                        <span class="product_ID text-gray-400 relative top-0 group cursor-pointer select-none">${toPersianNumber(UserSelectedProduct.product_ID)}</span>
                         <div class="tooltip bg-gray-300 text-[13px] text-gray-950 p-2 rounded-lg absolute bottom-7 -right-6 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">کپی شناسه محصول</div>
                     </li>
                 </span>
@@ -1246,7 +1249,7 @@ const purchaseInfoHandler = () => {
                     <span class="add-product-number cursor-pointer">
                         <i class="ri-add-line  text-[#aeb4be]"></i>
                     </span>
-                    <input class="quantity-input w-full max-w-[50px] bg-white dark:bg-[#353542] dark:text-white p-0.5 rounded-md outline-0 flex text-center" value="۱" type="text" minlength="1" maxlength="4" autocomplete="off"">
+                    <input class="quantity-input w-full max-w-[50px] bg-white dark:bg-[#353542] dark:text-white p-0.5 rounded-md outline-0 flex text-center" value="۱" type="text" minlength="1" maxlength="4" autocomplete="off">
                     <span class="subtract-product-number cursor-pointer">
                         <i class="ri-subtract-line text-[#aeb4be]"></i>
                     </span>
@@ -1254,7 +1257,7 @@ const purchaseInfoHandler = () => {
                             
                 <div>
                     <div class="flex justify-end gap-1 ${UserSelectedProduct.previous_price.length === 0 ? "hidden" : ""}">
-                        <span class="text-[14px] font-bold text-amber-500 line-through">${toPersianNumber(UserSelectedProduct.previous_price.toLocaleString())}</span>
+                        <span class="previous-price text-[14px] font-bold text-amber-500 line-through">${toPersianNumber(UserSelectedProduct.previous_price.toLocaleString())}</span>
                         <div class="discount-container p-1.5 bg-amber-500 shadow-lg shadow-amber-400/30 text-[14px] rounded-t-xl rounded-br-xl rounded-bl-sm h-[20px] display-flex ">
                             <p class="flex justify-between display-flex gap-0.5">
                                 <i class="ri-percent-fill text-[11px] font-bold"></i>
@@ -1265,13 +1268,13 @@ const purchaseInfoHandler = () => {
                         </div>
                     </div>
                     <div class="flex justify-end gap-1 mt-2">
-                        <span class="text-[24px] max-[1175px]:text-[15px] font-bold dark:text-white">${typeof UserSelectedProduct.price === "number" ? toPersianNumber(UserSelectedProduct.price.toLocaleString()) : ""}</span>
+                        <span class="price-product text-[24px] max-[1175px]:text-[15px] font-bold dark:text-white">${typeof UserSelectedProduct.price === "number" ? toPersianNumber(UserSelectedProduct.price.toLocaleString()) : ""}</span>
                         <img src="../images/toman-D-K3lGL1.svg" alt="" class="max-[1175px]:w-[20px]">
                     </div>
                 </div>
             </div>
                         
-            <button type="submit" class="bg-blue-600 text-white w-full py-2 rounded-2xl font-bold mt-2 shadow-lg shadow-blue-200 hover:bg-blue-500 dark:shadow-blue-900 dark:hover:bg-blue-700 hover:shadow-none transition-colors duration-300 cursor-pointer max-[1175px]:text-[14px]">${UserSelectedProduct.seller.length === 0 ? UserSelectedProduct.price : "افزودن به سبد خرید"}</button>
+            <button type="submit" class="add-to-cart-btn bg-blue-600 text-white w-full py-2 rounded-2xl font-bold mt-2 shadow-lg shadow-blue-200 hover:bg-blue-500 dark:shadow-blue-900 dark:hover:bg-blue-700 hover:shadow-none transition-colors duration-300 cursor-pointer max-[1175px]:text-[14px]">${UserSelectedProduct.seller.length === 0 ? UserSelectedProduct.price : "افزودن به سبد خرید"}</button>
             <div class="bg-[#9ce76a1a] dark:bg-[#414150] mt-5 display-flex justify-start p-2 rounded-3xl gap-2 ${UserSelectedProduct.seller.length === 0 ? "hidden" : ""}">
                 <img src="./imgs/torobpay.png" alt="" class="bg-[#9ce76a] w-[50px] rounded-2xl p-0.5">
                 <div class="flex flex-col text-start">
@@ -1287,7 +1290,7 @@ const purchaseInfoHandler = () => {
                     </span>
                 </div>
                 <div class="text-[13px] dark:text-white">
-                    <span class="text-[14px] font-bold">${toPersianNumber(UserSelectedProduct.customer_rating)}</span>
+                    <span class="customer-rating text-[14px] font-bold">${toPersianNumber(UserSelectedProduct.customer_rating)}</span>
                     امتیاز
                 </div>
             </div>
@@ -1297,15 +1300,314 @@ const purchaseInfoHandler = () => {
     
     const quantityInput = $.querySelector(".quantity-input")
 
-    quantityInput.addEventListener("input", (e) => {
-        e.target.value = e.target.value.replace(/[0-9]/g, number => {
-            return "۰۱۲۳۴۵۶۷۸۹"[number]
-        })
+   quantityInput.addEventListener("beforeinput", (e) => {
+        if (e.inputType === "insertText" && e.data && !/^[0-9۰-۹]+$/.test(e.data)) {
+            e.preventDefault()
+        }
     })
+    quantityInput.addEventListener("input", (e) => {
+        e.target.value = e.target.value.replace(/[0-9]/g, n => "۰۱۲۳۴۵۶۷۸۹"[Number(n)])
+    })
+
 
     switchViewers()
     copyProductID()
+
+    productQuantity()
+    addToCartHandler(quantityInput)
 }
+
+
+
+// product quantity
+const productQuantity = () => {
+    const subtractBtn = $.querySelector(".subtract-product-number")
+    const addBtn = $.querySelector(".add-product-number")
+    const quantityInput = $.querySelector(".quantity-input")
+    const priceProduct = $.querySelector(".price-product")
+    const previousPriceElem = $.querySelector(".previous-price")
+    const customerRatingElem = $.querySelector(".customer-rating")
+
+    const price = UserSelectedProduct.price
+    const previousPrice = UserSelectedProduct.previous_price
+    const customerRating = +UserSelectedProduct.customer_rating
+
+    let quantity = +quantityInput.value.replace(/[۰-۹]/g, n => "۰۱۲۳۴۵۶۷۸۹".indexOf(n))
+
+    const updateProductInfo = () => {
+        priceProduct.innerHTML = toPersianNumber(
+            (price * quantity).toLocaleString()
+        )
+
+        previousPriceElem.innerHTML = toPersianNumber(
+            (previousPrice * quantity).toLocaleString()
+        )
+
+        customerRatingElem.innerHTML = toPersianNumber(
+            (customerRating * quantity).toLocaleString()
+        )
+    }
+
+    addBtn.addEventListener("click", () => {
+        if (quantity < 164) {
+            quantity++
+    
+            quantityInput.value = toPersianNumber(quantity)
+    
+            updateProductInfo()
+
+        }
+    })
+
+    subtractBtn.addEventListener("click", () => {
+        if (quantity > 1) {
+            quantity--
+
+            quantityInput.value = toPersianNumber(quantity)
+
+            updateProductInfo()
+        }
+    })
+
+    quantityInput.addEventListener("focus", () => {
+        quantityInput.select()
+    })
+    quantityInput.addEventListener("input", () => {
+        quantity = +quantityInput.value.replace(
+        /[۰-۹]/g,
+        n => "۰۱۲۳۴۵۶۷۸۹".indexOf(n)
+        )
+
+        if (quantity > 164) {
+            quantity = 164
+            quantityInput.value = "۱۶۴"
+        }
+
+        if (quantity < 1 || !quantity) {
+            quantity = 1
+            quantityInput.value = "۱"
+        }
+
+        updateProductInfo()
+    })
+
+}
+
+
+// modal
+const addToCartHandler = (quantityInput) => {
+    const addToCartBtn = $.querySelector(".add-to-cart-btn")
+    const modalOverlayAddCart = $.querySelector(".modal-overlay-add-cart")
+    const modalContainer = modalOverlayAddCart.querySelector(".main-modal")
+    const closeModalBtn = modalOverlayAddCart.querySelector(".close-modal")
+    const closeModalSvg = modalOverlayAddCart.querySelector(".close-modal-svg")
+    const goBasketBtn = modalOverlayAddCart.querySelector(".go-basket-btn")
+
+    const imageSrc = Array.isArray(UserSelectedProduct.src) ? UserSelectedProduct.src[0] : UserSelectedProduct.src
+    
+    
+    let quantityProduct = ""
+    const priceHandler = (property) => toPersianNumber((UserSelectedProduct[property] * quantityProduct).toLocaleString())
+
+    addToCartBtn.addEventListener("click", () => {
+        quantityProduct = +quantityInput.value.replace(
+            /[۰-۹]/g,
+            n => "۰۱۲۳۴۵۶۷۸۹".indexOf(n)
+        );
+
+        modalContainer.innerHTML = ""
+        // console.log(selectedColor);
+        
+        modalContainer.insertAdjacentHTML("beforeend",
+            `
+            <div class="display-flex text-start gap-2 pb-4">
+                    <img src="${imageSrc}" alt="" class="w-[100px] bg-gray-100 dark:bg-[#414150] rounded-xl">
+                    <div class="flex flex-col gap-2 dark:text-white">
+                        <p class="text-[14px] font-bold block w-[320px]">${UserSelectedProduct.title}</p>
+                        <ul class="flex items-center">
+                            <li class="border-gray pl-2">
+                                <span class="size-3 ${selectedColor} ${selectedColor === "bg-white" ? "border-[1px] border-gray-400" : ""} rounded-full block"></span>
+                            </li>
+                            <li class="text-[13px] pr-2 ${UserSelectedProduct.warranty.length === 0 ? "hidden" : ""}">
+                                گارانتی:
+                                <span>${UserSelectedProduct.warranty}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="display-flex justify-between border-t-2 border-gray-100 dark:border-[#414150] pt-3">
+                    <div>
+                        <div class="text-start text-[13px] dark:text-white">
+                            تعداد:
+                            <span class="font-bold">${toPersianNumber(quantityProduct)}</span>
+                        </div>
+                        <span class="text-[12px] text-gray-400">قیمت کل برحسب تعداد:</span>
+                    </div>
+                    <div class="text-end">
+                        <span class="text-red-500 text-[12px] line-through ${UserSelectedProduct.previous_price.length === 0 ? "hidden" : ""}">${priceHandler("previous_price")}</span>
+                        <div class="display-flex gap-1">
+                            <h3 class="text-[14px] font-bold dark:text-white">${priceHandler("price")}</h3>
+                            <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4">
+                        </div>
+                    </div>
+                </div>
+            `
+        )
+        modalOverlayAddCart.classList.remove("opacity-0", "invisible")
+        modalOverlayAddCart.classList.add("opacity-100", "visible")
+        bodyTag.classList.toggle("overflow-x-hidden")
+        bodyTag.classList.toggle("overflow-hidden")
+        
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeModal()
+            }
+        })
+    })
+
+    const closeModal = () => {
+        modalOverlayAddCart.classList.add("opacity-0", "invisible")
+        modalOverlayAddCart.classList.remove("opacity-100", "visible")
+        bodyTag.classList.toggle("overflow-x-hidden")
+        bodyTag.classList.toggle("overflow-hidden")
+    }
+
+    closeModalBtn.addEventListener("click", closeModal)
+    closeModalSvg.addEventListener("click", closeModal)
+    
+    
+
+    goBasketBtn.addEventListener("click", () => {
+        
+        
+        const { cartItems } = getDataFromLocalStorage()
+
+        const findSimilarProduct = cartItems.find(item => {
+            return item.slug === UserSelectedProduct.slug
+        })
+        
+        
+        
+        if (findSimilarProduct) {
+            findSimilarProduct.quantity += quantityProduct
+            
+            localStorage.setItem("cartItems", JSON.stringify(cartItems))
+            
+            closeModal()
+            cartHandler()
+        } else {
+            const newProduct = {
+                title: UserSelectedProduct.title,
+                src: imageSrc,
+                price: UserSelectedProduct.price,
+                quantity: quantityProduct,
+                color: selectedColor,
+                slug: UserSelectedProduct.slug,
+            }
+            cartItems.push(newProduct)
+    
+    
+            localStorage.setItem("cartItems", JSON.stringify(cartItems))
+    
+            closeModal()
+            cartHandler()
+            
+        }
+
+    })
+}
+
+const cartHandler = () => {
+    const mainCart = $.querySelector(".main-cart")
+    const quantityItems = $.querySelector(".quantity-items")
+    const priceContainer = $.querySelector(".price-container")
+    const numberOfProducts = $.querySelector(".number-of-products")
+    const { cartItems } = getDataFromLocalStorage()
+
+    
+
+    let finalPrice = 0
+    cartItems.forEach(item => {
+        const calculate = item.price * item.quantity
+        finalPrice += calculate
+    })
+
+    numberOfProducts.innerHTML = ""
+    numberOfProducts.innerHTML = toPersianNumber(cartItems.length)
+
+    // تعداد کل محصولات
+    quantityItems.innerHTML = ""
+    quantityItems.innerHTML = toPersianNumber(cartItems.length)
+
+    // قیمت نهایی
+    priceContainer.innerHTML = ""
+    priceContainer.innerHTML = toPersianNumber(finalPrice.toLocaleString())
+
+    mainCart.innerHTML = ""
+    cartItems.forEach((item) => {
+        mainCart.insertAdjacentHTML("beforeend",
+            `
+            <div class="display-flex gap-2 py-5 border-b-2 border-b-gray-100 dark:border-[#414150]">
+                <img src="${item.src}" alt="" class="w-[50px] bg-gray-100 dark:bg-[#414150] rounded-lg">
+                <div class="flex flex-col gap-3">
+                    <div class="text-gray-950 display-flex dark:text-white">
+                        <span class="block w-[200px] truncate">${item.title}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" data-slug="${item.slug}" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="remove-product-btn size-3.5 cursor-pointer">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+    
+                    </div>
+                    <div class="text-gray-900 display-flex justify-between">
+                        <div class="text-gray-400">
+                            تعداد:
+                            <span>${toPersianNumber(item.quantity)}</span>
+                        </div>
+                        <div class="display-flex gap-1 font-bold">
+                            <span class="dark:text-white">${toPersianNumber(item.price.toLocaleString())}</span>
+                            <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `
+        )
+    })
+    if (cartItems.length > 3) {
+    mainCart.classList.add("overflow-y-auto", "max-h-[280px]")
+} else {
+    mainCart.classList.remove("overflow-y-auto", "max-h-[280px]")
+}
+
+    if (cartItems.length === 0) {
+        mainCart.insertAdjacentHTML("beforeend",
+            `
+            <div class="text-gray-900 bg-gray-50 p-5 rounded-xl m-3">
+               <span>سبد خرید شما خالی میباشد :(</span>
+            </div>
+            `
+        )
+    } else {
+        
+    }
+    removeProduct()
+
+}
+const removeProduct = () => {
+    const { cartItems } = getDataFromLocalStorage()
+    const removeProductBtn = $.querySelectorAll(".remove-product-btn")
+    removeProductBtn.forEach(item => {
+        item.addEventListener("click", () => {
+            const newCartItems = cartItems.filter(pro => {
+                return pro.slug !== item.dataset.slug
+            })
+    
+            localStorage.setItem("cartItems", JSON.stringify(newCartItems))
+            cartHandler()
+        })
+    })
+    
+}
+
 
 
 const switchViewers = () => {
@@ -1338,18 +1640,19 @@ const switchViewers = () => {
 
 
 // copy product id \ toast
-const copyProductID = (e) => {
+const copyProductID = () => {
     const productIDElem = $.querySelector(".product_ID")
 
-    productIDElem.addEventListener("click", async (e) => {
+    productIDElem.addEventListener("click", async () => {
         try {
-            const id = e.target.innerHTML.replace(/[۰-۹]/g, n => "۰۱۲۳۴۵۶۷۸۹".indexOf(n))
+            const id = productIDElem.textContent.trim()
+
             await navigator.clipboard.writeText(id)
+
             showGoodToastBox()
         } catch (error) {
-            // codes
             showbadToastBox()
-        }        
+        }
     })
 }
 
@@ -1441,314 +1744,6 @@ toastIcon.addEventListener("click", () => {
         "pointer-events-none"
     )
 })
-
-
-
-//! start
-// const products = [
-//   {
-//     id: 1,
-//     title:
-//       "لپ تاپ 15.6 اینچی لنوو مدل IdeaPad Slim 3 15IRH8-i7 13620H 16GB 512SSD",
-//     price: 32_000_000,
-//     img: "./imgs/image01.png",
-//     description:
-//       "این لپ‌تاپ لنوو با پردازنده‌ی قدرتمند i7 نسل ۱۳ و ۱۶ گیگابایت رم، مناسب برای کارهای روزمره و سنگین. حافظه ۵۱۲ گیگابایتی SSD عملکرد سریعی را فراهم می‌کند.",
-//   },
-//   {
-//     id: 2,
-//     title:
-//       "لپ تاپ 14 اینچی ایسوس مدل VivoBook R465FA - Core i5 1135G7 8GB 256SSD",
-//     price: 27_000_000,
-//     img: "./imgs/image02.png",
-//     description:
-//       "لپ‌تاپ اقتصادی ایسوس با پردازنده i5 نسل ۱۱، دارای ۸ گیگابایت رم و ۲۵۶ گیگابایت حافظه SSD، مناسب برای استفاده روزمره و سبک.",
-//   },
-//   {
-//     id: 3,
-//     title: "لپ تاپ 13.3 اینچی اپل مدل MacBook Air 2020 M1 8GB 256SSD",
-//     price: 55_000_000,
-//     img: "./imgs/image03.png",
-//     description:
-//       "مک‌بوک ایر با پردازنده M1 و ۸ گیگابایت رم، ایده‌آل برای کاربران حرفه‌ای اپل که به دنبال سرعت و عملکرد بالا در یک بدنه سبک هستند.",
-//   },
-//   {
-//     id: 4,
-//     title: "لپ تاپ 16 اینچی اچ‌پی مدل Envy x360 - Ryzen 7 5700U 16GB 512SSD",
-//     price: 47_000_000,
-//     img: "./imgs/image04.png",
-//     description:
-//       "لپ‌تاپ تبدیل‌پذیر اچ‌پی با پردازنده Ryzen 7 و ۱۶ گیگابایت رم، مناسب برای کارهای گرافیکی و مالتی‌مدیا. صفحه‌نمایش ۱۶ اینچی و کیفیت ساخت عالی.",
-//   },
-//   {
-//     id: 5,
-//     title: "لپ تاپ 15.6 اینچی دل مدل G5 15 SE - Ryzen 5 4600H 8GB 512SSD",
-//     price: 36_000_000,
-//     img: "./imgs/image05.png",
-//     description:
-//       "لپ‌تاپ گیمینگ دل با پردازنده Ryzen 5 و ۸ گیگابایت رم، مناسب برای گیمرها و کاربران حرفه‌ای که به دنبال عملکرد قوی هستند.",
-//   },
-//   {
-//     id: 6,
-//     title:
-//       "لپ تاپ 15.6 اینچی ایسر مدل Nitro 5 AN515-45 - Ryzen 7 5800H 16GB 1TB SSD",
-//     price: 54_000_000,
-//     img: "./imgs/image06.png",
-//     description:
-//       "یک لپ‌تاپ گیمینگ قدرتمند از ایسر با پردازنده Ryzen 7 و ۱۶ گیگابایت رم. دارای ۱ ترابایت حافظه SSD برای بازی‌های حجیم و اجرای سریع.",
-//   },
-//   {
-//     id: 7,
-//     title:
-//       "لپ تاپ 14 اینچی لنوو مدل ThinkPad X1 Carbon Gen 9 - Core i7 1165G7 16GB 1TB SSD",
-//     price: 62_000_000,
-//     img: "./imgs/image07.png",
-//     description:
-//       "لپ‌تاپ حرفه‌ای و باکیفیت از سری ThinkPad با پردازنده i7 و ۱۶ گیگابایت رم. مناسب برای کاربران تجاری و حرفه‌ای که به دنبال کیفیت ساخت بالا و امنیت هستند.",
-//   },
-//   {
-//     id: 8,
-//     title: "لپ تاپ 13.3 اینچی دل مدل XPS 13 - Core i7 1185G7 16GB 512SSD",
-//     price: 71_000_000,
-//     img: "./imgs/image08.png",
-//     description:
-//       "لپ‌تاپ دل XPS با طراحی زیبا و پردازنده i7، ۱۶ گیگابایت رم و صفحه‌نمایش باکیفیت، انتخابی عالی برای کاربران حرفه‌ای و علاقه‌مندان به تکنولوژی.",
-//   },
-//   {
-//     id: 9,
-//     title: "لپ تاپ 14 اینچی ایسوس مدل ZenBook 14 - Ryzen 5 5500U 8GB 512SSD",
-//     price: 38_000_000,
-//     img: "./imgs/image09.png",
-//     description:
-//       "لپ‌تاپ سبک و زیبا از سری ZenBook با پردازنده Ryzen 5 و ۸ گیگابایت رم. مناسب برای کارهای روزمره و سبک با باتری قوی.",
-//   },
-//   {
-//     id: 10,
-//     title:
-//       "لپ تاپ 15.6 اینچی ام‌اس‌آی مدل GF63 Thin 11SC - Core i5 11400H 16GB 512SSD",
-//     price: 46_000_000,
-//     img: "./imgs/image10.png",
-//     description:
-//       "لپ‌تاپ قدرتمند MSI با پردازنده i5 نسل ۱۱، ۱۶ گیگابایت رم و کارت گرافیک مناسب. گزینه‌ای عالی برای گیمرها و کاربران حرفه‌ای.",
-//   },
-//   {
-//     id: 11,
-//     title: "لپ تاپ 15.6 اینچی اچ‌پی مدل Pavilion 15 - Core i5 1235U 8GB 512SSD",
-//     price: 34_000_000,
-//     img: "./imgs/image11.png",
-//     description:
-//       "لپ‌تاپ اقتصادی اچ‌پی با پردازنده i5 نسل ۱۲، ۸ گیگابایت رم و ۵۱۲ گیگابایت حافظه SSD، مناسب برای استفاده‌های روزمره و تجاری.",
-//   },
-//   {
-//     id: 12,
-//     title: "لپ تاپ 16 اینچی اپل مدل MacBook Pro 2021 M1 Pro 16GB 1TB SSD",
-//     price: 85_000_000,
-//     img: "./imgs/image12.png",
-//     description:
-//       "مک‌بوک پرو با پردازنده M1 Pro و ۱۶ گیگابایت رم، مناسب برای کاربران حرفه‌ای اپل که به دنبال عملکرد بی‌نظیر در کارهای سنگین و حرفه‌ای هستند.",
-//   },
-// ];
-
-// const productContainer = document.querySelector(".wrapper")
-// const basketContainer = document.querySelector(".basket-main")
-// const basketIcone = document.querySelector(".basket_icone")
-// const basketScreen = document.querySelector(".basket-screen")
-// const closeBasketX = document.querySelector(".close-basket")
-// const count = document.querySelector(".count")
-// const clearAllBtn = document.querySelector(".clear-button")
-// const productAllCount = document.querySelector(".products-count")
-// const totalPrice = document.querySelector(".total-price")
-
-
-
-// let basketsUser = []
-
-// const showProducts = () => {
-//   products.forEach((product) => {
-//       productContainer.insertAdjacentHTML("beforeend",
-//           `<article>
-//             <header class="product-header">
-//               <img
-//                 src="${product.img}"
-//                 class="product-img"
-//                 alt=""
-//               />
-//             </header>
-//             <main class="product-body">
-//               <h3 class="product-title">
-//                 ${product.title}
-//               </h3>
-//               <p class="desc">
-//                 ${product.description}
-//               </p>
-//             </main>
-//             <footer class="product-footer">
-//               <p class="price">${product.price.toLocaleString()} ت</p>
-//               <button class="add-to-cart" onclick="addProductToBasket(${
-//                 product.id
-//               })">
-//                 <i class="bx bx-cart-alt"></i>
-//                 افزودن به سبد
-//               </button>
-//             </footer>
-//           </article>`
-//       )
-//   })
-
-// }
-
-// const addProductToBasket = (productId) => {
-//   const userProduct = products.find((product) => product.id == productId)
-
-//   const isProductInBasket = basketsUser.some((item) => item.id == userProduct.id)
-  
-//   if (isProductInBasket) {
-//     plusNumberProduct(productId)
-//   } else {
-//     const basketNewProduct = {
-//       ...userProduct,
-//       count: 1
-//     }
-//     basketsUser.push(basketNewProduct)
-
-//   }
-  
-  
-  
-//   goToDomBasket(basketsUser)
-//   setToLocalStorage(basketsUser)
-// }
-
-// const goToDomBasket = (basketsUser) => {
-//   basketContainer.innerHTML = ""
-//   if (basketsUser.length) {
-//     basketsUser.forEach((item) => {
-//       basketContainer.insertAdjacentHTML("beforeend",
-//         `<article class="basket-item">
-//             <div class="flex-center">
-//               <img src="${item.img}" alt="" />
-//               <div class="basket-item_details">
-//                 <p class="basket-item_title">
-//                  ${item.title}
-//                   512SSD
-//                 </p>
-//                 <p class="basket-item_price">${item.price.toLocaleString()}</p>
-//               </div>
-//               <div class="before">
-//                 <div class="buttons">
-//                   <button class="increase" onClick="plusNumberProduct(${item.id})">
-//                     <i class="bx bx-plus"></i>
-//                   </button>
-//                   <button class="remove-button" onClick="removeProduct(${item.id})">
-//                     <!-- Boxicons trash icon -->
-//                     <i class="bx bx-trash"></i>
-//                   </button>
-//                   <button class="decrease" onClick="minusNumberProduct(${item.id})">
-//                     <!-- Decrease icon -->
-//                     <i class="bx bx-minus"> </i>
-//                   </button>
-//                 </div>
-//                 <div class="product-count-card">
-//                   <span>تعداد:</span>
-//                   <span class="product-count">${item.count}</span>
-//                 </div>
-//               </div>
-//             </div>
-//           </article>`
-//       )
-//     })
-//   } else {
-//     basketContainer.innerHTML = `<p class="empty-basket">
-//             سبد خرید شما خالی می باشد :(
-//        </p>`
-//   }
-//   numberOfBasket(basketsUser)
-//   priceCalculation(basketsUser)
-// }
-
-
-
-// const setToLocalStorage = (basketsUser) => localStorage.setItem("basket", JSON.stringify(basketsUser))
-// const getDataFromLocalStorage = () => {
-//   const localStorageUser = JSON.parse(localStorage.getItem("basket"))
-//   if (localStorageUser) {
-//     basketsUser = localStorageUser
-//   }
-
-//   goToDomBasket(basketsUser)
-//   showProducts()
-// }
-
-
-
-// const numberOfBasket = (localStorageUser) => {
-//   if (localStorageUser) {
-//     const numberOfBaskets =  localStorageUser.length;
-//     count.innerHTML = numberOfBaskets
-//     productAllCount.innerHTML = `(${numberOfBaskets})`
-//   }
-// }
-
-
-
-// const removeProduct = (basketUserId) => {
-//   const indexDelProduct = basketsUser.findIndex((item) => item.id == +basketUserId)
-//   basketsUser.splice(indexDelProduct, 1)
-  
-//   setToLocalStorage(basketsUser)
-//   goToDomBasket(basketsUser)
-
-// }
-// const clearBasket = () => {
-//   basketsUser.splice(0 , basketsUser.length)
-
-//   setToLocalStorage(basketsUser)
-//   goToDomBasket(basketsUser)
-// }
-
-
-// const plusNumberProduct = (productId) => {
-//   const findToPlus = basketsUser.find((item) => item.id == productId)
-//   findToPlus.count += 1
-
-//   setToLocalStorage(basketsUser)
-//   goToDomBasket(basketsUser)
-// }
-
-// const minusNumberProduct = (productId) => {
-  
-//   const findToMinus = basketsUser.find((item) => item.id == productId)
-//   findToMinus.count -= 1
-//   console.log(findToMinus);
-  
-//   if (findToMinus.count == 0) {
-//     removeProduct(productId)
-//   }
-  
-//   setToLocalStorage(basketsUser)
-//   goToDomBasket(basketsUser)
-  
-// }
-
-// const priceCalculation = () => {
-//   let calculation = 0
-//   basketsUser.forEach((item) => calculation += item.price * item.count)
-//   totalPrice.innerHTML = calculation.toLocaleString()
-//   calculation = 0
-  
-// }
-
-// const showBasket = () => basketScreen.classList.remove("hidden")
-// const hideBasket = () => basketScreen.classList.add("hidden")
-
-
-// basketIcone.addEventListener("click", showBasket)
-// closeBasketX.addEventListener("click", hideBasket)
-// clearAllBtn.addEventListener("click", clearBasket)
-
-
-// opened imges
-//! end
 
 
 const productSlider = document.querySelector(".product-slider")
@@ -2149,7 +2144,7 @@ const createSlideHTML = (item) => {
             </div>
 
             <div class="box-info my-2 mb-4">
-                <div class="title text-[13px] min-h-[40px] group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300 dark:text-white text-base/loose line-clamp-2">
+                <div class="title text-[13px] min-h-[60px] group-hover/changeColor:text-blue-400 dark:group-hover/changeColor:text-white transition-colors duration-300 dark:text-white text-base/loose line-clamp-2">
                     <p>
                         ${item.title}
                     </p>
@@ -2321,11 +2316,31 @@ const similarProductsTitle = () => {
 }
 
 
+const getDataFromLocalStorage = () => {
+    const theme = localStorage.getItem("theme");
+
+    if (theme === "dark") {
+        htmlElem.classList.add("dark");
+    } else {
+        htmlElem.classList.remove("dark");
+    }
+
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || []
+
+    return {
+        theme,
+        cartItems
+    }
+    
+};
+getDataFromLocalStorage()
+
+
 window.addEventListener("load", () => {
     getProductBySlug()
     loadingInfoProduct()
     similarProductsTitle()
     createSimilarProductsSwiper()
+    cartHandler()
 })
-window.addEventListener("load", loadingInfoProduct)
 window.addEventListener("load", loadTitle)

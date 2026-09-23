@@ -324,6 +324,99 @@ userSymbol.addEventListener("click",()=>{
 
 
 
+// shopping cart
+const cartHandler = () => {
+    const mainCart = $.querySelector(".main-cart")
+    const quantityItems = $.querySelector(".quantity-items")
+    const priceContainer = $.querySelector(".price-container")
+    const numberOfProducts = $.querySelector(".number-of-products")
+    const { cartItems } = getDataFromLocalStorage()
+    
+
+    let finalPrice = 0
+    cartItems.forEach(item => {
+        const calculate = item.price * item.quantity
+        finalPrice += calculate
+    })
+
+    numberOfProducts.innerHTML = ""
+    numberOfProducts.innerHTML = toPersianNumber(cartItems.length)
+
+    // تعداد کل محصولات
+    quantityItems.innerHTML = ""
+    quantityItems.innerHTML = toPersianNumber(cartItems.length)
+
+    // قیمت نهایی
+    priceContainer.innerHTML = ""
+    priceContainer.innerHTML = toPersianNumber(finalPrice.toLocaleString())
+
+    mainCart.innerHTML = ""
+    cartItems.forEach((item) => {
+        mainCart.insertAdjacentHTML("beforeend",
+            `
+            <div class="display-flex gap-2 py-5 border-b-2 border-b-gray-100 dark:border-[#414150]">
+                <img src="${item.src}" alt="" class="w-[50px] bg-gray-100 dark:bg-[#414150] rounded-lg">
+                <div class="flex flex-col gap-3">
+                    <div class="text-gray-950 display-flex dark:text-white">
+                        <span class="block w-[200px] truncate">${item.title}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" data-slug="${item.slug}" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="remove-product-btn size-3.5 cursor-pointer">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+    
+                    </div>
+                    <div class="text-gray-900 display-flex justify-between">
+                        <div class="text-gray-400">
+                            تعداد:
+                            <span>${toPersianNumber(item.quantity)}</span>
+                        </div>
+                        <div class="display-flex gap-1 font-bold">
+                            <span class="dark:text-white">${toPersianNumber(item.price.toLocaleString())}</span>
+                            <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `
+        )
+    })
+    if (cartItems.length > 3) {
+    mainCart.classList.add("overflow-y-auto", "max-h-[280px]")
+} else {
+    mainCart.classList.remove("overflow-y-auto", "max-h-[280px]")
+}
+
+    if (cartItems.length === 0) {
+        mainCart.insertAdjacentHTML("beforeend",
+            `
+            <div class="text-gray-900 bg-gray-50 p-5 rounded-xl m-3">
+               <span>سبد خرید شما خالی میباشد :(</span>
+            </div>
+            `
+        )
+    } else {
+        
+    }
+    removeProduct()
+
+}
+const removeProduct = () => {
+    const { cartItems } = getDataFromLocalStorage()
+    const removeProductBtn = $.querySelectorAll(".remove-product-btn")
+    removeProductBtn.forEach(item => {
+        item.addEventListener("click", () => {
+            const newCartItems = cartItems.filter(pro => {
+                return pro.slug !== item.dataset.slug
+            })
+    
+            localStorage.setItem("cartItems", JSON.stringify(newCartItems))
+            cartHandler()
+        })
+    })
+    
+}
+window.addEventListener("load", cartHandler)
+
+
 // scroll stories
 const prevCircleStory = () => {
     containerStoriesCircle.scrollBy({
@@ -3873,10 +3966,11 @@ const getDataFromLocalStorage = () => {
         html.classList.remove("dark");
     }
 
-    const localNews = JSON.parse(localStorage.getItem("news"))
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || []
 
-    if (localNews) {
-        newsLettersContainer = localNews
+    return {
+        theme,
+        cartItems
     }
     
 };
