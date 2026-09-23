@@ -867,11 +867,11 @@ const loadingInfoProduct = () => {
             <div class="bg-[#0060ff33] display-flex justify-between p-2 rounded-xl whitespace-nowrap w-full">
                 <h2 class="text-[18px] font-bold text-blue-600">فروش ویژه</h2>
                 <div>
-                    <p class="dark:text-white">
-                        <span class="timer-seconds bg-white font-bold dark:bg-black/40 rounded-md px-1.5"></span> :
-                        <span class="timer-minutes bg-white font-bold dark:bg-black/40 rounded-md px-1.5"></span> :
-                        <span class="timer-hours bg-white font-bold dark:bg-black/40 rounded-md px-1.5"></span> :
-                        <span class="timer-days bg-white font-bold dark:bg-black/40 rounded-md px-1.5"></span>
+                    <p class="dark:text-white display-flex flex-wrap gap-1">
+                        <span class="timer-seconds bg-white font-bold dark:bg-black/40 rounded-md px-0.5"></span> :
+                        <span class="timer-minutes bg-white font-bold dark:bg-black/40 rounded-md px-0.5"></span> :
+                        <span class="timer-hours bg-white font-bold dark:bg-black/40 rounded-md px-0.5"></span> :
+                        <span class="timer-days bg-white font-bold dark:bg-black/40 rounded-md px-0.5"></span>
                     </p>
                 </div>
             </div>
@@ -1520,9 +1520,10 @@ const addToCartHandler = (quantityInput) => {
 const cartHandler = () => {
     const mainCart = $.querySelector(".main-cart")
     const quantityItems = $.querySelector(".quantity-items")
+    const quantityItemsMobile = $.querySelector(".quantity-items-mobile")
     const priceContainer = $.querySelector(".price-container")
     const numberOfProducts = $.querySelector(".number-of-products")
-    const { cartItems } = getDataFromLocalStorage()
+    const { cartItems } = getDataFromLocalStorage()    
 
     
 
@@ -1538,6 +1539,9 @@ const cartHandler = () => {
     // تعداد کل محصولات
     quantityItems.innerHTML = ""
     quantityItems.innerHTML = toPersianNumber(cartItems.length)
+
+    quantityItemsMobile.innerHTML = ""
+    quantityItemsMobile.innerHTML = toPersianNumber(cartItems.length)
 
     // قیمت نهایی
     priceContainer.innerHTML = ""
@@ -2073,21 +2077,6 @@ updateThumbnails()
 updateButtons()
 updateCounter()
 moveSlider(0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

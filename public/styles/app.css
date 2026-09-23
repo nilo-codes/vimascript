@@ -567,6 +567,7 @@ body{
     display: inline-block;
     box-shadow: 0px 0 5px oklch(90% 0.189 84.429) !important;
     position: absolute;
+    z-index: 1;
 }
 
 

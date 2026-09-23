@@ -1,130 +1,130 @@
 // story array
 const circleMainStories = [
     [
-        {id: 1, src: "./../images/file.1736941738.29238.webp", title: "چراغ دنا عقب حالت اسپورت"},
-        {id: 1, src: "../images/file.1736941738.29238.webp", title: "چراغ دنا عقب حالت اسپورت", date: "2 سال پیش", infoTitle: "چراغ خطر عقب چپ گروه پژوهش صنعت مدرن کد L1",imgInfo: "../images/file.1736763925.55473.webp",like: 14, link: "چراغ خطر عقب دنا", price: 700_00, discount: 8, star: 5, color: ["bg-red-400", "bg-black"]}
+        {id: 1, src: "./public/images/file.1736941738.29238.webp", title: "چراغ دنا عقب حالت اسپورت"},
+        {id: 1, src: "./public/images/file.1736941738.29238.webp", title: "چراغ دنا عقب حالت اسپورت", date: "2 سال پیش", infoTitle: "چراغ خطر عقب چپ گروه پژوهش صنعت مدرن کد L1",imgInfo: "../images/file.1736763925.55473.webp",like: 14, link: "چراغ خطر عقب دنا", price: 700_00, discount: 8, star: 5, color: ["bg-red-400", "bg-black"]}
     ],
     [
-        {id: 2, src: "./../images/file.1736941657.66176.webp", title: "پژو 207 اسپورت"},
-        {id: 2, src: "../images/file.1736941657.66176.webp", title: "پژو 207 اسپورت", date: "2 سال پیش", infoTitle: "روغن موتور خودرو زادو مدل EXTERAPOWER 16000-000",imgInfo: "../images/file.1736710666.43273.webp",like: 14, link: "روغن مناسب پژو 207", price: "استعلام موجودی", discount: "", star: 4, color: []}
+        {id: 2, src: "./public/images/file.1736941657.66176.webp", title: "پژو 207 اسپورت"},
+        {id: 2, src: "./public/images/file.1736941657.66176.webp", title: "پژو 207 اسپورت", date: "2 سال پیش", infoTitle: "روغن موتور خودرو زادو مدل EXTERAPOWER 16000-000",imgInfo: "../images/file.1736710666.43273.webp",like: 14, link: "روغن مناسب پژو 207", price: "استعلام موجودی", discount: "", star: 4, color: []}
     ],
     [
-        {id: 3, src: "./../images/file.1736941338.11988.webp", title: "استارت خودرو ها"},
-        {id: 3, src: "../videos/vimashop.mp4", title: "استارت خودرو ها", date: "2 سال پیش", infoTitle: "پمپ هیدرولیک فرمان دیناپارت کد 103011 مناسب ماشین",imgInfo: "../images/file.1736850732.24344.webp",like: 20, link: "", price: 380_000, discount: 16, star: 5, color: ["bg-white", "bg-black"]}
+        {id: 3, src: "./public/images/file.1736941338.11988.webp", title: "استارت خودرو ها"},
+        {id: 3, src: "./public/videos/vimashop.mp4", title: "استارت خودرو ها", date: "2 سال پیش", infoTitle: "پمپ هیدرولیک فرمان دیناپارت کد 103011 مناسب ماشین",imgInfo: "../images/file.1736850732.24344.webp",like: 20, link: "", price: 380_000, discount: 16, star: 5, color: ["bg-white", "bg-black"]}
     ],
     [
-        {id: 4, src: "./../images/file.1736941143.61678.webp", title: "لوازم یدکی ماشین ها"},
-        {id: 4, src: "../images/file.1736941143.61678.webp", title: "لوازم یدکی ماشین ها", date: "2 سال پیش", infoTitle: "",imgInfo: "", like: 8, link: "لوازم یدکی ماشین های خارجی", price: "", discount: "", star: "", color: []}
+        {id: 4, src: "./public/images/file.1736941143.61678.webp", title: "لوازم یدکی ماشین ها"},
+        {id: 4, src: "./public/images/file.1736941143.61678.webp", title: "لوازم یدکی ماشین ها", date: "2 سال پیش", infoTitle: "",imgInfo: "", like: 8, link: "لوازم یدکی ماشین های خارجی", price: "", discount: "", star: "", color: []}
     ],
     [
-        {id: 5, src: "./../images/file.1736941036.72496.webp", title: "رولز رویس مظهر زیبایی"},
-        {id: 5, src: "../videos/vimashap2.mp4", title: "رولز رویس مظهر زیبایی", date: "2 سال پیش", infoTitle: "",imgInfo: "", like: 13, link: "", price: "", discount: "", star: "", color: []}
+        {id: 5, src: "./public/images/file.1736941036.72496.webp", title: "رولز رویس مظهر زیبایی"},
+        {id: 5, src: "./public/videos/vimashap2.mp4", title: "رولز رویس مظهر زیبایی", date: "2 سال پیش", infoTitle: "",imgInfo: "", like: 13, link: "", price: "", discount: "", star: "", color: []}
     ],
     [
-        {id: 6, src: "./../images/file.1736939356.69287.webp", title: "انبار ایساکو به زودی..."},
-        {id: 6, src: "../images/file.1736939356.69287.webp", title: "انبار ایساکو به زودی...", date: "2 سال پیش", infoTitle: "",imgInfo: "", like: 7, link: "مشاهده محصولات برند ایساکو", price: "", discount: "", star: "", color: []}
+        {id: 6, src: "./public/images/file.1736939356.69287.webp", title: "انبار ایساکو به زودی..."},
+        {id: 6, src: "./public/images/file.1736939356.69287.webp", title: "انبار ایساکو به زودی...", date: "2 سال پیش", infoTitle: "",imgInfo: "", like: 7, link: "مشاهده محصولات برند ایساکو", price: "", discount: "", star: "", color: []}
     ],
     [
-        {id: 7, src: "./../images/file.1736939152.92573.webp", title: "پژو اسپورت و قطعات کانپکس"},
-        {id: 7, src: "../images/file.1736939152.92573.webp", title: "پژو اسپورت و قطعات کانپکس", date: "2 سال پیش", infoTitle: "لامپ هدلایت خودرو کانپکس مدل M8 H7 بسته 2 عدد",imgInfo: "../images/file.1736781288.52956.webp", like: 8, link: "خرید هدلایت پژو slx", price: 1_100_000, discount: "8", star: "4.5", color: ["bg-white", "bg-red-300"]}
+        {id: 7, src: "./public/images/file.1736939152.92573.webp", title: "پژو اسپورت و قطعات کانپکس"},
+        {id: 7, src: "./public/images/file.1736939152.92573.webp", title: "پژو اسپورت و قطعات کانپکس", date: "2 سال پیش", infoTitle: "لامپ هدلایت خودرو کانپکس مدل M8 H7 بسته 2 عدد",imgInfo: "../images/file.1736781288.52956.webp", like: 8, link: "خرید هدلایت پژو slx", price: 1_100_000, discount: "8", star: "4.5", color: ["bg-white", "bg-red-300"]}
         
     ],
     [
-        {id: 8, src: "./../images/file.1736938959.57257.webp", title: "هیوندا فراتر از رویا"},
-        {id: 8, src: "../videos/vimashop3.mp4", title: "هیوندا فراتر از رویا", date: "2 سال پیش", infoTitle: "",imgInfo: "", like: 11, link: "مقاله معرفی هیوندای", price: "", discount: "", star: "", color: []}
+        {id: 8, src: "./public/images/file.1736938959.57257.webp", title: "هیوندا فراتر از رویا"},
+        {id: 8, src: "./public/videos/vimashop3.mp4", title: "هیوندا فراتر از رویا", date: "2 سال پیش", infoTitle: "",imgInfo: "", like: 11, link: "مقاله معرفی هیوندای", price: "", discount: "", star: "", color: []}
     ],
     [
-        {id: 9, src: "./../images/file.1736938724.58426.webp", title: "آینه بغل های اسپورت"},
-        {id: 9, src: "../images/file.1736938724.58426.webp", title: "آینه بغل های اسپورت", date: "2 سال پیش", infoTitle: "",imgInfo: "", like: 6, link: "", price: "", discount: "", star: "", color: []}
+        {id: 9, src: "./public/images/file.1736938724.58426.webp", title: "آینه بغل های اسپورت"},
+        {id: 9, src: "./public/images/file.1736938724.58426.webp", title: "آینه بغل های اسپورت", date: "2 سال پیش", infoTitle: "",imgInfo: "", like: 6, link: "", price: "", discount: "", star: "", color: []}
     ],
     [
-        {id: 10, src: "./../images/file.1736938602.99187.webp", title: "معرفی سدان جدید بازار"},
-        {id: 10, src: "../videos/vimashop4.mp4", title: "معرفی سدان جدید بازار", date: "2 سال پیش", infoTitle: "",imgInfo: "",like: 3, link: "بیشتر بخوانید", price: "", discount: "", star: "", color: []}
+        {id: 10, src: "./public/images/file.1736938602.99187.webp", title: "معرفی سدان جدید بازار"},
+        {id: 10, src: "./public/videos/vimashop4.mp4", title: "معرفی سدان جدید بازار", date: "2 سال پیش", infoTitle: "",imgInfo: "",like: 3, link: "بیشتر بخوانید", price: "", discount: "", star: "", color: []}
     ],
     [
-        {id: 11, src: "./../images/file.1736938081.36617.webp", title: "چراغ دنا حالت اسپورت"},
-        {id: 11, src: "../images/file.1736938081.36617.webp", title: "چراغ دنا حالت اسپورت", date: "2 سال پیش", infoTitle: "چراغ جلو چپ مدرن مدلMD-28669 مناسب برای دنا پلاس",imgInfo: "../images/file.1736764235.15130.webp", like: 4, link: "", price: 790_000, discount: "11", star: "4", color: ["bg-white", "bg-blue-600/50"]}
+        {id: 11, src: "./public/images/file.1736938081.36617.webp", title: "چراغ دنا حالت اسپورت"},
+        {id: 11, src: "./public/images/file.1736938081.36617.webp", title: "چراغ دنا حالت اسپورت", date: "2 سال پیش", infoTitle: "چراغ جلو چپ مدرن مدلMD-28669 مناسب برای دنا پلاس",imgInfo: "../images/file.1736764235.15130.webp", like: 4, link: "", price: 790_000, discount: "11", star: "4", color: ["bg-white", "bg-blue-600/50"]}
     ],
     [
-        {id: 12, src: "./../images/file.1736937840.33755.webp", title: "رینک و لاستیک"},
-        {id: 12, src: "../images/file.1736937959.56077.webp", title: "رینک و لاستیک", date: "2 سال پیش", infoTitle: "بلبرینگ چرخ جلو مدل 198 مناسب برای 405, Pars",imgInfo: "../images/file.1736850024.72548.webp", like: 1, link: "", price: 115_000, discount: "18", star: "5", color: ["bg-black/25", "bg-black/15"]}
+        {id: 12, src: "./public/images/file.1736937840.33755.webp", title: "رینک و لاستیک"},
+        {id: 12, src: "./public/images/file.1736937959.56077.webp", title: "رینک و لاستیک", date: "2 سال پیش", infoTitle: "بلبرینگ چرخ جلو مدل 198 مناسب برای 405, Pars",imgInfo: "../images/file.1736850024.72548.webp", like: 1, link: "", price: 115_000, discount: "18", star: "5", color: ["bg-black/25", "bg-black/15"]}
     ],
     [
-        {id: 13, src: "./../images/file.1736937526.66943.webp", title: "روغن موتور سپیدی"},
-        {id: 13, src: "../images/file.1736937526.66943.webp", title: "روغن موتور سپیدی", date: "2 سال پیش", infoTitle: "روغن موتور مدل پاول 10w40SJ حجم 4لیتر",imgInfo: "../images/file.1736708594.81208.webp", like: 2, link: "روغن موتور های اسپیدی", price: 590_000, discount: "13", star: "5", color: ["bg-cyan-700", "bg-black/10"]}
+        {id: 13, src: "./public/images/file.1736937526.66943.webp", title: "روغن موتور سپیدی"},
+        {id: 13, src: "./public/images/file.1736937526.66943.webp", title: "روغن موتور سپیدی", date: "2 سال پیش", infoTitle: "روغن موتور مدل پاول 10w40SJ حجم 4لیتر",imgInfo: "../images/file.1736708594.81208.webp", like: 2, link: "روغن موتور های اسپیدی", price: 590_000, discount: "13", star: "5", color: ["bg-cyan-700", "bg-black/10"]}
     ],
     [
-        {id: 14, src: "./../images/file.1736710054.23797.webp", title: "روغن موتور خودرو ها"},
-        {id: 14, src: "../images/file.1736710054.23797.webp", title: "روغن موتور خودرو ها", date: "2 سال پیش", infoTitle: "روغن موتور با کیفیت موتوسل مدل 10W40SM حجم 12",imgInfo: "../images/file.1736710054.23797.webp", like: 4, link: "روغن موتور", price: 590_000, discount: "6", star: "4", color: ["bg-black", "bg-black/10"]}
+        {id: 14, src: "./public/images/file.1736710054.23797.webp", title: "روغن موتور خودرو ها"},
+        {id: 14, src: "./public/images/file.1736710054.23797.webp", title: "روغن موتور خودرو ها", date: "2 سال پیش", infoTitle: "روغن موتور با کیفیت موتوسل مدل 10W40SM حجم 12",imgInfo: "../images/file.1736710054.23797.webp", like: 4, link: "روغن موتور", price: 590_000, discount: "6", star: "4", color: ["bg-black", "bg-black/10"]}
     ],
 ]
 
 // products array
 const productsArray = [
-    {id: 1,title: "چراغ جلو چپ مدرن مدل MD-28663 مناسب برای دنا پلاس", price: 790_000, src: "../images/file.1736764235.15130.webp", color: ["bg-blue-300", "bg-white"], previous_price: 890_000, discount: 11, star: 4, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 240, sales: 54, slug: "p1"},
-    {id: 2,title: "سمپاش کنزاکس مدل KPS-102 حجم 2 لیتر", price: 1_420_000, src: "../images/file.1736801171.44215.webp", color: ["bg-gray-200", "bg-yellow-400", "bg-gray-600"], previous_price: "", discount: "", star: 4, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 258, sales: 28, slug: "p2"},
-    {id: 3,title: "لامپ هدلایت خودرو مدل S2 پایه H1 بسته دو عددی", price: 1_600_000, src: "../images/file.1736782031.16645.webp", color: ["bg-purple-400", "bg-white"], previous_price: 1_690_000, discount: 5, star: 5, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 202, sales: 71, slug: "p3"},
-    {id: 4,title: "کمپرسور هوا کنزاکس مدل KAC-13 مدل چندکاره اتوماتیک", price: 2_550_000, src: "../images/file.1736801623.63624.webp", color: ["bg-yellow-700", "bg-white"], previous_price: 2_690_000, discount: 5, star: 5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 260, sales: 154, slug: "p4"},
-    {id: 5,title: "لامپ خودرو سام مدل 144 بسته دو عددی تکمیل شده", price: 100_000, src: "../images/file.1736783807.85162.webp", color: ["bg-blue-300", "bg-white"], previous_price: 110_000, discount: 9, star: 4, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 210, sales: 98, slug: "p5"},
-    {id: 6,title: "روغن موتور خودرو الف مدل EVOLUTION STI700 10W40 SN حجم 5 لیتر",price: 570_000, src: "../images/file.1736710941.51585.webp", color: ["bg-gray-500", "bg-blue-950"], previous_price: 700_000, discount: 19, star: 5, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 220, sales: 243, slug: "p6"},
-    {id: 7,title: "هدلایت لامپ خودرو D9 مدل H4 بسته 2 عددی", price: 1_750_000 , src: "../images/file.1736781067.44454.webp", color: ["bg-amber-500", "bg-amber-300"], previous_price: 1_800_000, discount: 3, star: 3, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 300, sales: 127, slug: "p7"},
-    {id: 8,title: "چراغ عقب چپ جمع ساز مدل JT123B مناسب برای سمند",price: 360_000, src: "../images/file.1736714148.51039.webp", color: ["bg-red-700", "bg-white"], previous_price: 460_000, discount: 22, star: 3, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 280, sales: 410, slug: "p8"},
-    {id: 9,title: "آچار بکس شارژی کنزاکس مدل 8800 مدل همه کاره", price: 3_350_000, src: "../images/file.1736802129.55888.webp", color: ["bg-amber-500", "bg-white"], previous_price: 3_350_000, discount: 4, star: 4.5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 325, sales: 109, slug: "p9"},
-    {id: 10,title: "هدلایت لامپ خودرو اسمارت مدل M10 PRO پایه H7 بسته دو عددی", price: "استعلام موجودی", src: "../images/file.1736783333.49271.webp", color: ["bg-gray-700"], previous_price: "", discount: "", star: 4, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 200, sales: 85, slug: "p10"},
-    {id: 11,title: "کمپرسور هوا فندکی کنزاکس مدل 5417", price: 3_250_000, src: "../images/file.1736704448.36439.webp", color: ["g-yellow-400", "bg-black"], previous_price: "", discount: "", star: 4.6, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 310, sales: 69, slug: "p11"},
-    {id: 12,title: "چراغ جلو راست گروه پژوهش صنعت مدرن کد 44 مناسب برای پژو پارس", price: 600_000, src: "../images/file.1736765649.19155.webp", color: ["bg-blue-900", "bg-white"], previous_price: "", discount: "", star: 5, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 350, sales: 291, slug: "p12"},
-    {id: 13,title: "پمپ هیدرولیک فرمان دیناپارت کد 103011 مناسب برای پژو 405 و سمند", price: 380_000, src: "../images/file.1736850732.24344.webp", color: ["bg-black", "bg-white"], previous_price: 450_000, discount: 16, star: 4, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 200, sales: 338, slug: "p13"},
-    {id: 14,title: "چراغ عقب چپ فن آوران پرتو الوند مدل salimpl مناسب برای پژو پارس ELX", price: 400_000, src: "../images/file.1736764562.85996.webp", color: ["bg-gray-600", "bg-red-700"], previous_price: 420_000, discount: 5, star: 5, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 400, sales: 172, slug: "p14"},
-    {id: 15,title: "چراغ خطر راست خودرو کروز پلاس کد CR506306 مناسب برای شاهین", price: 900_000, src: "../images/file.1736763503.21517.webp", color: ["bg-red-300", "bg-gray-300"], previous_price: "", discount: "", star: 4, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 430, sales: 108, slug: "p15"},
-    {id: 16,title: "دریل کنزاکس مدل KED-150", price: 6_300_000, src: "../images/file.1736800627.32736.webp", color: ["bg-amber-500", "bg-amber-300"], previous_price: 6_900_000, discount: 9, star: 5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 372, sales: 21, slug: "p16"},
-    {id: 17,title: "چراغ جلو چپ اس ان تی کد AM 5964 مناسب برای ساینا", price: 400_000, src: "../images/file.1736764333.52817.webp", color: ["bg-gray-300"], previous_price: 450_000, discount: 11, star: 4, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 412, sales: 72, slug: "p17"},
-    {id: 18,title: "موتور برق کنزاکس مدل KPG-13000", price: "استعلام موجودی", src: "../images/file.1736800861.20102.webp", color: ["bg-amber-300"], previous_price: "", discount: "", star: 5, type: "mechanical parts", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 470, sales: 289, slug: "p18"},
-    {id: 19,title: "بلبرینگ چرخ جلو حامد مدل 198 مناسب برای 405 , Pars", price: 115_000, src: "../images/file.1736850024.72548.webp", color: ["bg-gray-300", "bg-gray-600"], previous_price: 140_000, discount: 18, star: 5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 408, sales: 300, slug: "p19"},
-    {id: 20,title: "چراغ خطر عقب چپ گروه پژوهش صنعت مدرن کد L1 مناسب برای دنا", price: 700_000, src: "../images/file.1736763925.55473.webp", color: ["bg-red-500", "bg-black"], previous_price: 760_000, discount: 5, star: 5, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 510, sales: 193, slug: "p20"},
-    {id: 21,title: "روغن موتور خودرو موتوسل مدل Kangaroo Plus SM 10W40 حجم 5 لیتر", price: 1_000_000, src: "../images/file.1736711221.80403.webp", color: ["bg-yellow-500", "bg-white"], previous_price: "", discount: "", star: 4, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 604, sales: 95, slug: "p21"},
-    {id: 22,title: "روغن موتور مدل پاور پلاس سوپر 10w40 SJ حجم 4 لیتر", price: 1_180_000, src: "../images/file.1736708594.81208.webp", color: ["bg-gray-300", "bg-gray-600"], previous_price: 1_360_000, discount: 13, star: 5, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 386, sales: 359, slug: "p22"},
-    {id: 23,title: "روغن موتور لیکمولی مدل 10W40 SN حجم 4 لیتر", price: 1_000_000, src: "../images/file.1736710364.28748.webp", color: ["bg-blue-500", "bg-white"], previous_price: 1_250_000, discount: 20, star: 4, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 273, sales: 180, slug: "p23"},
-    {id: 24,title: "روغن موتور پتروناس مدل 800 SyntiumEU کد 885869 حجم 4 لیتر", price: 950_000, src: "../images/file.1736713100.43916.webp", color: ["bg-gray-300", "bg-gray-600"], previous_price: "", discount: "", star: 5, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 319, sales: 80, slug: "p24"},
-    {id: 25,title: "روغن موتور با کیفیت موتوسل مدل 10W40 SM حجم 4 لیتر", price: 750_000, src: "../images/file.1736710054.23797.webp", color: ["bg-black", "bg-gray-300"], previous_price: 800_000, discount: 6, star: 4, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 327, sales: 94, slug: "p25"},
-    {id: 26,title: "لامپ هدلایت خودرو کانپکس مدل M8 H7 بسته 2 عددی", price: 1_100_000, src: "../images/file.1736781288.52956.webp", color: ["bg-pink-700/50", "bg-white"], previous_price: 1_200_000, discount: 8, star: 4.5, type: "headlight", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 286, sales: 510, slug: "p26"},
-    {id: 27,title: "روغن موتور موتوسل مدل 10W40 SL حجم 3.5 لیتر", price: "استعلام موجودی", src: "../imgs/img-product/file.1736711454.45904.webp", color: [], previous_price: "", discount: "", star: 5, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 54, sales: 328, slug: "p27"},
-    {id: 28,title: "روغن موتور خودرو زادو مدل 20W50-SM-16000 EXTERA POWER حجم 5 لیتر", price: "استعلام موجودی", src: "../imgs/img-product/file.1736710666.43273.webp", color: [], previous_price: "", discount: "", star: 4, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 91, sales: 244, slug: "p28"},
-    {id: 29,title: "هدلایت لامپ خودرو روشا مدل TP1 پایه H3 بسته دو عددی", price: 1_400_000, src: "../imgs/img-product/file.1736782692.52155.webp", color: ["bg-cyan-600/60", "bg-white"], previous_price: "", discount: "", star: 4, type: "headlight", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 180, sales: 43, slug: "p29"},
-    {id: 30,title: "چراغ عقب مدل G4133400 مناسب برای خودروهای لیفان", price: "استعلام موجودی", src: "../imgs/img-product/file.1736765386.82005.webp", color: [], previous_price: "", discount: "", star: 4.5, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 573, sales: 205, slug: "p30"},
-    {id: 31,title: "کمپرسور هوا گالف مدل 5420 با تنوع ابزار های مورد نیاز", price: "استعلام موجودی", src: "../imgs/img-product/file.1736800164.56400.webp", color: [], previous_price: "", discount: "", star: 5, type: "mechanical parts", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 247, sales: 80, slug: "p31"},
-    {id: 32,title: "لامپ چراغ کوچک خودرو سام اسپرت مدل 24 SMD BELU بسته 2 عددی", price: "استعلام موجودی", src: "../imgs/img-product/file.1736781554.41936.webp", color: [], previous_price: "", discount: "", star: 5, type: "headlight", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 341, sales: 188, slug: "p32"},
+    {id: 1,title: "چراغ جلو چپ مدرن مدل MD-28663 مناسب برای دنا پلاس", price: 790_000, src: "./public/images/file.1736764235.15130.webp", color: ["bg-blue-300", "bg-white"], previous_price: 890_000, discount: 11, star: 4, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 240, sales: 54, slug: "p1"},
+    {id: 2,title: "سمپاش کنزاکس مدل KPS-102 حجم 2 لیتر", price: 1_420_000, src: "./public/images/file.1736801171.44215.webp", color: ["bg-gray-200", "bg-yellow-400", "bg-gray-600"], previous_price: "", discount: "", star: 4, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 258, sales: 28, slug: "p2"},
+    {id: 3,title: "لامپ هدلایت خودرو مدل S2 پایه H1 بسته دو عددی", price: 1_600_000, src: "./public/images/file.1736782031.16645.webp", color: ["bg-purple-400", "bg-white"], previous_price: 1_690_000, discount: 5, star: 5, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 202, sales: 71, slug: "p3"},
+    {id: 4,title: "کمپرسور هوا کنزاکس مدل KAC-13 مدل چندکاره اتوماتیک", price: 2_550_000, src: "./public/images/file.1736801623.63624.webp", color: ["bg-yellow-700", "bg-white"], previous_price: 2_690_000, discount: 5, star: 5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 260, sales: 154, slug: "p4"},
+    {id: 5,title: "لامپ خودرو سام مدل 144 بسته دو عددی تکمیل شده", price: 100_000, src: "./public/images/file.1736783807.85162.webp", color: ["bg-blue-300", "bg-white"], previous_price: 110_000, discount: 9, star: 4, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 210, sales: 98, slug: "p5"},
+    {id: 6,title: "روغن موتور خودرو الف مدل EVOLUTION STI700 10W40 SN حجم 5 لیتر",price: 570_000, src: "./public/images/file.1736710941.51585.webp", color: ["bg-gray-500", "bg-blue-950"], previous_price: 700_000, discount: 19, star: 5, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 220, sales: 243, slug: "p6"},
+    {id: 7,title: "هدلایت لامپ خودرو D9 مدل H4 بسته 2 عددی", price: 1_750_000 , src: "./public/images/file.1736781067.44454.webp", color: ["bg-amber-500", "bg-amber-300"], previous_price: 1_800_000, discount: 3, star: 3, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 300, sales: 127, slug: "p7"},
+    {id: 8,title: "چراغ عقب چپ جمع ساز مدل JT123B مناسب برای سمند",price: 360_000, src: "./public/images/file.1736714148.51039.webp", color: ["bg-red-700", "bg-white"], previous_price: 460_000, discount: 22, star: 3, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 280, sales: 410, slug: "p8"},
+    {id: 9,title: "آچار بکس شارژی کنزاکس مدل 8800 مدل همه کاره", price: 3_350_000, src: "./public/images/file.1736802129.55888.webp", color: ["bg-amber-500", "bg-white"], previous_price: 3_350_000, discount: 4, star: 4.5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 325, sales: 109, slug: "p9"},
+    {id: 10,title: "هدلایت لامپ خودرو اسمارت مدل M10 PRO پایه H7 بسته دو عددی", price: "استعلام موجودی", src: "./public/images/file.1736783333.49271.webp", color: ["bg-gray-700"], previous_price: "", discount: "", star: 4, type: "headlight", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 200, sales: 85, slug: "p10"},
+    {id: 11,title: "کمپرسور هوا فندکی کنزاکس مدل 5417", price: 3_250_000, src: "./public/images/file.1736704448.36439.webp", color: ["g-yellow-400", "bg-black"], previous_price: "", discount: "", star: 4.6, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 310, sales: 69, slug: "p11"},
+    {id: 12,title: "چراغ جلو راست گروه پژوهش صنعت مدرن کد 44 مناسب برای پژو پارس", price: 600_000, src: "./public/images/file.1736765649.19155.webp", color: ["bg-blue-900", "bg-white"], previous_price: "", discount: "", star: 5, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 350, sales: 291, slug: "p12"},
+    {id: 13,title: "پمپ هیدرولیک فرمان دیناپارت کد 103011 مناسب برای پژو 405 و سمند", price: 380_000, src: "./public/images/file.1736850732.24344.webp", color: ["bg-black", "bg-white"], previous_price: 450_000, discount: 16, star: 4, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 200, sales: 338, slug: "p13"},
+    {id: 14,title: "چراغ عقب چپ فن آوران پرتو الوند مدل salimpl مناسب برای پژو پارس ELX", price: 400_000, src: "./public/images/file.1736764562.85996.webp", color: ["bg-gray-600", "bg-red-700"], previous_price: 420_000, discount: 5, star: 5, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 400, sales: 172, slug: "p14"},
+    {id: 15,title: "چراغ خطر راست خودرو کروز پلاس کد CR506306 مناسب برای شاهین", price: 900_000, src: "./public/images/file.1736763503.21517.webp", color: ["bg-red-300", "bg-gray-300"], previous_price: "", discount: "", star: 4, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 430, sales: 108, slug: "p15"},
+    {id: 16,title: "دریل کنزاکس مدل KED-150", price: 6_300_000, src: "./public/images/file.1736800627.32736.webp", color: ["bg-amber-500", "bg-amber-300"], previous_price: 6_900_000, discount: 9, star: 5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 372, sales: 21, slug: "p16"},
+    {id: 17,title: "چراغ جلو چپ اس ان تی کد AM 5964 مناسب برای ساینا", price: 400_000, src: "./public/images/file.1736764333.52817.webp", color: ["bg-gray-300"], previous_price: 450_000, discount: 11, star: 4, type: "vehicle light", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 412, sales: 72, slug: "p17"},
+    {id: 18,title: "موتور برق کنزاکس مدل KPG-13000", price: "استعلام موجودی", src: "./public/images/file.1736800861.20102.webp", color: ["bg-amber-300"], previous_price: "", discount: "", star: 5, type: "mechanical parts", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 470, sales: 289, slug: "p18"},
+    {id: 19,title: "بلبرینگ چرخ جلو حامد مدل 198 مناسب برای 405 , Pars", price: 115_000, src: "./public/images/file.1736850024.72548.webp", color: ["bg-gray-300", "bg-gray-600"], previous_price: 140_000, discount: 18, star: 5, type: "mechanical parts", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 408, sales: 300, slug: "p19"},
+    {id: 20,title: "چراغ خطر عقب چپ گروه پژوهش صنعت مدرن کد L1 مناسب برای دنا", price: 700_000, src: "./public/images/file.1736763925.55473.webp", color: ["bg-red-500", "bg-black"], previous_price: 760_000, discount: 5, star: 5, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 510, sales: 193, slug: "p20"},
+    {id: 21,title: "روغن موتور خودرو موتوسل مدل Kangaroo Plus SM 10W40 حجم 5 لیتر", price: 1_000_000, src: "./public/images/file.1736711221.80403.webp", color: ["bg-yellow-500", "bg-white"], previous_price: "", discount: "", star: 4, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: true, viewed: 604, sales: 95, slug: "p21"},
+    {id: 22,title: "روغن موتور مدل پاور پلاس سوپر 10w40 SJ حجم 4 لیتر", price: 1_180_000, src: "./public/images/file.1736708594.81208.webp", color: ["bg-gray-300", "bg-gray-600"], previous_price: 1_360_000, discount: 13, star: 5, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 386, sales: 359, slug: "p22"},
+    {id: 23,title: "روغن موتور لیکمولی مدل 10W40 SN حجم 4 لیتر", price: 1_000_000, src: "./public/images/file.1736710364.28748.webp", color: ["bg-blue-500", "bg-white"], previous_price: 1_250_000, discount: 20, star: 4, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 273, sales: 180, slug: "p23"},
+    {id: 24,title: "روغن موتور پتروناس مدل 800 SyntiumEU کد 885869 حجم 4 لیتر", price: 950_000, src: "./public/images/file.1736713100.43916.webp", color: ["bg-gray-300", "bg-gray-600"], previous_price: "", discount: "", star: 5, type: "engine oil", discount_start_date: "2026-08-22T00:00:00", discount_end_date: "2099-12-31T23:59:59", isFeatured: false, viewed: 319, sales: 80, slug: "p24"},
+    {id: 25,title: "روغن موتور با کیفیت موتوسل مدل 10W40 SM حجم 4 لیتر", price: 750_000, src: "./public/images/file.1736710054.23797.webp", color: ["bg-black", "bg-gray-300"], previous_price: 800_000, discount: 6, star: 4, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 327, sales: 94, slug: "p25"},
+    {id: 26,title: "لامپ هدلایت خودرو کانپکس مدل M8 H7 بسته 2 عددی", price: 1_100_000, src: "./public/images/file.1736781288.52956.webp", color: ["bg-pink-700/50", "bg-white"], previous_price: 1_200_000, discount: 8, star: 4.5, type: "headlight", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 286, sales: 510, slug: "p26"},
+    {id: 27,title: "روغن موتور موتوسل مدل 10W40 SL حجم 3.5 لیتر", price: "استعلام موجودی", src: "./public/imgs/img-product/file.1736711454.45904.webp", color: [], previous_price: "", discount: "", star: 5, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 54, sales: 328, slug: "p27"},
+    {id: 28,title: "روغن موتور خودرو زادو مدل 20W50-SM-16000 EXTERA POWER حجم 5 لیتر", price: "استعلام موجودی", src: "./public/imgs/img-product/file.1736710666.43273.webp", color: [], previous_price: "", discount: "", star: 4, type: "engine oil", discount_start_date: null, discount_end_date: null, isFeatured: false, viewed: 91, sales: 244, slug: "p28"},
+    {id: 29,title: "هدلایت لامپ خودرو روشا مدل TP1 پایه H3 بسته دو عددی", price: 1_400_000, src: "./public/imgs/img-product/file.1736782692.52155.webp", color: ["bg-cyan-600/60", "bg-white"], previous_price: "", discount: "", star: 4, type: "headlight", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 180, sales: 43, slug: "p29"},
+    {id: 30,title: "چراغ عقب مدل G4133400 مناسب برای خودروهای لیفان", price: "استعلام موجودی", src: "./public/imgs/img-product/file.1736765386.82005.webp", color: [], previous_price: "", discount: "", star: 4.5, type: "vehicle light", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 573, sales: 205, slug: "p30"},
+    {id: 31,title: "کمپرسور هوا گالف مدل 5420 با تنوع ابزار های مورد نیاز", price: "استعلام موجودی", src: "./public/imgs/img-product/file.1736800164.56400.webp", color: [], previous_price: "", discount: "", star: 5, type: "mechanical parts", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 247, sales: 80, slug: "p31"},
+    {id: 32,title: "لامپ چراغ کوچک خودرو سام اسپرت مدل 24 SMD BELU بسته 2 عددی", price: "استعلام موجودی", src: "./public/imgs/img-product/file.1736781554.41936.webp", color: [], previous_price: "", discount: "", star: 5, type: "headlight", discount_start_date: null, discount_end_date: null, isFeatured: true, viewed: 341, sales: 188, slug: "p32"},
 ]
 
 // brands
 const brandsArray = [
-    {id: 1, title: "ایساکو", src: "../imgs/img-brands/file.1736767619.39314.webp"},
-    {id: 2, title: "پارس لنت", src: "../imgs/img-brands/file.1736779878.54799.webp"},
-    {id: 3, title: "وی پارت", src: "../imgs/img-brands/file.1736780368.27117.webp"},
-    {id: 4, title: "امیرنیا", src: "../imgs/img-brands/file.1736780009.79829.webp"},
-    {id: 5, title: "سایپا", src: "../imgs/img-brands/file.1736777722.39255.webp"},
-    {id: 6, title: "والئو", src: "../imgs/img-brands/file.1736778216.39126.webp"},
-    {id: 7, title: "مادپارت", src: "../imgs/img-brands/file.1736779747.21865.webp"},
-    {id: 8, title: "ساپکو", src: "../imgs/img-brands/file.1736780758.20040.webp"},
-    {id: 9, title: "کنزاکس", src: "../imgs/img-brands/file.1736769677.14146.webp"},
-    {id: 10, title: "بتاسرامد", src: "../imgs/img-brands/file.1736780189.48830.webp"},
-    {id: 11, title: "اسپیدی", src: "../imgs/img-brands/file.1736778668.43658.webp"},
-    {id: 12, title: "ایده پارت", src: "../imgs/img-brands/file.1736780507.74102.webp"},
+    {id: 1, title: "ایساکو", src: "./public/imgs/img-brands/file.1736767619.39314.webp"},
+    {id: 2, title: "پارس لنت", src: "./public/imgs/img-brands/file.1736779878.54799.webp"},
+    {id: 3, title: "وی پارت", src: "./public/imgs/img-brands/file.1736780368.27117.webp"},
+    {id: 4, title: "امیرنیا", src: "./public/imgs/img-brands/file.1736780009.79829.webp"},
+    {id: 5, title: "سایپا", src: "./public/imgs/img-brands/file.1736777722.39255.webp"},
+    {id: 6, title: "والئو", src: "./public/imgs/img-brands/file.1736778216.39126.webp"},
+    {id: 7, title: "مادپارت", src: "./public/imgs/img-brands/file.1736779747.21865.webp"},
+    {id: 8, title: "ساپکو", src: "./public/imgs/img-brands/file.1736780758.20040.webp"},
+    {id: 9, title: "کنزاکس", src: "./public/imgs/img-brands/file.1736769677.14146.webp"},
+    {id: 10, title: "بتاسرامد", src: "./public/imgs/img-brands/file.1736780189.48830.webp"},
+    {id: 11, title: "اسپیدی", src: "./public/imgs/img-brands/file.1736778668.43658.webp"},
+    {id: 12, title: "ایده پارت", src: "./public/imgs/img-brands/file.1736780507.74102.webp"},
 ]
 
 // random articles
 const articlesArray = [
-    {id: 1, title: "بهترین هدلایت برای پژو پارس و پژو 405 چیست؟", src: "../imgs/img-articles/file.1736867341.98478.webp", author: "مهرآفرین", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "25 دی 1403", type: "لوازم اسپورت"},
-    {id: 2, title: "تاریخچه سیستم صوتی در خودروسازی", src: "../imgs/img-articles/file.1736868491.56388.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "5 مرداد 1405", type: "سیستم صوتی"},
-    {id: 3, title: "بررسی عوارض استارت زدن ماشین روشن", src: "../imgs/img-articles/file.1736865549.83950.webp", author: "محسن جباری", profile_src: "../imgs/img-articles/article-profile/file.1736681841.91977.jpg", date: "2 خرداد 1404", type: "تعمیرات"},
-    {id: 4, title: "معرفی خودرو اشکودا اکتاویا؛ سدان اروپایی جذاب و تازه‌وارد بازار", src: "../imgs/img-articles/file.1736870066.83672.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "14 تیر 1405", type: "تعمیرات"},
-    {id: 5, title: "بررسی تخصصی علت زنگ زدن شمع ماشین", src: "../imgs/img-articles/file.1736864633.97003.webp", author: "قطعه پلاس", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "12 اسفند 1405", type: "جلوبندی"},
-    {id: 6, title: "در صورت پاره شدن تسمه دینام چکار کنیم + خطرات پاره شدن تسمه دینام", src: "../imgs/img-articles/file.1736864339.41312.webp", author: "محسن جباری", profile_src: "../imgs/img-articles/article-profile/file.1736681841.91977.jpg", date: "25 شهریور 1402", type: "تعمیرات"},
-    {id: 7, title: "در صورت پاره شدن تسمه دینام چکار کنیم + خطرات پاره شدن تسمه دینام", src: "../imgs/img-articles/file.1736866063.65293.webp", author: "قطعه پلاس", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "5 مهر 1405", type: "عیب یابی"},
-    {id: 8, title: "واتر پمپ چیست؟ (هرآنچه باید درباره آن بدانید)", src: "../imgs/img-articles/file.1736863837.46593.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "19 آذر 1405", type: "فنی"},
-    {id: 9, title: "علائم خرابی کمک فنر + زمان مناسب برای تعویض آنها", src: "../imgs/img-articles/file.1736862535.82765.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "10 بهمن 1404", type: "اخبار خودرو"},
-    {id: 10, title: "همه چیز درباره کاتاف زدن ماشین", src: "../imgs/img-articles/file.1736865080.36408.webp", author: "مهرآفرین", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "11 ابان 1405", type: "تیونینگ"},
-    {id: 11, title: "همه چیز درباره تاب داشتن سرسیلندر، از علائم تا خطرات", src: "../imgs/img-articles/file.1736865665.34094.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "1 اردیبهشت 1405", type: "تعمیرات"},
-    {id: 12, title: "بهترین برندهای لنت ترمز پژو پارس کدام است؟", src: "../imgs/img-articles/file.1736863569.35553.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "13 مرداد 1405", type: "دانستنی ها"},
+    {id: 1, title: "بهترین هدلایت برای پژو پارس و پژو 405 چیست؟", src: "./public/imgs/img-articles/file.1736867341.98478.webp", author: "مهرآفرین", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "25 دی 1403", type: "لوازم اسپورت"},
+    {id: 2, title: "تاریخچه سیستم صوتی در خودروسازی", src: "./public/imgs/img-articles/file.1736868491.56388.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "5 مرداد 1405", type: "سیستم صوتی"},
+    {id: 3, title: "بررسی عوارض استارت زدن ماشین روشن", src: "./public/imgs/img-articles/file.1736865549.83950.webp", author: "محسن جباری", profile_src: "../imgs/img-articles/article-profile/file.1736681841.91977.jpg", date: "2 خرداد 1404", type: "تعمیرات"},
+    {id: 4, title: "معرفی خودرو اشکودا اکتاویا؛ سدان اروپایی جذاب و تازه‌وارد بازار", src: "./public/imgs/img-articles/file.1736870066.83672.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "14 تیر 1405", type: "تعمیرات"},
+    {id: 5, title: "بررسی تخصصی علت زنگ زدن شمع ماشین", src: "./public/imgs/img-articles/file.1736864633.97003.webp", author: "قطعه پلاس", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "12 اسفند 1405", type: "جلوبندی"},
+    {id: 6, title: "در صورت پاره شدن تسمه دینام چکار کنیم + خطرات پاره شدن تسمه دینام", src: "./public/imgs/img-articles/file.1736864339.41312.webp", author: "محسن جباری", profile_src: "../imgs/img-articles/article-profile/file.1736681841.91977.jpg", date: "25 شهریور 1402", type: "تعمیرات"},
+    {id: 7, title: "در صورت پاره شدن تسمه دینام چکار کنیم + خطرات پاره شدن تسمه دینام", src: "./public/imgs/img-articles/file.1736866063.65293.webp", author: "قطعه پلاس", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "5 مهر 1405", type: "عیب یابی"},
+    {id: 8, title: "واتر پمپ چیست؟ (هرآنچه باید درباره آن بدانید)", src: "./public/imgs/img-articles/file.1736863837.46593.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "19 آذر 1405", type: "فنی"},
+    {id: 9, title: "علائم خرابی کمک فنر + زمان مناسب برای تعویض آنها", src: "./public/imgs/img-articles/file.1736862535.82765.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "10 بهمن 1404", type: "اخبار خودرو"},
+    {id: 10, title: "همه چیز درباره کاتاف زدن ماشین", src: "./public/imgs/img-articles/file.1736865080.36408.webp", author: "مهرآفرین", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "11 ابان 1405", type: "تیونینگ"},
+    {id: 11, title: "همه چیز درباره تاب داشتن سرسیلندر، از علائم تا خطرات", src: "./public/imgs/img-articles/file.1736865665.34094.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "1 اردیبهشت 1405", type: "تعمیرات"},
+    {id: 12, title: "بهترین برندهای لنت ترمز پژو پارس کدام است؟", src: "./public/imgs/img-articles/file.1736863569.35553.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "13 مرداد 1405", type: "دانستنی ها"},
 ]
 
 
@@ -309,7 +309,7 @@ userSymbol.addEventListener("click",()=>{
     const userId=localStorage.getItem("userId")
 
     if(!userId){
-        window.location.href="../login/index.html"
+        window.location.href="./public/login/index.html"
         return
     }
 
@@ -319,7 +319,7 @@ userSymbol.addEventListener("click",()=>{
         localStorage.setItem(`clickedButton_${userId}`,"userSymbol")
     }
 
-    window.location.href="../user/dashboard/index.html"
+    window.location.href="./public/user/dashboard/index.html"
 })
 
 
@@ -328,6 +328,7 @@ userSymbol.addEventListener("click",()=>{
 const cartHandler = () => {
     const mainCart = $.querySelector(".main-cart")
     const quantityItems = $.querySelector(".quantity-items")
+    const quantityItemsMobile = $.querySelector(".quantity-items-mobile")
     const priceContainer = $.querySelector(".price-container")
     const numberOfProducts = $.querySelector(".number-of-products")
     const { cartItems } = getDataFromLocalStorage()
@@ -346,16 +347,22 @@ const cartHandler = () => {
     quantityItems.innerHTML = ""
     quantityItems.innerHTML = toPersianNumber(cartItems.length)
 
+    quantityItemsMobile.innerHTML = ""
+    quantityItemsMobile.innerHTML = toPersianNumber(cartItems.length)
+
+
     // قیمت نهایی
     priceContainer.innerHTML = ""
     priceContainer.innerHTML = toPersianNumber(finalPrice.toLocaleString())
 
     mainCart.innerHTML = ""
     cartItems.forEach((item) => {
+        console.log(item.src);
+        
         mainCart.insertAdjacentHTML("beforeend",
             `
             <div class="display-flex gap-2 py-5 border-b-2 border-b-gray-100 dark:border-[#414150]">
-                <img src="${item.src}" alt="" class="w-[50px] bg-gray-100 dark:bg-[#414150] rounded-lg">
+                <img src="${item.src.replace("../", "./public/")}" alt="" class="w-[50px] bg-gray-100 dark:bg-[#414150] rounded-lg">
                 <div class="flex flex-col gap-3">
                     <div class="text-gray-950 display-flex dark:text-white">
                         <span class="block w-[200px] truncate">${item.title}</span>
@@ -371,7 +378,7 @@ const cartHandler = () => {
                         </div>
                         <div class="display-flex gap-1 font-bold">
                             <span class="dark:text-white">${toPersianNumber(item.price.toLocaleString())}</span>
-                            <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4">
+                            <img src="./public/images/toman-D-K3lGL1.svg" alt="" class="size-4">
                         </div>
                     </div>
                 </div>
@@ -943,9 +950,9 @@ const gifsContainer = $.querySelector(".gifs")
 const swiperPagination = $.querySelector(".pagination")
 
 const gifItems = [
-    "../imgs/img-banner/file.1736860214.21292.webp",
-    "../imgs/img-banner/file.1736700859.41955.webp",
-    "../imgs/img-banner/file.1736700912.41917.webp",
+    "./public/imgs/img-banner/file.1736860214.21292.webp",
+    "./public/imgs/img-banner/file.1736700859.41955.webp",
+    "./public/imgs/img-banner/file.1736700912.41917.webp",
 ]
 let currentIndex = 0
 
@@ -4024,6 +4031,6 @@ window.addEventListener("click", (e) => {
     if (product) {
         const slug = product.dataset.slug
 
-        window.location.href=`../show-product/singleProduct.html?slug=${slug}`
+        window.location.href=`./public/show-product/singleProduct.html?slug=${slug}`
     }
 })
