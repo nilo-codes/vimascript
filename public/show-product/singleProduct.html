@@ -519,23 +519,42 @@
     </div>
 
 
-    <div class="modal-overlay-add-cart fixed inset-0 bg-black/50 dark:bg-white/30 display-flex z-[9999] opacity-0 invisible transition-all duration-300">
-        <div class="modal-cart bg-white dark:bg-[#262631] p-5 rounded-2xl max-[600px]:m-4">
-            <div class="display-flex justify-between pb-5 dark:text-white">
-                <span class="font-bold text-[14px]">محصول به سبد خرید اضافه شد</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="close-modal-svg size-3.5 cursor-pointer">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-            </div>
-            <div class="main-modal border-2 border-gray-100 dark:border-[#414150] dark:bg-[#353542] rounded-2xl my-2 p-4">
-                <!-- loaded from js -->
-            </div>
-            <div class="flex justify-end gap-2 pt-5">
-                <button class="close-modal bg-[#f5f8fd] dark:bg-[#ffffff1a] dark:text-white dark:hover:text-black hover:bg-gray-200 transition-colors duration-400 cursor-pointer text-[14px] p-2 px-4 rounded-xl border-[1px] border-gray-200 dark:border-0">بستن</button>
-                <button class="go-basket-btn bg-[#1abc9c] hover:bg-[#25c8a7] hover:dark:bg-[#119a7e] transition-colors duration-400 cursor-pointer text-[14px] p-2 px-3 rounded-xl text-white">برو به سبد خرید</button>
-            </div>
-        </div>
+    <div class="modal-cart bg-white dark:bg-[#262631] p-5 rounded-2xl max-[600px]:m-4 max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] overflow-hidden flex flex-col">
+
+    <div class="display-flex justify-between pb-5 dark:text-white shrink-0">
+        <span class="font-bold text-[14px]">
+            محصول به سبد خرید اضافه شد
+        </span>
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke-width="2"
+             stroke="currentColor"
+             class="close-modal-svg size-3.5 cursor-pointer">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12" />
+        </svg>
     </div>
+
+    <div class="flex items-center justify-center gap-2 w-fit max-w-full mx-auto min-h-0">
+
+        <button
+            class="close-modal shrink-0 bg-[#f5f8fd] dark:bg-[#ffffff1a] dark:text-white hover:bg-gray-200 transition-colors duration-300 cursor-pointer text-[14px] p-2 px-4 rounded-xl border border-gray-200 dark:border-0">
+            بستن
+        </button>
+
+        <div class="main-modal min-w-0 max-w-full max-h-full overflow-hidden border-2 border-gray-100 dark:border-[#414150] dark:bg-[#353542] rounded-2xl my-2 p-4">
+        </div>
+
+        <button
+            class="go-basket-btn shrink-0 bg-[#1abc9c] hover:bg-[#25c8a7] hover:dark:bg-[#119a7e] transition-colors duration-300 cursor-pointer text-[14px] p-2 px-3 rounded-xl text-white">
+            برو به سبد خرید
+        </button>
+
+    </div>
+
+</div>
     
 
 

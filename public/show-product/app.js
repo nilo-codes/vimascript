@@ -1420,10 +1420,10 @@ const addToCartHandler = (quantityInput) => {
         
         modalContainer.insertAdjacentHTML("beforeend",
             `
-            <div class="display-flex text-start gap-2 pb-4">
-                    <img src="${imageSrc}" alt="" class="w-[100px] bg-gray-100 dark:bg-[#414150] rounded-xl">
+            <div class="flex items-center text-start gap-2 pb-4 min-w-0">
+                    <img src="${imageSrc}" alt="" class="w-[100px] max-[600px]:w-[70px] shrink-0 bg-gray-100 dark:bg-[#414150] rounded-xl">
                     <div class="flex flex-col gap-2 dark:text-white">
-                        <p class="text-[14px] font-bold block w-[320px]">${UserSelectedProduct.title}</p>
+                        <p class="text-[14px] font-bold block w-[320px] max-[600px]:w-[180px] min-w-0">${UserSelectedProduct.title}</p>
                         <ul class="flex items-center">
                             <li class="border-gray pl-2">
                                 <span class="size-3 ${selectedColor} ${selectedColor === "bg-white" ? "border-[1px] border-gray-400" : ""} rounded-full block"></span>

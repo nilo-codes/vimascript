@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./public/output.css --watch"
+  },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.3",
     "swiper": "^14.1.0",

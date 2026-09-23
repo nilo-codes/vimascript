@@ -2,15 +2,15 @@
 const circleMainStories = [
     [
         {id: 1, src: "./public/images/file.1736941738.29238.webp", title: "چراغ دنا عقب حالت اسپورت"},
-        {id: 1, src: "./public/images/file.1736941738.29238.webp", title: "چراغ دنا عقب حالت اسپورت", date: "2 سال پیش", infoTitle: "چراغ خطر عقب چپ گروه پژوهش صنعت مدرن کد L1",imgInfo: "../images/file.1736763925.55473.webp",like: 14, link: "چراغ خطر عقب دنا", price: 700_00, discount: 8, star: 5, color: ["bg-red-400", "bg-black"]}
+        {id: 1, src: "./public/images/file.1736941738.29238.webp", title: "چراغ دنا عقب حالت اسپورت", date: "2 سال پیش", infoTitle: "چراغ خطر عقب چپ گروه پژوهش صنعت مدرن کد L1",imgInfo: "./public/images/file.1736763925.55473.webp",like: 14, link: "چراغ خطر عقب دنا", price: 700_00, discount: 8, star: 5, color: ["bg-red-400", "bg-black"]}
     ],
     [
         {id: 2, src: "./public/images/file.1736941657.66176.webp", title: "پژو 207 اسپورت"},
-        {id: 2, src: "./public/images/file.1736941657.66176.webp", title: "پژو 207 اسپورت", date: "2 سال پیش", infoTitle: "روغن موتور خودرو زادو مدل EXTERAPOWER 16000-000",imgInfo: "../images/file.1736710666.43273.webp",like: 14, link: "روغن مناسب پژو 207", price: "استعلام موجودی", discount: "", star: 4, color: []}
+        {id: 2, src: "./public/images/file.1736941657.66176.webp", title: "پژو 207 اسپورت", date: "2 سال پیش", infoTitle: "روغن موتور خودرو زادو مدل EXTERAPOWER 16000-000",imgInfo: "./public/images/file.1736710666.43273.webp",like: 14, link: "روغن مناسب پژو 207", price: "استعلام موجودی", discount: "", star: 4, color: []}
     ],
     [
         {id: 3, src: "./public/images/file.1736941338.11988.webp", title: "استارت خودرو ها"},
-        {id: 3, src: "./public/videos/vimashop.mp4", title: "استارت خودرو ها", date: "2 سال پیش", infoTitle: "پمپ هیدرولیک فرمان دیناپارت کد 103011 مناسب ماشین",imgInfo: "../images/file.1736850732.24344.webp",like: 20, link: "", price: 380_000, discount: 16, star: 5, color: ["bg-white", "bg-black"]}
+        {id: 3, src: "./public/videos/vimashop.mp4", title: "استارت خودرو ها", date: "2 سال پیش", infoTitle: "پمپ هیدرولیک فرمان دیناپارت کد 103011 مناسب ماشین",imgInfo: "./public/images/file.1736850732.24344.webp",like: 20, link: "", price: 380_000, discount: 16, star: 5, color: ["bg-white", "bg-black"]}
     ],
     [
         {id: 4, src: "./public/images/file.1736941143.61678.webp", title: "لوازم یدکی ماشین ها"},
@@ -26,7 +26,7 @@ const circleMainStories = [
     ],
     [
         {id: 7, src: "./public/images/file.1736939152.92573.webp", title: "پژو اسپورت و قطعات کانپکس"},
-        {id: 7, src: "./public/images/file.1736939152.92573.webp", title: "پژو اسپورت و قطعات کانپکس", date: "2 سال پیش", infoTitle: "لامپ هدلایت خودرو کانپکس مدل M8 H7 بسته 2 عدد",imgInfo: "../images/file.1736781288.52956.webp", like: 8, link: "خرید هدلایت پژو slx", price: 1_100_000, discount: "8", star: "4.5", color: ["bg-white", "bg-red-300"]}
+        {id: 7, src: "./public/images/file.1736939152.92573.webp", title: "پژو اسپورت و قطعات کانپکس", date: "2 سال پیش", infoTitle: "لامپ هدلایت خودرو کانپکس مدل M8 H7 بسته 2 عدد",imgInfo: "./public/images/file.1736781288.52956.webp", like: 8, link: "خرید هدلایت پژو slx", price: 1_100_000, discount: "8", star: "4.5", color: ["bg-white", "bg-red-300"]}
         
     ],
     [
@@ -43,19 +43,19 @@ const circleMainStories = [
     ],
     [
         {id: 11, src: "./public/images/file.1736938081.36617.webp", title: "چراغ دنا حالت اسپورت"},
-        {id: 11, src: "./public/images/file.1736938081.36617.webp", title: "چراغ دنا حالت اسپورت", date: "2 سال پیش", infoTitle: "چراغ جلو چپ مدرن مدلMD-28669 مناسب برای دنا پلاس",imgInfo: "../images/file.1736764235.15130.webp", like: 4, link: "", price: 790_000, discount: "11", star: "4", color: ["bg-white", "bg-blue-600/50"]}
+        {id: 11, src: "./public/images/file.1736938081.36617.webp", title: "چراغ دنا حالت اسپورت", date: "2 سال پیش", infoTitle: "چراغ جلو چپ مدرن مدلMD-28669 مناسب برای دنا پلاس",imgInfo: "./public/images/file.1736764235.15130.webp", like: 4, link: "", price: 790_000, discount: "11", star: "4", color: ["bg-white", "bg-blue-600/50"]}
     ],
     [
         {id: 12, src: "./public/images/file.1736937840.33755.webp", title: "رینک و لاستیک"},
-        {id: 12, src: "./public/images/file.1736937959.56077.webp", title: "رینک و لاستیک", date: "2 سال پیش", infoTitle: "بلبرینگ چرخ جلو مدل 198 مناسب برای 405, Pars",imgInfo: "../images/file.1736850024.72548.webp", like: 1, link: "", price: 115_000, discount: "18", star: "5", color: ["bg-black/25", "bg-black/15"]}
+        {id: 12, src: "./public/images/file.1736937959.56077.webp", title: "رینک و لاستیک", date: "2 سال پیش", infoTitle: "بلبرینگ چرخ جلو مدل 198 مناسب برای 405, Pars",imgInfo: "./public/images/file.1736850024.72548.webp", like: 1, link: "", price: 115_000, discount: "18", star: "5", color: ["bg-black/25", "bg-black/15"]}
     ],
     [
         {id: 13, src: "./public/images/file.1736937526.66943.webp", title: "روغن موتور سپیدی"},
-        {id: 13, src: "./public/images/file.1736937526.66943.webp", title: "روغن موتور سپیدی", date: "2 سال پیش", infoTitle: "روغن موتور مدل پاول 10w40SJ حجم 4لیتر",imgInfo: "../images/file.1736708594.81208.webp", like: 2, link: "روغن موتور های اسپیدی", price: 590_000, discount: "13", star: "5", color: ["bg-cyan-700", "bg-black/10"]}
+        {id: 13, src: "./public/images/file.1736937526.66943.webp", title: "روغن موتور سپیدی", date: "2 سال پیش", infoTitle: "روغن موتور مدل پاول 10w40SJ حجم 4لیتر",imgInfo: "./public/images/file.1736708594.81208.webp", like: 2, link: "روغن موتور های اسپیدی", price: 590_000, discount: "13", star: "5", color: ["bg-cyan-700", "bg-black/10"]}
     ],
     [
         {id: 14, src: "./public/images/file.1736710054.23797.webp", title: "روغن موتور خودرو ها"},
-        {id: 14, src: "./public/images/file.1736710054.23797.webp", title: "روغن موتور خودرو ها", date: "2 سال پیش", infoTitle: "روغن موتور با کیفیت موتوسل مدل 10W40SM حجم 12",imgInfo: "../images/file.1736710054.23797.webp", like: 4, link: "روغن موتور", price: 590_000, discount: "6", star: "4", color: ["bg-black", "bg-black/10"]}
+        {id: 14, src: "./public/images/file.1736710054.23797.webp", title: "روغن موتور خودرو ها", date: "2 سال پیش", infoTitle: "روغن موتور با کیفیت موتوسل مدل 10W40SM حجم 12",imgInfo: "./public/images/file.1736710054.23797.webp", like: 4, link: "روغن موتور", price: 590_000, discount: "6", star: "4", color: ["bg-black", "bg-black/10"]}
     ],
 ]
 
@@ -113,18 +113,18 @@ const brandsArray = [
 
 // random articles
 const articlesArray = [
-    {id: 1, title: "بهترین هدلایت برای پژو پارس و پژو 405 چیست؟", src: "./public/imgs/img-articles/file.1736867341.98478.webp", author: "مهرآفرین", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "25 دی 1403", type: "لوازم اسپورت"},
-    {id: 2, title: "تاریخچه سیستم صوتی در خودروسازی", src: "./public/imgs/img-articles/file.1736868491.56388.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "5 مرداد 1405", type: "سیستم صوتی"},
-    {id: 3, title: "بررسی عوارض استارت زدن ماشین روشن", src: "./public/imgs/img-articles/file.1736865549.83950.webp", author: "محسن جباری", profile_src: "../imgs/img-articles/article-profile/file.1736681841.91977.jpg", date: "2 خرداد 1404", type: "تعمیرات"},
-    {id: 4, title: "معرفی خودرو اشکودا اکتاویا؛ سدان اروپایی جذاب و تازه‌وارد بازار", src: "./public/imgs/img-articles/file.1736870066.83672.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "14 تیر 1405", type: "تعمیرات"},
-    {id: 5, title: "بررسی تخصصی علت زنگ زدن شمع ماشین", src: "./public/imgs/img-articles/file.1736864633.97003.webp", author: "قطعه پلاس", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "12 اسفند 1405", type: "جلوبندی"},
-    {id: 6, title: "در صورت پاره شدن تسمه دینام چکار کنیم + خطرات پاره شدن تسمه دینام", src: "./public/imgs/img-articles/file.1736864339.41312.webp", author: "محسن جباری", profile_src: "../imgs/img-articles/article-profile/file.1736681841.91977.jpg", date: "25 شهریور 1402", type: "تعمیرات"},
-    {id: 7, title: "در صورت پاره شدن تسمه دینام چکار کنیم + خطرات پاره شدن تسمه دینام", src: "./public/imgs/img-articles/file.1736866063.65293.webp", author: "قطعه پلاس", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "5 مهر 1405", type: "عیب یابی"},
-    {id: 8, title: "واتر پمپ چیست؟ (هرآنچه باید درباره آن بدانید)", src: "./public/imgs/img-articles/file.1736863837.46593.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "19 آذر 1405", type: "فنی"},
-    {id: 9, title: "علائم خرابی کمک فنر + زمان مناسب برای تعویض آنها", src: "./public/imgs/img-articles/file.1736862535.82765.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "10 بهمن 1404", type: "اخبار خودرو"},
-    {id: 10, title: "همه چیز درباره کاتاف زدن ماشین", src: "./public/imgs/img-articles/file.1736865080.36408.webp", author: "مهرآفرین", profile_src: "../imgs/img-articles/article-profile/store-logo.png", date: "11 ابان 1405", type: "تیونینگ"},
-    {id: 11, title: "همه چیز درباره تاب داشتن سرسیلندر، از علائم تا خطرات", src: "./public/imgs/img-articles/file.1736865665.34094.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "1 اردیبهشت 1405", type: "تعمیرات"},
-    {id: 12, title: "بهترین برندهای لنت ترمز پژو پارس کدام است؟", src: "./public/imgs/img-articles/file.1736863569.35553.webp", author: "توحید زمانی", profile_src: "../imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "13 مرداد 1405", type: "دانستنی ها"},
+    {id: 1, title: "بهترین هدلایت برای پژو پارس و پژو 405 چیست؟", src: "./public/imgs/img-articles/file.1736867341.98478.webp", author: "مهرآفرین", profile_src: "./public/imgs/img-articles/article-profile/store-logo.png", date: "25 دی 1403", type: "لوازم اسپورت"},
+    {id: 2, title: "تاریخچه سیستم صوتی در خودروسازی", src: "./public/imgs/img-articles/file.1736868491.56388.webp", author: "توحید زمانی", profile_src: "./public/imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "5 مرداد 1405", type: "سیستم صوتی"},
+    {id: 3, title: "بررسی عوارض استارت زدن ماشین روشن", src: "./public/imgs/img-articles/file.1736865549.83950.webp", author: "محسن جباری", profile_src: "./public/imgs/img-articles/article-profile/file.1736681841.91977.jpg", date: "2 خرداد 1404", type: "تعمیرات"},
+    {id: 4, title: "معرفی خودرو اشکودا اکتاویا؛ سدان اروپایی جذاب و تازه‌وارد بازار", src: "./public/imgs/img-articles/file.1736870066.83672.webp", author: "توحید زمانی", profile_src: "./public/imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "14 تیر 1405", type: "تعمیرات"},
+    {id: 5, title: "بررسی تخصصی علت زنگ زدن شمع ماشین", src: "./public/imgs/img-articles/file.1736864633.97003.webp", author: "قطعه پلاس", profile_src: "./public/imgs/img-articles/article-profile/store-logo.png", date: "12 اسفند 1405", type: "جلوبندی"},
+    {id: 6, title: "در صورت پاره شدن تسمه دینام چکار کنیم + خطرات پاره شدن تسمه دینام", src: "./public/imgs/img-articles/file.1736864339.41312.webp", author: "محسن جباری", profile_src: "./public/imgs/img-articles/article-profile/file.1736681841.91977.jpg", date: "25 شهریور 1402", type: "تعمیرات"},
+    {id: 7, title: "در صورت پاره شدن تسمه دینام چکار کنیم + خطرات پاره شدن تسمه دینام", src: "./public/imgs/img-articles/file.1736866063.65293.webp", author: "قطعه پلاس", profile_src: "./public/imgs/img-articles/article-profile/store-logo.png", date: "5 مهر 1405", type: "عیب یابی"},
+    {id: 8, title: "واتر پمپ چیست؟ (هرآنچه باید درباره آن بدانید)", src: "./public/imgs/img-articles/file.1736863837.46593.webp", author: "توحید زمانی", profile_src: "./public/imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "19 آذر 1405", type: "فنی"},
+    {id: 9, title: "علائم خرابی کمک فنر + زمان مناسب برای تعویض آنها", src: "./public/imgs/img-articles/file.1736862535.82765.webp", author: "توحید زمانی", profile_src: "./public/imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "10 بهمن 1404", type: "اخبار خودرو"},
+    {id: 10, title: "همه چیز درباره کاتاف زدن ماشین", src: "./public/imgs/img-articles/file.1736865080.36408.webp", author: "مهرآفرین", profile_src: "./public/imgs/img-articles/article-profile/store-logo.png", date: "11 ابان 1405", type: "تیونینگ"},
+    {id: 11, title: "همه چیز درباره تاب داشتن سرسیلندر، از علائم تا خطرات", src: "./public/imgs/img-articles/file.1736865665.34094.webp", author: "توحید زمانی", profile_src: "./public/imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "1 اردیبهشت 1405", type: "تعمیرات"},
+    {id: 12, title: "بهترین برندهای لنت ترمز پژو پارس کدام است؟", src: "./public/imgs/img-articles/file.1736863569.35553.webp", author: "توحید زمانی", profile_src: "./public/imgs/img-articles/article-profile/file.1736631787.69467.webp", date: "13 مرداد 1405", type: "دانستنی ها"},
 ]
 
 
@@ -149,6 +149,7 @@ const countLikes = $.querySelector(".count")
 const stories = $.querySelectorAll(".story")
 const containerStoriesOpened = $.querySelector(".open-stories")
 const nextStory = $.querySelector(".next-story")
+const bodyElem = $.querySelector("body")
 
 
 // add story circle to DOM
@@ -551,6 +552,8 @@ const openStory = (e, storyIndex = 0) => {
         
     })
     
+    bodyElem.classList.remove("overflow-x-hidden")
+    bodyElem.classList.add("overflow-hidden")
     
     let userSelectedStory = circleStories.find((story) => {
         return story[0].id === e;
@@ -561,13 +564,13 @@ const openStory = (e, storyIndex = 0) => {
     if (userSelectedStory[1].src.includes("mp4")) {
         storyImg.insertAdjacentHTML("beforeend",
             `
-            <video autoplay muted playsinline src="${userSelectedStory[1].src}" alt="" class="video-story pointer-events-none select-none w-full h-full rounded-xl object-cover">
+            <video autoplay muted playsinline src="${userSelectedStory[1].src}" class="video-story pointer-events-none select-none w-full h-[calc(100%-90px)] rounded-xl object-cover">
             `
         )
     } else {
         storyImg.insertAdjacentHTML("beforeend",
             `
-            <img src="${userSelectedStory[1].src}" alt="" class="img-story pointer-events-none select-none w-full h-full rounded-xl object-cover bg-black">
+            <img src="${userSelectedStory[1].src}" alt="" class="img-story pointer-events-none select-none w-full h-[calc(100%-90px)] rounded-xl object-cover bg-black">
             `
         )
     }
@@ -610,6 +613,8 @@ const openStory = (e, storyIndex = 0) => {
         storyDetails.classList.remove("hidden")
 
         imgInfoBox.src = userSelectedStory[1].imgInfo
+        console.log(userSelectedStory[1].imgInfo);
+
         star.innerHTML = userSelectedStory[1].star
 
         
@@ -672,6 +677,8 @@ const closeStory = () => {
     stopStoryTimer()
     containerStoriesOpened.classList.add("opacity-0" ,"pointer-events-none")
     containerStoriesOpened.classList.remove("opacity-100")
+    bodyElem.classList.add("overflow-x-hidden")
+    bodyElem.classList.remove("overflow-hidden")
 }
 containerStoriesOpened.addEventListener("click", (e) => {
     if (
@@ -1228,7 +1235,7 @@ const desktopDiscountedProducts = () => {
 
                     <div class="box-price display-flex gap-1 dark:text-white">
                         <p>${toPersianNumber(item.price.toLocaleString())}</p>
-                        <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1">
+                        <img src="./public/images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1">
                     </div>
                 </div>
             </div>
@@ -1297,7 +1304,7 @@ const mobileDiscountedProducts = () => {
 
                     <div class="box-price display-flex gap-1 dark:text-white">
                         <p>${toPersianNumber(item.price.toLocaleString())}</p>
-                        <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1">
+                        <img src="./public/images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1">
                     </div>
                 </div>
             </div>
@@ -1808,7 +1815,7 @@ const createOilSlideHTML = (item) => {
                     <p>
                         ${toPersianNumber(item.price.toLocaleString())}
                     </p>
-                    <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price == "number" ? "" : "hidden"}">
+                    <img src="./public/images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price == "number" ? "" : "hidden"}">
                 </div>
             </div>
         </div>
@@ -1959,7 +1966,7 @@ const createProductHTML = (item, index) => {
             </div>
             <div class="box-price text-[14px] max-[450px]:!text-[13px] ${typeof item.price == "number" ? "" : "text[12px] font-bold"} display-flex gap-1 dark:text-white">
                 <p>${toPersianNumber(item.price.toLocaleString())}</p>
-                <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price == "number" ? "" : "hidden"}">
+                <img src="./public/images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price == "number" ? "" : "hidden"}">
             </div>
         </div>
     </div>
@@ -2089,7 +2096,7 @@ const createPopularProduct = (item) => {
                     </div>
                     <div class="price display-flex pr-2 ${typeof item.price === "number" ? "" : "text-[13px] font-bold"} dark:text-white">
                         <p>${toPersianNumber(item.price.toLocaleString())}</p>
-                        <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price === "number" ? "" : "hidden"}">
+                        <img src="./public/images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price === "number" ? "" : "hidden"}">
                     </div>
                 </div>
             </div>
@@ -2215,7 +2222,7 @@ const desktopFeaturedProducts = () => {
 
                     <div class="box-price display-flex gap-1 dark:text-white h-[20px]">
                         <p class="${typeof item.price === "number" ? "" : "text-[14px] font-bold"}">${toPersianNumber(item.price.toLocaleString())}</p>
-                        <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1" ${typeof item.price === "number" ? "" : "hidden"}>
+                        <img src="./public/images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1" ${typeof item.price === "number" ? "" : "hidden"}>
                     </div>
                 </div>
             </div>
@@ -2286,7 +2293,7 @@ const mobileFeaturedProducts = () => {
 
                     <div class="box-price display-flex gap-1 dark:text-white h-[20px]">
                         <p class="${typeof item.price === "number" ? "" : "text-[14px] font-bold"}">${toPersianNumber(item.price.toLocaleString())}</p>
-                        <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price === "number" ? "" : "hidden"}">
+                        <img src="./public/images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price === "number" ? "" : "hidden"}">
                     </div>
                 </div>
             </div>
@@ -2585,7 +2592,7 @@ const createMechanicalPartsHTML = (item) => {
                     </div>
                     <div class="box-price text-[14px] max-[450px]:!text-[14px] ${typeof item.price == "number" ? "" : "font-bold"} display-flex gap-1 dark:text-white">
                         <p>${item.price}</p>
-                        <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price == "number" ? "" : "hidden"}">
+                        <img src="./public/images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price == "number" ? "" : "hidden"}">
                     </div>
                 </div>
             </div>
@@ -2672,7 +2679,7 @@ const createviewedProduct = (item) => {
                     </div>
                     <div class="price display-flex pr-2 ${typeof item.price === "number" ? "" : "text-[13px] font-bold"} dark:text-white">
                         <p>${toPersianNumber(item.price.toLocaleString())}</p>
-                        <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price === "number" ? "" : "hidden"}">
+                        <img src="./public/images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price === "number" ? "" : "hidden"}">
                     </div>
                 </div>
             </div>
@@ -2803,7 +2810,7 @@ const desktopBestSellingProducts = () => {
 
                     <div class="box-price display-flex gap-1 dark:text-white h-[20px]">
                         <p class="${typeof item.price === "number" ? "" : "text-[14px] font-bold"}">${toPersianNumber(item.price.toLocaleString())}</p>
-                        <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1" ${typeof item.price === "number" ? "" : "hidden"}>
+                        <img src="./public/images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1" ${typeof item.price === "number" ? "" : "hidden"}>
                     </div>
                 </div>
             </div>
@@ -2874,7 +2881,7 @@ const mobileBestSellingProducts = () => {
 
                     <div class="box-price display-flex gap-1 dark:text-white h-[20px]">
                         <p class="${typeof item.price === "number" ? "" : "text-[14px] font-bold"}">${toPersianNumber(item.price.toLocaleString())}</p>
-                        <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price === "number" ? "" : "hidden"}">
+                        <img src="./public/images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price === "number" ? "" : "hidden"}">
                     </div>
                 </div>
             </div>
@@ -3202,7 +3209,7 @@ const createHeadlightSlideHTML = (item) => {
                     <p>
                         ${toPersianNumber(item.price.toLocaleString())}
                     </p>
-                    <img src="../images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price == "number" ? "" : "hidden"}">
+                    <img src="./public/images/toman-D-K3lGL1.svg" alt="" class="size-4 pb-1 ${typeof item.price == "number" ? "" : "hidden"}">
                 </div>
             </div>
         </div>
