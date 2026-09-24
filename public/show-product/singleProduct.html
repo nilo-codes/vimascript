@@ -455,7 +455,7 @@
         </div>
     </footer>
 
-    <div class="product-gallery fixed inset-0 z-[99999] p-[40px] hidden">
+    <div class="product-gallery fixed inset-0 z-[99999] p-[40px] max-[600px]:p-5 hidden">
         <div class="overly absolute inset-0 z-0 bg-[#18181bfa] backdrop-blur-[7px]"></div>
         <div class="relative z-10">
             <div class="flex justify-between items-center">
@@ -483,27 +483,31 @@
             </div>
             <div class="main-img mt-[30px]">
                 <div>
-                    <div class="product-slider overflow-hidden w-full h-[500px] select-none cursor-grab">
-                        <ul class="slider-titles hidden max-[770px]:flex mb-5 mt-[20px] display-flex justify-self-center relative bg-[#ffffff0d] rounded-[10px] w-fit max-w-[150px] p-2 px-3">
+                    <div class="product-slider relative overflow-hidden w-full h-[500px] max-h-[55vh] select-none cursor-grab touch-none">
+                        <ul class="slider-titles hidden max-[770px]:flex mt-[20px] display-flex justify-self-center relative bg-[#ffffff0d] rounded-[10px] w-fit max-w-[150px] p-2 px-3">
                             <div class="absolute bottom-0 left-0 size-[15px] border-b-2 border-b-[#595b68] border-l-2 border-l-[#595b68] rounded-bl-lg"></div>
                             <div class="absolute bottom-0 right-0 size-[15px] border-b-2 border-b-[#595b68] border-r-2 border-r-[#595b68] rounded-br-lg"></div>
                             <li class="tab-btn relative text-white text-[15px]">تصاویر رسمی</li>
                         </ul>
-                        <div class="product-track flex h-full">
-                            
-                            <!-- loaded from js -->
+                        <div class="relative w-full max-w-[580px] h-full mx-auto">
+
+                            <div class="product-track flex h-full items-center -translate-y-5">
+                                <!-- loaded from js -->
+                            </div>
+
+                            <button class="product-prev absolute left-0 top-1/2 -translate-y-1/2 z-50 bg-[#ffffff1a] text-gray-400 rounded-full size-10 cursor-pointer">
+                                <i class="ri-arrow-left-s-line text-3xl text-shadow-lg text-shadow-gray-600"></i>
+                            </button>
+
+                            <button class="product-next absolute right-0 top-1/2 -translate-y-1/2 z-50 bg-[#ffffff1a] text-white rounded-full size-10 cursor-pointer">
+                                <i class="ri-arrow-right-s-line text-3xl text-shadow-lg text-shadow-gray-600"></i>
+                            </button>
+
                         </div>
                     </div>
             
-                    <button class="product-prev fixed left-5 top-1/2 -translate-y-1/2 z-50 bg-[#ffffff1a] text-gray-400 rounded-full size-10 cursor-pointer">
-                        <i class="ri-arrow-left-s-line text-3xl text-shadow-lg text-shadow-gray-600"></i>
-                    </button>
-            
-                    <button class="product-next fixed right-5 top-1/2 -translate-y-1/2 z-50 bg-[#ffffff1a] text-white rounded-full size-10 cursor-pointer">
-                        <i class="ri-arrow-right-s-line text-3xl text-shadow-lg text-shadow-gray-600"></i>
-                    </button>
 
-                    <ul class="product-thumbnails display-flex gap-2.5 mt-[80px]">
+                    <ul class="product-thumbnails display-flex gap-2.5 mt-10 max-h-[80px] overflow-hidden">
                         <!-- loaded from js -->
                     </ul>
                 </div>
@@ -520,7 +524,7 @@
 
 
     <div class="modal-overlay-add-cart fixed inset-0 bg-black/50 dark:bg-white/30 display-flex z-[9999] opacity-0 invisible transition-all duration-300">
-        <div class="modal-cart bg-white dark:bg-[#262631] p-5 rounded-2xl max-[600px]:m-4">
+        <div class="modal-cart w-[calc(100vw-2rem)] max-w-[500px] max-[600px]:m-4 min-w-0 bg-white dark:bg-[#262631] p-5 rounded-2xl">
             <div class="display-flex justify-between pb-5 dark:text-white">
                 <span class="font-bold text-[14px]">محصول به سبد خرید اضافه شد</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="close-modal-svg size-3.5 cursor-pointer">

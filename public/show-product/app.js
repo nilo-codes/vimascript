@@ -1420,10 +1420,10 @@ const addToCartHandler = (quantityInput) => {
         
         modalContainer.insertAdjacentHTML("beforeend",
             `
-            <div class="flex items-center text-start gap-2 pb-4 min-w-0">
+            <div class="flex items-center text-start gap-2 pb-4 min-w-0 w-full">
                     <img src="${imageSrc}" alt="" class="w-[100px] max-[600px]:w-[70px] shrink-0 bg-gray-100 dark:bg-[#414150] rounded-xl">
-                    <div class="flex flex-col gap-2 dark:text-white">
-                        <p class="text-[14px] font-bold block w-[320px] max-[600px]:w-[180px] min-w-0">${UserSelectedProduct.title}</p>
+                    <div class="flex flex-col gap-2 dark:text-white min-w-0 flex-1">
+                        <p class="text-[14px] font-bold min-w-0 break-words">${UserSelectedProduct.title}</p>
                         <ul class="flex items-center">
                             <li class="border-gray pl-2">
                                 <span class="size-3 ${selectedColor} ${selectedColor === "bg-white" ? "border-[1px] border-gray-400" : ""} rounded-full block"></span>
@@ -1982,8 +1982,10 @@ productNext.addEventListener("click", () => {
 })
 
 
-productSlider.addEventListener("mousedown", (e) => {
-    if (e.button !== 0) return
+productSlider.addEventListener("pointerdown", (e) => {
+    if (e.target.closest(".product-prev, .product-next")) return
+
+    if (e.button !== 0 && e.pointerType === "mouse") return
 
     isDragging = true
     hasDragged = false
@@ -1991,12 +1993,13 @@ productSlider.addEventListener("mousedown", (e) => {
     currentX = e.clientX
 
     productTrack.style.transition = "none"
+    productSlider.setPointerCapture(e.pointerId)
 
     productSlider.classList.remove("cursor-grab")
     productSlider.classList.add("cursor-grabbing")
 })
 
-productSlider.addEventListener("mousemove", (e) => {
+productSlider.addEventListener("pointermove", (e) => {
     if (!isDragging) return
 
     currentX = e.clientX
@@ -2047,14 +2050,9 @@ const finishDrag = () => {
     }, 0)
 }
 
-productSlider.addEventListener("mouseup", finishDrag)
+productSlider.addEventListener("pointerup", finishDrag)
 
-productSlider.addEventListener("mouseleave", () => {
-    if (isDragging) {
-        finishDrag()
-    }
-})
-
+productSlider.addEventListener("pointercancel", finishDrag)
 productSlider.addEventListener("dragstart", (e) => {
     e.preventDefault()
 })
